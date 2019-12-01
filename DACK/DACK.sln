@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29009.5
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DACK", "DACK\DACK.csproj", "{3A8C7E52-15E3-4F58-A1F6-0FDA24979355}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A8C7E52-15E3-4F58-A1F6-0FDA24979355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A8C7E52-15E3-4F58-A1F6-0FDA24979355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A8C7E52-15E3-4F58-A1F6-0FDA24979355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A8C7E52-15E3-4F58-A1F6-0FDA24979355}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {195C51C7-4E27-4D38-B662-9729A1E6D05D}
+	EndGlobalSection
+EndGlobal

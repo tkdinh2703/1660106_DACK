@@ -14,7 +14,7 @@ namespace DACK
 {
     public partial class Form1 : Form
     {
-        string path = @"Data Source=DESKTOP-2H8FUNK\SQLEXPRESS;Initial Catalog=QLBH-DACK;User ID=sa;Password=1";
+        string path = @"Data Source=DESKTOP-I9DUIM2\SQLEXPRESS;Initial Catalog=QLBH-DACK;Persist Security Info=True;User ID=sa;Password=1";
         public Form1()
         {
             InitializeComponent();
@@ -35,10 +35,13 @@ namespace DACK
                 if (v != null)
                 {
                     int role = (int)v;
-                    MessageBox.Show("" + role);
-                        frmTrangchu frmmanin = new frmTrangchu(role,ID(username), passwork);
-                        frmmanin.Show();
+                    //MessageBox.Show("" + role);
+                    frmTrangchu frmmanin = new frmTrangchu(role,ID(username), passwork); 
+                    frmmanin.Show();
+                    frmmanin.khiDangXuat += XuLyDangXuat;
                     frmmanin.khiketthuc += Frmmanin_khiketthuc;
+
+                    this.Visible = false;
                 }
                 else
                 {
@@ -54,6 +57,10 @@ namespace DACK
         private void Frmmanin_khiketthuc()
         {
             this.Close();
+        }
+        private void XuLyDangXuat()
+        {
+            this.Visible = true;
         }
 
         public int ID(string username)

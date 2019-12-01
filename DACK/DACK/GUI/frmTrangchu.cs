@@ -20,6 +20,10 @@ namespace DACK
         string passwork;
         public delegate void addsanpham();
         public event addsanpham khiketthuc = null;
+
+        public delegate void dangxuat();
+        public event dangxuat khiDangXuat = null;
+
         public frmTrangchu()
         {
             InitializeComponent();
@@ -55,6 +59,7 @@ namespace DACK
         private void BtnDangxuat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
+            this.khiDangXuat();
         }
 
         private void Btnnahcungcap_ItemClick(object sender, ItemClickEventArgs e)

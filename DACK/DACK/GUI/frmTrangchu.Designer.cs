@@ -55,6 +55,7 @@
             this.ribbonQuanly = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonNhanvien = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.bntqlKhachhang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +80,10 @@
             this.btnnahcungcap,
             this.btnNhasanxuat,
             this.btnkhohang,
-            this.btnnhaphang});
+            this.btnnhaphang,
+            this.bntqlKhachhang});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 19;
+            this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonHethong,
@@ -267,6 +269,7 @@
             this.ribbonNhanvien.ItemLinks.Add(this.btnnahcungcap);
             this.ribbonNhanvien.ItemLinks.Add(this.btnNhasanxuat);
             this.ribbonNhanvien.ItemLinks.Add(this.btnkhohang);
+            this.ribbonNhanvien.ItemLinks.Add(this.bntqlKhachhang);
             this.ribbonNhanvien.Name = "ribbonNhanvien";
             // 
             // ribbonStatusBar
@@ -275,6 +278,12 @@
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(927, 24);
+            // 
+            // bntqlKhachhang
+            // 
+            this.bntqlKhachhang.Caption = "Khách hàng";
+            this.bntqlKhachhang.Id = 19;
+            this.bntqlKhachhang.Name = "bntqlKhachhang";
             // 
             // frmTrangchu
             // 
@@ -323,5 +332,6 @@
         private DevExpress.XtraBars.BarButtonItem btnNhasanxuat;
         private DevExpress.XtraBars.BarButtonItem btnkhohang;
         private DevExpress.XtraBars.BarButtonItem btnnhaphang;
+        private DevExpress.XtraBars.BarButtonItem bntqlKhachhang;
     }
 }

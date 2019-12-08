@@ -105,6 +105,7 @@ namespace DACK.DAO
             return roleform;
         }
 
+
         public Roleform quyentruycap(int role, int IDmanhinh)
         {
            
@@ -131,6 +132,195 @@ namespace DACK.DAO
             con.Close();
             return roleform;
         }
+        public List<Khachhang> ChonKh(string sql)
+        {
+            List<Khachhang> lstnhansu = new List<Khachhang>();
+            SqlConnection con = new SqlConnection(path);
+           
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstnhansu.Add(new Khachhang { Id= int.Parse(row[0].ToString()),                                             
+                                               Ten = row[1].ToString(),
+                                               Email= row[2].ToString(),
+                                               Diachi=row[4].ToString(),
+                                               Gioitinh=row[5].ToString(),
+                                               Nganhang= row[6].ToString(),
+                                               Ngaysinh= row[3].ToString(),                                               
+                                               Sodienthoai=int.Parse(row[8].ToString()),
+                                               Sotk=long.Parse(row[7].ToString())
+                    });
+                }
 
+            }          
+            con.Close();
+            return lstnhansu;
+        }
+
+        public List<Nhacungcap> ChonNCC(string sql)
+        {
+            List<Nhacungcap> lstnhansu = new List<Nhacungcap>();
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstnhansu.Add(new Nhacungcap
+                    {   Id= int.Parse(row[0].ToString()),
+                        TenNCC= row[1].ToString(),
+                        DiaChi= row[2].ToString(),
+                        DienThoai= int.Parse(row[3].ToString()),
+                        Website= row[4].ToString()
+
+                    });
+                }
+
+            }
+            con.Close();
+            return lstnhansu;
+        }
+
+        public List<Nhansu> Chonnv(string sql)
+        {
+            List<Nhansu> lstnhansu = new List<Nhansu>();
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstnhansu.Add(new Nhansu
+                    {
+                        Id = int.Parse(row[0].ToString()),
+                        TenDangNhap=row[1].ToString(),
+                        MatKhau="********",
+                        Ten = row[3].ToString(),
+                        Email = row[4].ToString(),
+                        NgayThamgia = row[5].ToString(),
+                        Diachi = row[6].ToString(),
+                        Gioitinh = row[7].ToString(),
+                        Nganhang = row[8].ToString(),
+                        Sotk= long.Parse(row[9].ToString()),
+                        Sodienthoai = int.Parse(row[10].ToString()),
+                        IdQuyen = int.Parse(row[11].ToString())
+
+                    });
+                }
+
+            }
+            con.Close();
+            return lstnhansu;
+        }
+        public List<Luoixuathang> Loadphieuxuathang(string sql)
+        {
+            List<Luoixuathang> lstpxh = new List<Luoixuathang>();
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstpxh.Add(new Luoixuathang
+                    {
+                        Idsp= int.Parse(row[0].ToString()),
+                        Tenhang = row[1].ToString(),
+                        Loaihang = row[2].ToString(),
+                        Giahientai = long.Parse(row[3].ToString()),
+                        VAT = int.Parse(row[4].ToString()),
+                        Soluong = int.Parse(row[5].ToString()),
+                        Thanhtien = long.Parse(row[6].ToString())
+
+                    });
+                }
+
+            }
+            con.Close();
+            return lstpxh;
+        }
+        public List<Sanpham> LIstsanpham(string sql)
+        {
+            List<Sanpham> lstpxh = new List<Sanpham>();
+
+
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstpxh.Add(new Sanpham
+                    {
+                        Id=int.Parse(row[0].ToString()),
+                        TenHang=row[1].ToString(),
+                        LoaiHang=row[2].ToString(),
+                        NgaySanXuat = row[3].ToString(),
+                        XuatXu = row[4].ToString(),
+                        SoLuong=int.Parse(row[5].ToString()),
+                        HinhAnh = row[6].ToString(),
+                        NhaCungCap = row[7].ToString(),
+                        GiaMua=long.Parse(row[8].ToString()),
+                        GiaBan=long.Parse(row[9].ToString()),
+                        VAT=int.Parse(row[10].ToString()),
+                        Khohang = row[11].ToString(),
+                        Thuonghieu = row[12].ToString(),
+
+                    });
+                }
+
+            }
+            con.Close();
+            return lstpxh;
+        }
+
+        public List<Khohang> ChonKhohang(string sql)
+        {
+            List<Khohang> lstkhohang = new List<Khohang>();
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstkhohang.Add(new Khohang
+                    {
+                        Id = int.Parse(row[0].ToString()),
+                        Tenkhohang = row[1].ToString(),
+                        Diachikho= row[2].ToString()
+                    });
+                }
+
+            }
+            con.Close();
+            return lstkhohang;
+        }
+        public Object Laythuoctinh(string sql) {
+
+            SqlConnection conn = new SqlConnection(path);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand(sql, conn);
+            var v = sqlCommand.ExecuteScalar();
+            conn.Close();
+            return v;
+        }
     }
 }

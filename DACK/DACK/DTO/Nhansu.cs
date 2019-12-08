@@ -15,11 +15,12 @@ namespace DACK.DTO
         public string Email{ get; set; }
         public string NgayThamgia{ get; set; }
         public string Diachi{ get; set; }
-        public int IdQuyen{ get; set; }
+        
         public string Gioitinh{ get; set; }
         public string Nganhang{ get; set; }
         public long Sotk{ get; set; }
         public int Sodienthoai{ get; set; }
+        public int IdQuyen { get; set; }
 
     }
 }

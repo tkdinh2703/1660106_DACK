@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DACK.DAO
 {
-    class NhansuDAO
+    public class NhansuDAO
     {
         public Datbase db = new Datbase();
         public DataTable loadnhansu(int IDmh)

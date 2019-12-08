@@ -30,11 +30,11 @@ namespace DACK.DAO
             string sql = "";
             if (Id != 0)
             {
-                sql = string.Format("Update Sanphams Set TenHang=N'{0}',LoaiHang= N'{1}',NgaySanXuat='{2}',XuatXu=N'{3}',SoLuong='{4}',HinhAnh='{5}',NhaCungCap=N'{6}',GiaMua='{7}',GiaBanLe='{8}',GiaBanSi='{9}',Khohang=N'{10}',Thuonghieu=N'{11}' Where Id='{12}' ", sanpham.TenHang, sanpham.LoaiHang, sanpham.NgaySanXuat, sanpham.XuatXu, sanpham.SoLuong, sanpham.HinhAnh, sanpham.NhaCungCap, sanpham.GiaMua, sanpham.GiaBanLe, sanpham.GiaBanSi, sanpham.Khohang, sanpham.Thuonghieu,Id);
+                sql = string.Format("Update Sanphams Set TenHang=N'{0}',LoaiHang= N'{1}',NgaySanXuat='{2}',XuatXu=N'{3}',SoLuong='{4}',HinhAnh='{5}',NhaCungCap=N'{6}',GiaMua='{7}',GiaBan='{8}',VAT='{9}',Khohang=N'{10}',Thuonghieu=N'{11}' Where Id='{12}' ", sanpham.TenHang, sanpham.LoaiHang, sanpham.NgaySanXuat, sanpham.XuatXu, sanpham.SoLuong, sanpham.HinhAnh, sanpham.NhaCungCap, sanpham.GiaMua, sanpham.GiaBan, sanpham.VAT, sanpham.Khohang, sanpham.Thuonghieu,Id);
             }
             else
             {
-                sql = string.Format("Insert into Sanphams(TenHang,LoaiHang,NgaySanXuat,XuatXu,SoLuong,HinhAnh,NhaCungCap,GiaMua,GiaBanLe,GiaBanSi,Khohang,Thuonghieu) Values('{0}',N'{1}',N'{2}',N'{3}','{4}','{5}',N'{6}','{7}','{8}','{9}',N'{10}',N'{11}')", sanpham.TenHang, sanpham.LoaiHang, sanpham.NgaySanXuat, sanpham.XuatXu, sanpham.SoLuong, sanpham.HinhAnh, sanpham.NhaCungCap, sanpham.GiaMua, sanpham.GiaBanLe, sanpham.GiaBanSi, sanpham.Khohang, sanpham.Thuonghieu);
+                sql = string.Format("Insert into Sanphams(TenHang,LoaiHang,NgaySanXuat,XuatXu,SoLuong,HinhAnh,NhaCungCap,GiaMua,GiaBan,VAT,Khohang,Thuonghieu) Values('{0}',N'{1}',N'{2}',N'{3}','{4}','{5}',N'{6}','{7}','{8}','{9}',N'{10}',N'{11}')", sanpham.TenHang, sanpham.LoaiHang, sanpham.NgaySanXuat, sanpham.XuatXu, sanpham.SoLuong, sanpham.HinhAnh, sanpham.NhaCungCap, sanpham.GiaMua, sanpham.GiaBan, sanpham.VAT, sanpham.Khohang, sanpham.Thuonghieu);
             }
             var rs = db.thesuadulieu(sql);
             return rs;

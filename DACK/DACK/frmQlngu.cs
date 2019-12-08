@@ -38,7 +38,7 @@ namespace DACK
                 button1.Visible = role.Them;
                 button2.Visible = role.Xoa;
                 button3.Visible = role.Sua;
-                button4.Visible = role.Xuat;
+                //button4.Visible = role.Xuat;
             }
             Loaddata();
 
@@ -51,7 +51,7 @@ namespace DACK
             SqlDataAdapter adapter = new SqlDataAdapter(query, sqlConnection);
             DataTable data = new DataTable();
             adapter.Fill(data);
-            dataGridView1.DataSource = data;
+            //.DataSource = data;
 
         }
         public Roleform Quyen()

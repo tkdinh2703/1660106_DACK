@@ -17,7 +17,8 @@ namespace DACK
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmBanhang());
+            //1660106 code all
         }
     }
 }

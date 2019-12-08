@@ -16,9 +16,9 @@ namespace DACK
         public int SoLuong { get; set; }
         public string HinhAnh { get; set; }
         public string NhaCungCap { get; set; }
-        public int GiaMua { get; set; }
-        public int GiaBanLe { get; set; }
-        public int GiaBanSi { get; set; }
+        public long GiaMua { get; set; }
+        public long GiaBan { get; set; }
+        public int VAT { get; set; }
         public string Khohang { get; set; }
         public string Thuonghieu { get; set; }
 

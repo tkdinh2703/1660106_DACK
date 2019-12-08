@@ -43,8 +43,8 @@ namespace DACK
             txtngaysx.Text = s.NgaySanXuat;
             txtXuatxu.Text = s.XuatXu;
             txtsoluong.Value = s.SoLuong;
-            txtGiabanle.Value = s.GiaBanLe;
-            txtGiabansi.Value = s.GiaBanSi;
+            txtGiabanle.Value = s.GiaBan;
+            txtGiabansi.Value = s.VAT;
             txtGiamua.Value = s.GiaMua;
             cbbkhohang.Text = s.Khohang;
             cbbLoaihang.Text = s.LoaiHang;
@@ -133,8 +133,8 @@ namespace DACK
             sanpham.HinhAnh = srcAnh;
             sanpham.NhaCungCap = cbbNhacungcap.Text;
             sanpham.GiaMua = (int)txtGiamua.Value;
-            sanpham.GiaBanLe = (int)txtGiabanle.Value;
-            sanpham.GiaBanSi = (int)txtGiabansi.Value;
+            sanpham.GiaBan = (int)txtGiabanle.Value;
+            sanpham.VAT = (int)txtGiabansi.Value;
             sanpham.Khohang = cbbkhohang.Text;
             sanpham.Thuonghieu = cbbthuonghieu.Text;
             return sanpham;

@@ -88,8 +88,8 @@ namespace DACK
                 Object hinhAnh = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "HinhAnh");
                 Object nhaCungCap = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "NhaCungCap");
                 Object giaMua = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "GiaMua");
-                Object giaBanLe = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "GiaBanLe");
-                Object giaBanSi = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "GiaBanSi");
+                Object giaBanLe = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "GiaBan");
+                Object giaBanSi = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "VAT");
                 Object khohang = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "Khohang");
                 Object thuonghieu = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "Thuonghieu");
             Sanpham sanpham = new Sanpham()
@@ -102,9 +102,9 @@ namespace DACK
                 SoLuong = int.Parse(soLuong.ToString()),
                 HinhAnh = hinhAnh.ToString(),
                 NhaCungCap = nhaCungCap.ToString(),
-                GiaMua = int.Parse(giaMua.ToString()),
-                GiaBanLe = int.Parse(giaBanLe.ToString()),
-                GiaBanSi = int.Parse(giaBanSi.ToString()),
+                GiaMua = long.Parse(giaMua.ToString()),
+                GiaBan = long.Parse(giaBanLe.ToString()),
+                VAT = int.Parse(giaBanSi.ToString()),
                 Khohang = khohang.ToString(),
                 Thuonghieu = thuonghieu.ToString()
 

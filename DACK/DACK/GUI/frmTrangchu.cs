@@ -107,7 +107,8 @@ namespace DACK
 
         private void Btnbanhang_ItemClick(object sender, ItemClickEventArgs e)
         {
-
+            frmBanhang banhang = new frmBanhang(Id);
+            banhang.Show();
         }
 
         private void FrmTrangchu_Load(object sender, EventArgs e)

@@ -70,6 +70,7 @@
             this.btnLogin.TabIndex = 7;
             this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.Click += new System.EventHandler(this.BtnLogin_Click);
+            this.btnLogin.MouseEnter += new System.EventHandler(this.BtnLogin_MouseEnter);
             // 
             // linkdk
             // 

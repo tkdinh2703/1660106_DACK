@@ -1,4 +1,5 @@
-﻿using DACK.GUI;
+﻿using DACK.DTO;
+using DACK.GUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace DACK
 {
     public partial class Form1 : Form
     {
-        string path = @"Data Source=DESKTOP-I9DUIM2\SQLEXPRESS;Initial Catalog=QLBH-DACK;Persist Security Info=True;User ID=sa;Password=1";
+        LoginDAO loginDAO = new LoginDAO();
         public Form1()
         {
             InitializeComponent();
@@ -27,11 +28,8 @@ namespace DACK
             string passwork = txtPasswork.Text;
             if (username.Length != 0 && passwork.Length != 0)
             {
-                SqlConnection conn = new SqlConnection(path);
-                string sql = string.Format("Select IdQuyen from Nhansu where TenDangNhap='{0}' and MatKhau='{1}'", username, passwork);
-                conn.Open();
-                SqlCommand sqlCommand = new SqlCommand(sql, conn);
-                var v = sqlCommand.ExecuteScalar();
+
+                var v = loginDAO.Login(username, passwork);
                 if (v != null)
                 {
                     int role = (int)v;
@@ -45,9 +43,9 @@ namespace DACK
                 }
                 else
                 {
-                    MessageBox.Show("Đang nhập không thành công Kiểm tra lại thông tin đăng nhập ");
+                    MessageBox.Show("Đăng nhập không thành công Kiểm tra lại thông tin đăng nhập ");
                 }
-                conn.Close();
+               
             }
             else {
                 MessageBox.Show("Thông tin đăng nhập không được bỏ trống");
@@ -66,13 +64,9 @@ namespace DACK
         public int ID(string username)
         {
             int id;
-            SqlConnection con = new SqlConnection(path);          
-            string sql = string.Format("Select Id from Nhansu where TenDangNhap = '{0}'", username);
-            SqlCommand sqlCommand = new SqlCommand(sql, con);
-            con.Open();
-            var row = sqlCommand.ExecuteScalar();
+            var row = loginDAO.LayId(username);
              id= int.Parse(row.ToString());
-            con.Close();
+            
             return id;
         }
 
@@ -80,6 +74,37 @@ namespace DACK
         {
             Themsuanguoidung themsuanguoidung = new Themsuanguoidung();
             themsuanguoidung.Show();
+        }
+
+        private void BtnLogin_MouseEnter(object sender, EventArgs e)
+        {
+            string username = txtUser.Text;
+            string passwork = txtPasswork.Text;
+            if (username.Length != 0 && passwork.Length != 0)
+            {
+
+                var v = loginDAO.Login(username, passwork);
+                if (v != null)
+                {
+                    int role = (int)v;
+                    //MessageBox.Show("" + role);
+                    frmTrangchu frmmanin = new frmTrangchu(role, ID(username), passwork);
+                    frmmanin.Show();
+                    frmmanin.khiDangXuat += XuLyDangXuat;
+                    frmmanin.khiketthuc += Frmmanin_khiketthuc;
+
+                    this.Visible = false;
+                }
+                else
+                {
+                    MessageBox.Show("Đăng nhập không thành công Kiểm tra lại thông tin đăng nhập ");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Thông tin đăng nhập không được bỏ trống");
+            }
         }
     }
 }

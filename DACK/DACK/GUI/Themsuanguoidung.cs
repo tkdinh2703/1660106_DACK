@@ -26,6 +26,10 @@ namespace DACK.GUI
             InitializeComponent();
             layoutControlItem16.ContentVisible = false;
             btnluu.Text = "Thêm";
+           
+                cbbquyenhan.Text = "Khách Hàng";
+                cbbquyenhan.Enabled = false;
+            
         }
         public Themsuanguoidung(int Role,int Idmh)
         {
@@ -213,7 +217,7 @@ namespace DACK.GUI
         private void Themsuanhansu_Load(object sender, EventArgs e)
         {
             nhansuBUS.Laodcbbedit(cbbquyenhan, "Quyen", "TenQuyen");
-            if (Role == 0|| IDmh==1)
+            if (IDmh==1)
             {
                 cbbquyenhan.Text = "Khách Hàng";
                 cbbquyenhan.Enabled = false;

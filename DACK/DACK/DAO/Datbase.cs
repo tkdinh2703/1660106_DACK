@@ -222,9 +222,9 @@ namespace DACK.DAO
             con.Close();
             return lstnhansu;
         }
-        public List<Luoixuathang> Loadphieuxuathang(string sql)
+        public List<Luoixuatnhaphang> Loadphieuxuathang(string sql)
         {
-            List<Luoixuathang> lstpxh = new List<Luoixuathang>();
+            List<Luoixuatnhaphang> lstpxh = new List<Luoixuatnhaphang>();
             SqlConnection con = new SqlConnection(path);
 
             SqlCommand sqlCommand = new SqlCommand(sql, con);
@@ -234,7 +234,7 @@ namespace DACK.DAO
             {
                 while (row.Read())
                 {
-                    lstpxh.Add(new Luoixuathang
+                    lstpxh.Add(new Luoixuatnhaphang
                     {
                         Idsp= int.Parse(row[0].ToString()),
                         Tenhang = row[1].ToString(),
@@ -321,6 +321,16 @@ namespace DACK.DAO
             var v = sqlCommand.ExecuteScalar();
             conn.Close();
             return v;
+        }
+        public int Demthuoctinh(string sql)
+        {
+
+            SqlConnection conn = new SqlConnection(path);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand(sql, conn);
+            var v = sqlCommand.ExecuteScalar();
+            conn.Close();
+            return (int)v;
         }
     }
 }

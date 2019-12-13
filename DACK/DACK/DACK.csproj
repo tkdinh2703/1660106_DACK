@@ -86,15 +86,15 @@
     <Compile Include="DAO\NhansuDAO.cs" />
     <Compile Include="DAO\NhasanxuatDAO.cs" />
     <Compile Include="DAO\SanphamDAO.cs" />
-    <Compile Include="DTO\Chitietphieuxuathang.cs" />
+    <Compile Include="DTO\Chitietphieuxuatnhaphang.cs" />
     <Compile Include="DTO\Khachhang.cs" />
     <Compile Include="DTO\Khohang.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
     <Compile Include="DTO\Nhacungcap.cs" />
     <Compile Include="DTO\Nhansu.cs" />
     <Compile Include="DTO\Nhasanxuat.cs" />
-    <Compile Include="DTO\Luoinhaphang.cs" />
-    <Compile Include="DTO\Luoixuathang.cs" />
+    <Compile Include="DTO\Luoixuatnhaphang.cs" />
+    <Compile Include="DTO\Phieunhaphang.cs" />
     <Compile Include="DTO\Phieuxuathang.cs" />
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>

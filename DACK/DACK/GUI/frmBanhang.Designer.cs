@@ -56,12 +56,20 @@
             this.XuatXu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SoLuong1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NhaCungCap = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.GiaMua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.GiaBan = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VAT1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Khohang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Thuonghieu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Tenhang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryName = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.Id2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenHang2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LoaiHang2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NgaySanXuat2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.XuatXu2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.SoLuong2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NhaCungCap2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GiaBan2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.VAT2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Loaihang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Giahientai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.VAT = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -103,6 +111,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
@@ -295,7 +305,8 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItem,
-            this.txtsl});
+            this.txtsl,
+            this.repositoryName});
             this.gridControl1.Size = new System.Drawing.Size(960, 245);
             this.gridControl1.TabIndex = 14;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -350,11 +361,8 @@
             this.XuatXu,
             this.SoLuong1,
             this.NhaCungCap,
-            this.GiaMua,
             this.GiaBan,
-            this.VAT1,
-            this.Khohang,
-            this.Thuonghieu});
+            this.VAT1});
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -444,18 +452,6 @@
             this.NhaCungCap.VisibleIndex = 6;
             this.NhaCungCap.Width = 20;
             // 
-            // GiaMua
-            // 
-            this.GiaMua.AppearanceCell.Options.UseTextOptions = true;
-            this.GiaMua.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.GiaMua.Caption = "Giá Mua";
-            this.GiaMua.FieldName = "GiaMua";
-            this.GiaMua.MaxWidth = 100;
-            this.GiaMua.Name = "GiaMua";
-            this.GiaMua.Visible = true;
-            this.GiaMua.VisibleIndex = 7;
-            this.GiaMua.Width = 22;
-            // 
             // GiaBan
             // 
             this.GiaBan.AppearanceCell.Options.UseTextOptions = true;
@@ -465,7 +461,7 @@
             this.GiaBan.MaxWidth = 100;
             this.GiaBan.Name = "GiaBan";
             this.GiaBan.Visible = true;
-            this.GiaBan.VisibleIndex = 8;
+            this.GiaBan.VisibleIndex = 7;
             this.GiaBan.Width = 27;
             // 
             // VAT1
@@ -477,44 +473,117 @@
             this.VAT1.MaxWidth = 100;
             this.VAT1.Name = "VAT1";
             this.VAT1.Visible = true;
-            this.VAT1.VisibleIndex = 9;
+            this.VAT1.VisibleIndex = 8;
             this.VAT1.Width = 22;
-            // 
-            // Khohang
-            // 
-            this.Khohang.AppearanceCell.Options.UseTextOptions = true;
-            this.Khohang.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Khohang.Caption = "Kho hàng";
-            this.Khohang.FieldName = "Khohang";
-            this.Khohang.MaxWidth = 100;
-            this.Khohang.Name = "Khohang";
-            this.Khohang.Visible = true;
-            this.Khohang.VisibleIndex = 10;
-            this.Khohang.Width = 36;
-            // 
-            // Thuonghieu
-            // 
-            this.Thuonghieu.AppearanceCell.Options.UseTextOptions = true;
-            this.Thuonghieu.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.Thuonghieu.Caption = "Thương hiệu";
-            this.Thuonghieu.FieldName = "Thuonghieu";
-            this.Thuonghieu.MaxWidth = 100;
-            this.Thuonghieu.Name = "Thuonghieu";
-            this.Thuonghieu.Visible = true;
-            this.Thuonghieu.VisibleIndex = 11;
-            this.Thuonghieu.Width = 30;
             // 
             // Tenhang
             // 
             this.Tenhang.AppearanceCell.Options.UseTextOptions = true;
             this.Tenhang.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Tenhang.Caption = "Tên hàng";
+            this.Tenhang.ColumnEdit = this.repositoryName;
             this.Tenhang.FieldName = "Tenhang";
             this.Tenhang.Name = "Tenhang";
-            this.Tenhang.OptionsColumn.AllowFocus = false;
             this.Tenhang.Visible = true;
             this.Tenhang.VisibleIndex = 1;
             this.Tenhang.Width = 214;
+            // 
+            // repositoryName
+            // 
+            this.repositoryName.AutoHeight = false;
+            this.repositoryName.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryName.Name = "repositoryName";
+            this.repositoryName.PopupView = this.gridView2;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.Id2,
+            this.TenHang2,
+            this.LoaiHang2,
+            this.NgaySanXuat2,
+            this.XuatXu2,
+            this.SoLuong2,
+            this.NhaCungCap2,
+            this.GiaBan2,
+            this.VAT2});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            // 
+            // Id2
+            // 
+            this.Id2.Caption = "Mã sản phẩm";
+            this.Id2.FieldName = "Id";
+            this.Id2.Name = "Id2";
+            this.Id2.Visible = true;
+            this.Id2.VisibleIndex = 0;
+            // 
+            // TenHang2
+            // 
+            this.TenHang2.Caption = "Tên hàng";
+            this.TenHang2.FieldName = "TenHang";
+            this.TenHang2.Name = "TenHang2";
+            this.TenHang2.Visible = true;
+            this.TenHang2.VisibleIndex = 1;
+            // 
+            // LoaiHang2
+            // 
+            this.LoaiHang2.Caption = "Loại hàng";
+            this.LoaiHang2.FieldName = "LoaiHang";
+            this.LoaiHang2.Name = "LoaiHang2";
+            this.LoaiHang2.Visible = true;
+            this.LoaiHang2.VisibleIndex = 2;
+            // 
+            // NgaySanXuat2
+            // 
+            this.NgaySanXuat2.Caption = "Ngày sản xuất";
+            this.NgaySanXuat2.FieldName = "NgaySanXuat";
+            this.NgaySanXuat2.Name = "NgaySanXuat2";
+            this.NgaySanXuat2.Visible = true;
+            this.NgaySanXuat2.VisibleIndex = 3;
+            // 
+            // XuatXu2
+            // 
+            this.XuatXu2.Caption = "Xuất xứ";
+            this.XuatXu2.FieldName = "XuatXu";
+            this.XuatXu2.Name = "XuatXu2";
+            this.XuatXu2.Visible = true;
+            this.XuatXu2.VisibleIndex = 4;
+            // 
+            // SoLuong2
+            // 
+            this.SoLuong2.Caption = "Số lượng";
+            this.SoLuong2.FieldName = "SoLuong";
+            this.SoLuong2.Name = "SoLuong2";
+            this.SoLuong2.Visible = true;
+            this.SoLuong2.VisibleIndex = 5;
+            // 
+            // NhaCungCap2
+            // 
+            this.NhaCungCap2.Caption = "Nhà cung cấp";
+            this.NhaCungCap2.FieldName = "NhaCungCap";
+            this.NhaCungCap2.Name = "NhaCungCap2";
+            this.NhaCungCap2.Visible = true;
+            this.NhaCungCap2.VisibleIndex = 6;
+            // 
+            // GiaBan2
+            // 
+            this.GiaBan2.Caption = "Giá bán";
+            this.GiaBan2.FieldName = "GiaBan";
+            this.GiaBan2.Name = "GiaBan2";
+            this.GiaBan2.Visible = true;
+            this.GiaBan2.VisibleIndex = 7;
+            // 
+            // VAT2
+            // 
+            this.VAT2.Caption = "VAT(%)";
+            this.VAT2.FieldName = "VAT";
+            this.VAT2.Name = "VAT2";
+            this.VAT2.Visible = true;
+            this.VAT2.VisibleIndex = 8;
             // 
             // Loaihang
             // 
@@ -824,6 +893,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtsl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
@@ -905,12 +976,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn XuatXu;
         private DevExpress.XtraGrid.Columns.GridColumn SoLuong1;
         private DevExpress.XtraGrid.Columns.GridColumn NhaCungCap;
-        private DevExpress.XtraGrid.Columns.GridColumn GiaMua;
         private DevExpress.XtraGrid.Columns.GridColumn GiaBan;
         private DevExpress.XtraGrid.Columns.GridColumn VAT1;
-        private DevExpress.XtraGrid.Columns.GridColumn Khohang;
-        private DevExpress.XtraGrid.Columns.GridColumn Thuonghieu;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit txtsl;
         private DevExpress.XtraGrid.Columns.GridColumn Tongthanhtoan;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryName;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn Id2;
+        private DevExpress.XtraGrid.Columns.GridColumn TenHang2;
+        private DevExpress.XtraGrid.Columns.GridColumn LoaiHang2;
+        private DevExpress.XtraGrid.Columns.GridColumn NgaySanXuat2;
+        private DevExpress.XtraGrid.Columns.GridColumn XuatXu2;
+        private DevExpress.XtraGrid.Columns.GridColumn SoLuong2;
+        private DevExpress.XtraGrid.Columns.GridColumn NhaCungCap2;
+        private DevExpress.XtraGrid.Columns.GridColumn GiaBan2;
+        private DevExpress.XtraGrid.Columns.GridColumn VAT2;
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DACK.DTO
 {
-    public class Chitietphieuxuathang
+    public class Chitietphieuxuatnhaphang
     {
         public int Id { get; set; }
         public int Maphieuxuathang { get; set; }

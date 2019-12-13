@@ -44,7 +44,7 @@ namespace DACK.DAO
             var rs = db.thesuadulieu(sql);
             return rs;
         }
-        public int InsertCTphieuxuathang(Chitietphieuxuathang phieuxuathang)
+        public int InsertCTphieuxuathang(Chitietphieuxuatnhaphang phieuxuathang)
         {
 
             string sql = string.Format("Insert into Chitietphieuxuathang(Maphieuxuathang,Masp,SoLuong,Dongiahientai,Thanhtien) Values('{0}','{1}','{2}','{3}','{4}')", phieuxuathang.Maphieuxuathang, phieuxuathang.Masp, phieuxuathang.SoLuong, phieuxuathang.Dongiahientai, phieuxuathang.Thanhtien);
@@ -70,6 +70,11 @@ namespace DACK.DAO
 
             string sql = string.Format("Select * from Sanphams");
             return db.LIstsanpham(sql); ;
+        }
+        public int Demthuoctinh()
+        {
+            string sql = "select count(Id) from Phieuxuathang";
+            return db.Demthuoctinh(sql);
         }
     }
 }

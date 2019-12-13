@@ -24,5 +24,35 @@ namespace DACK.BUS
         {         
             return db.ChonKhohang();
         }
+        public List<Sanpham> LIstsanpham()
+        {
+
+
+            return db.LIstsanpham(); ;
+        }
+
+        public int Insertphieunhaphang(Phieunhaphang phieunhaphang)
+        {
+            return db.Insertphieunhaphang(phieunhaphang);
+        }
+
+        public int InsertCTphieuxuathang(Chitietphieuxuatnhaphang phieuxuathang)
+        {
+            return db.InsertCTphieuxuathang( phieuxuathang);
+        }
+        public int UpdateSoluonghang(int soluong, int Id)
+        {
+
+            return db.UpdateSoluonghang( soluong,  Id);
+        }
+        public Object IDphieunhaphang(string maphieuchi)
+        {
+            return db.IDphieunhaphang( maphieuchi);
+        }
+
+        public int Demthuoctinh()
+        {
+            return db.Demthuoctinh();
+        }
     }
 }

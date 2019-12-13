@@ -21,7 +21,7 @@ namespace DACK.GUI
         List<Khachhang> lstkachchang= new List<Khachhang>();
         List<Nhansu> lstnhanvien = new List<Nhansu>();
         List<Khohang> lstkhohang = new List<Khohang>();
-        List<Luoixuathang> lstluoixuathang = new List<Luoixuathang>();
+        List<Luoixuatnhaphang> lstluoixuathang = new List<Luoixuatnhaphang>();
         BanhangBUS banhangBUS =  new BanhangBUS();
         private decimal qsoluong = 0;
         private decimal thanhtien = 0;
@@ -42,10 +42,20 @@ namespace DACK.GUI
         {
             Chondoituong();
             LoaditemID();
+            int sohd = banhangBUS.Demthuoctinh();
+            txtmadonhang.Text = "BHPT0" + (sohd + 1);
             cbbnhanvien.EditValue = ID; ;
-            txtngaylap.Text = DateTime.Now.ToString();
-
+            txtngaylap.Text = DateTime.Now.ToString();      
+            EditorButton editorButton = new EditorButton(ButtonPredefines.Plus);
+            cbbChonKh.Properties.Buttons.Add(editorButton);          
+            editorButton.Click += EditorButton_Click;
         }
+
+        private void EditorButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("aa");
+        }
+
         public void Chondoituong() {
             lstkachchang= banhangBUS.ChonKh();
             cbbChonKh.Properties.DataSource = lstkachchang;
@@ -67,8 +77,8 @@ namespace DACK.GUI
             cbbKho.Properties.ValueMember = "Id";
             cbbKho.Properties.PopupResizeMode = ResizeMode.FrameResize;
             cbbKho.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
-            lstluoixuathang = new List<Luoixuathang>(); 
-            gridControl1.DataSource = new BindingList<Luoixuathang>(lstluoixuathang) ;
+            lstluoixuathang = new List<Luoixuatnhaphang>(); 
+            gridControl1.DataSource = new BindingList<Luoixuatnhaphang>(lstluoixuathang) ;
 
 
         }
@@ -98,7 +108,7 @@ namespace DACK.GUI
         public Sanpham laysanpham(int Value)
         {
             Sanpham sanpham = new Sanpham();
-            for (int i = 0; i < lstkachchang.Count; i++)
+            for (int i = 0; i < lstsp.Count; i++)
             {
                 if (lstsp[i].Id == Value)
                 {
@@ -108,7 +118,19 @@ namespace DACK.GUI
             }
             return sanpham;
         }
-
+        public Sanpham laysanphamtheoTen(string Value)
+        {
+            Sanpham sanpham = new Sanpham();
+            for (int i = 0; i < lstsp.Count; i++)
+            {
+                if (lstsp[i].TenHang == Value)
+                {
+                    sanpham = lstsp[i];
+                    break;
+                }
+            }
+            return sanpham;
+        }
         private void CbbChonKh_EditValueChanged_1(object sender, EventArgs e)
         {
             Khachhang nhansu = laykhachang();
@@ -117,7 +139,7 @@ namespace DACK.GUI
             txtDiachi.Text = nhansu.Diachi;
             txtsodienthoai.Text = nhansu.Sodienthoai.ToString();
             txtmakh.Text = nhansu.Id.ToString();
-            txtmadonhang.Text = "BHPT0" +txtmakh.Text+ID+"01";          
+                   
             //cbbnhanvien.SelectedText
         }
         public void LoaditemID()
@@ -128,6 +150,12 @@ namespace DACK.GUI
             repositoryItem.DisplayMember = "Id";
             repositoryItem.NullText = "Chọn sản phẩm";
             Idsp.ColumnEdit = repositoryItem;
+
+            repositoryName.DataSource = lstsp;
+            repositoryName.ValueMember = "TenHang";
+            repositoryName.DisplayMember = "TenHang";
+            repositoryName.NullText = "Chọn sản phẩm";
+            Tenhang.ColumnEdit = repositoryName;
         }
         Sanpham sanpham = new Sanpham();
         private void GridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -169,6 +197,43 @@ namespace DACK.GUI
                               
                 
             }
+            if (e.Column.FieldName == "Tenhang")
+            {
+                var Value = gridView1.GetRowCellValue(e.RowHandle, e.Column);
+                sanpham = laysanphamtheoTen(Value.ToString());
+                if (sanpham != null)
+                {
+                    //gridView1.SetRowCellValue(e.RowHandle, "Idsp", sanpham.Id);
+                    lstluoixuathang[lstluoixuathang.Count - 1].Idsp = sanpham.Id;
+                    gridView1.SetRowCellValue(e.RowHandle, "Loaihang", sanpham.LoaiHang);
+                    gridView1.SetRowCellValue(e.RowHandle, "Giahientai", sanpham.GiaBan);
+                    if (gridView1.GetFocusedRowCellValue(Soluong) == null)
+                    {
+                        qsoluong = 0;
+                    }
+                    else
+                    {
+                        qsoluong = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(Soluong));
+                        if (sanpham.SoLuong < qsoluong)
+                        {
+                            MessageBox.Show("Sản  phẩm " + sanpham.TenHang + " xuất quá số lượng trong kho");
+                        }
+                        else
+                        {
+                            giahientai = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(Giahientai));
+                            thanhtien = qsoluong * giahientai;
+                            vat = (thanhtien * sanpham.VAT) / 100;
+                            gridView1.SetFocusedRowCellValue(Thanhtien, thanhtien);
+                            gridView1.SetFocusedRowCellValue(VAT, vat);
+                            Tongth = vat + thanhtien;
+                            gridView1.SetFocusedRowCellValue(Tongthanhtoan, Tongth);
+                        }
+                    }
+                }
+
+
+
+            }
             if (e.Column == Soluong)
             {            
                 qsoluong = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(Soluong));
@@ -200,12 +265,12 @@ namespace DACK.GUI
             phieuxuathang.Makh = int.Parse(txtmakh.Text);
             phieuxuathang.Manv= int.Parse(cbbnhanvien.EditValue.ToString());
             phieuxuathang.Ngaylap = txtngaylap.Text;
-            //rang buoc madonhang
+            // chua rang buoc madonhang
             banhangBUS.Insertphieuxuathang(phieuxuathang);
 
             var id = banhangBUS.IDphieuuxuathang(phieuxuathang.Madonhang);
             int soluong;
-            Chitietphieuxuathang ctPhieuxuathang = new Chitietphieuxuathang();
+            Chitietphieuxuatnhaphang ctPhieuxuathang = new Chitietphieuxuatnhaphang();
             for (int i = 0; i < lstluoixuathang.Count; i++)
             {
                 ctPhieuxuathang.Maphieuxuathang = int.Parse(id.ToString());
@@ -226,11 +291,13 @@ namespace DACK.GUI
             }
             lstluoixuathang.Clear();
             LoaditemID();
+            int sohd = banhangBUS.Demthuoctinh();
+            txtmadonhang.Text = "BHPT0" + (sohd+1);
         }
 
         private void Cbbnhanvien_EditValueChanged(object sender, EventArgs e)
         {
-            txtmadonhang.Text = "BHPT0" + txtmakh.Text + cbbnhanvien.EditValue + "01";
+           
         }
     }
 }

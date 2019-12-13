@@ -14,6 +14,7 @@ namespace DACK.GUI
 {
     public partial class frmQlKhachhang : DevExpress.XtraEditors.XtraForm
     {
+        int ID = 0;
         KhachangBUS khachang = new KhachangBUS();
         public frmQlKhachhang()
         {

@@ -42,7 +42,7 @@ namespace DACK.DAO
             return rs;
         }
 
-        public int InsertCTphieuxuathang(Chitietphieuxuatnhaphang phieuxuathang)
+        public int InsertCTphieuxuathang(CTPhieuxuatnhaphang phieuxuathang)
         {
 
             string sql = string.Format("Insert into Chitietphieunhaphang(Maphieunhaphang,Masp,SoLuong,Dongia,Thanhtien) Values('{0}','{1}','{2}','{3}','{4}')", phieuxuathang.Maphieuxuathang, phieuxuathang.Masp, phieuxuathang.SoLuong, phieuxuathang.Dongiahientai, phieuxuathang.Thanhtien);

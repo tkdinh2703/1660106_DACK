@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -273,7 +274,7 @@ namespace DACK.DAO
                         NgaySanXuat = row[3].ToString(),
                         XuatXu = row[4].ToString(),
                         SoLuong=int.Parse(row[5].ToString()),
-                        HinhAnh = row[6].ToString(),
+                        HinhAnh = Image.FromFile( row[6].ToString()),
                         NhaCungCap = row[7].ToString(),
                         GiaMua=long.Parse(row[8].ToString()),
                         GiaBan=long.Parse(row[9].ToString()),
@@ -287,6 +288,57 @@ namespace DACK.DAO
             }
             con.Close();
             return lstpxh;
+        }
+
+       
+        public List<Phieuxuathang> Listpheuxuathang(string sql)
+        {
+            List<Phieuxuathang> lstpxh = new List<Phieuxuathang>();
+
+
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstpxh.Add(new Phieuxuathang
+                    {
+                        Id = int.Parse(row[0].ToString()),
+                        Madonhang = row[1].ToString(),
+                        Makh = int.Parse(row[2].ToString()),
+                        Makho = int.Parse(row[3].ToString()),
+                        Manv = int.Parse(row[4].ToString()),
+                        Ngaylap = row[5].ToString(),
+                        Tongtien = long.Parse(row[6].ToString())
+                    }); ;
+                }
+
+            }
+            con.Close();
+            return lstpxh;
+        }
+        public long Tongtienphieuthuthu(string sql)
+        {
+            long tongtien = 0;
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    tongtien += int.Parse(row[5].ToString());
+                }
+
+            }
+            con.Close();
+            return tongtien;
         }
 
         public List<Khohang> ChonKhohang(string sql)

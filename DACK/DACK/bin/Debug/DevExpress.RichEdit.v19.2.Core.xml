@@ -303,6 +303,12 @@
         <para>Base class for inline layout elements.</para>
       </summary>
     </member>
+    <member name="P:DevExpress.XtraRichEdit.API.Layout.Box.RightToLeft">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraRichEdit.API.Layout.Box.Type">
       <summary>
         <para>Gets the type of the box descendant.</para>
@@ -356,6 +362,12 @@
         <para>Dispatches to the Visit method that is specific to the current <see cref="T:DevExpress.XtraRichEdit.API.Layout.LayoutType"/>.</para>
       </summary>
       <param name="visitor">A <see cref="T:DevExpress.XtraRichEdit.API.Layout.LayoutVisitor"/> implementation that is the instance of the visitor class defined in the Visitor pattern.</param>
+    </member>
+    <member name="P:DevExpress.XtraRichEdit.API.Layout.CharacterBox.RightToLeft">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraRichEdit.API.Layout.CharacterBox.Text">
       <summary>
@@ -1767,6 +1779,11 @@
         <para>The type of layout element of the <see cref="T:DevExpress.XtraRichEdit.API.Layout.LineNumberBox"/> class.</para>
       </summary>
     </member>
+    <member name="F:DevExpress.XtraRichEdit.API.Layout.LayoutType.NonBreakingHyphenBox">
+      <summary>
+        <para>The type of layout element of the NonBreakingHyphenBox class.</para>
+      </summary>
+    </member>
     <member name="F:DevExpress.XtraRichEdit.API.Layout.LayoutType.NumberingListMarkBox">
       <summary>
         <para>The type of layout element of the <see cref="T:DevExpress.XtraRichEdit.API.Layout.NumberingListMarkBox"/> class.</para>
@@ -2450,6 +2467,12 @@
         <para>Draws the <see cref="T:DevExpress.XtraRichEdit.API.Layout.LineNumberBox"/> element. Override it in a class descendant to customize the element appearance.</para>
       </summary>
       <param name="lineNumberBox">A layout element to draw.</param>
+    </member>
+    <member name="M:DevExpress.XtraRichEdit.API.Layout.PagePainter.DrawNonBreakingHyphenBox(DevExpress.XtraRichEdit.API.Layout.PlainTextBox)">
+      <summary>
+        <para>Draws the NonBreakingHyphenBox element. Override it in a class descendant to customize the element appearance.</para>
+      </summary>
+      <param name="nonBreakingHyphenBox">A layout element to draw.</param>
     </member>
     <member name="M:DevExpress.XtraRichEdit.API.Layout.PagePainter.DrawNumberingListMarkBox(DevExpress.XtraRichEdit.API.Layout.NumberingListMarkBox)">
       <summary>
@@ -9440,7 +9463,7 @@ Example: I, II, III</para>
         <para>Creates a uniform column layout using the current page settings.</para>
       </summary>
       <param name="page">A <see cref="T:DevExpress.XtraRichEdit.API.Native.SectionPage"/> object representing a current page.</param>
-      <param name="columnSpacing">A Single value specifying the width of an individual column, measured in <see cref="P:DevExpress.XtraRichEdit.API.Native.Document.Unit"/>.</param>
+      <param name="columnSpacing">A Single value specifying the spacing between adjacent columns, measured in <see cref="P:DevExpress.XtraRichEdit.API.Native.Document.Unit"/>.</param>
       <param name="columnCount">An <see cref="T:System.Int32"/> value specifying the number of columns on a page. Must be greater than zero.</param>
       <returns>A <see cref="T:DevExpress.XtraRichEdit.API.Native.SectionColumnCollection"/> object representing a collection of columns.</returns>
     </member>
@@ -20348,6 +20371,12 @@ Example: I, II, III</para>
       </summary>
       <value>A command ID.</value>
     </member>
+    <member name="F:DevExpress.XtraRichEdit.Commands.RichEditCommandId.InsertNonBreakingHyphen">
+      <summary>
+        <para>A InsertNonBreakingHyphenCommand ID.</para>
+      </summary>
+      <value>A command ID.</value>
+    </member>
     <member name="F:DevExpress.XtraRichEdit.Commands.RichEditCommandId.InsertNonBreakingSpace">
       <summary>
         <para><see cref="T:DevExpress.XtraRichEdit.Commands.InsertNonBreakingSpaceCommand"/> ID.</para>
@@ -28957,6 +28986,21 @@ Example: I, II, III</para>
       </summary>
       <param name="name">A string that is the name of the variable to remove.</param>
     </member>
+    <member name="T:DevExpress.XtraRichEdit.DocumentViewDirection">
+      <summary>
+        <para>Lists values indicating the page order in Print Layout view and in Print Preview.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraRichEdit.DocumentViewDirection.LeftToRight">
+      <summary>
+        <para>Pages are displayed in left to right order.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraRichEdit.DocumentViewDirection.RightToLeft">
+      <summary>
+        <para>Pages are displayed in right to left order.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraRichEdit.DocVariableValue">
       <summary>
         <para>A class which allows you to specify the current value of a DOCVARIABLE field in the <see cref="E:DevExpress.XtraRichEdit.API.Native.Document.CalculateDocumentVariable"/> event handler.</para>
@@ -31013,6 +31057,12 @@ Example: I, II, III</para>
         <para>Provides access to a <see cref="T:DevExpress.XtraRichEdit.API.Native.Document"/> interface representing the control&#39;s document.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraRichEdit.API.Native.Document"/> interface representing a document loaded in the control.</value>
+    </member>
+    <member name="P:DevExpress.XtraRichEdit.IRichEditControl.DocumentViewDirection">
+      <summary>
+        <para>Specifies the page order in Print Layout view and in Print Preview.</para>
+      </summary>
+      <value>One of the DocumentViewDirection enumeration values indicating the page order.</value>
     </member>
     <member name="M:DevExpress.XtraRichEdit.IRichEditControl.DoDragDrop(System.Object,System.Windows.Forms.DragDropEffects)">
       <summary>
@@ -33213,7 +33263,7 @@ Example: I, II, III</para>
     </member>
     <member name="P:DevExpress.XtraRichEdit.RichEditControlCompatibility.UsePrintingSystemPdfExport">
       <summary>
-        <para>Allows you to use an obsolete PDF export implemented in earlier versions.</para>
+        <para>Allows you to use an obsolete PDF export implemented in earlier versions. <span data-platform="netstandard">Not supported in .NET Standard 2.0+ / .NET Core 2.1+</span></para>
       </summary>
       <value>True, to use PDF export based on the Printing System functionality; otherwise, false.</value>
     </member>

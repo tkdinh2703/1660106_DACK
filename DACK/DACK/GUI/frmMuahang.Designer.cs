@@ -93,6 +93,7 @@
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbbkhonhap.Properties)).BeginInit();
@@ -129,6 +130,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -158,7 +160,7 @@
             // 
             this.btnluu.Location = new System.Drawing.Point(12, 396);
             this.btnluu.Name = "btnluu";
-            this.btnluu.Size = new System.Drawing.Size(464, 22);
+            this.btnluu.Size = new System.Drawing.Size(230, 22);
             this.btnluu.StyleController = this.layoutControl1;
             this.btnluu.TabIndex = 15;
             this.btnluu.Text = "simpleButton1";
@@ -434,7 +436,6 @@
             // 
             // repositoryItemGridLookUpEdit1View
             // 
-            this.repositoryItemGridLookUpEdit1View.AutoFillColumn = this.TenHang1;
             this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.Id1,
             this.TenHang1,
@@ -613,7 +614,8 @@
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem11,
-            this.layoutControlItem12});
+            this.layoutControlItem12,
+            this.emptySpaceItem4});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(957, 430);
             this.Root.TextVisible = false;
@@ -770,9 +772,17 @@
             this.layoutControlItem12.Control = this.btnluu;
             this.layoutControlItem12.Location = new System.Drawing.Point(0, 384);
             this.layoutControlItem12.Name = "layoutControlItem12";
-            this.layoutControlItem12.Size = new System.Drawing.Size(468, 26);
+            this.layoutControlItem12.Size = new System.Drawing.Size(234, 26);
             this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem12.TextVisible = false;
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(234, 384);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(234, 26);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // frmMuahang
             // 
@@ -819,6 +829,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -890,5 +901,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn Soluong2;
         private DevExpress.XtraGrid.Columns.GridColumn Giamua2;
         private DevExpress.XtraGrid.Columns.GridColumn VAT2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
     }
 }

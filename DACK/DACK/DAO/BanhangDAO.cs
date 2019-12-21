@@ -39,12 +39,12 @@ namespace DACK.DAO
         public int Insertphieuxuathang(Phieuxuathang phieuxuathang)
         {
             
-                string sql = string.Format("Insert into Phieuxuathang(Madonhang,Makh,Makho,Manv,Ngaylap) Values('{0}','{1}','{2}','{3}','{4}')", phieuxuathang.Madonhang, phieuxuathang.Makh, phieuxuathang.Makho, phieuxuathang.Manv, phieuxuathang.Ngaylap);
+                string sql = string.Format("Insert into Phieuxuathang(Madonhang,Makh,Makho,Manv,Ngaylap,Tongtien) Values('{0}','{1}','{2}','{3}','{4}','{5}')", phieuxuathang.Madonhang, phieuxuathang.Makh, phieuxuathang.Makho, phieuxuathang.Manv, phieuxuathang.Ngaylap,phieuxuathang.Tongtien);
             
             var rs = db.thesuadulieu(sql);
             return rs;
         }
-        public int InsertCTphieuxuathang(Chitietphieuxuatnhaphang phieuxuathang)
+        public int InsertCTphieuxuathang(CTPhieuxuatnhaphang phieuxuathang)
         {
 
             string sql = string.Format("Insert into Chitietphieuxuathang(Maphieuxuathang,Masp,SoLuong,Dongiahientai,Thanhtien) Values('{0}','{1}','{2}','{3}','{4}')", phieuxuathang.Maphieuxuathang, phieuxuathang.Masp, phieuxuathang.SoLuong, phieuxuathang.Dongiahientai, phieuxuathang.Thanhtien);
@@ -69,7 +69,7 @@ namespace DACK.DAO
         {
 
             string sql = string.Format("Select * from Sanphams");
-            return db.LIstsanpham(sql); ;
+            return db.LIstsanpham(sql); 
         }
         public int Demthuoctinh()
         {

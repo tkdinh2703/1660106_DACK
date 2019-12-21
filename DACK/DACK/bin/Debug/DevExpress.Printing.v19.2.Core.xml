@@ -1877,9 +1877,9 @@
     </member>
     <member name="P:DevExpress.Export.ExportSettings.EncodeCsvExecutableContent">
       <summary>
-        <para></para>
+        <para>Encodes potentially dangerous content prior to exporting it to the CSV format.</para>
       </summary>
-      <value></value>
+      <value>One of the <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration values.</value>
     </member>
     <member name="T:DevExpress.Export.ExportType">
       <summary>
@@ -15985,9 +15985,9 @@ When exporting to XLS and XLSX formats, the layout of control elements is retain
     </member>
     <member name="P:DevExpress.XtraPrinting.CsvExportOptions.EncodeExecutableContent">
       <summary>
-        <para></para>
+        <para>Encodes potentially dangerous content prior to exporting it to the CSV format.</para>
       </summary>
-      <value></value>
+      <value>One of the <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration values.</value>
     </member>
     <member name="P:DevExpress.XtraPrinting.CsvExportOptions.FollowReportLayout">
       <summary>
@@ -25290,11 +25290,6 @@ The DefaultBoolean.Default value is equivalent to True.</value>
       </summary>
       <value>A <see cref="T:DevExpress.XtraPrinting.Drawing.Watermark"/> object.</value>
     </member>
-    <member name="N:DevExpress.XtraReports.Parameters">
-      <summary>
-        <para>Contains classes that are used to handle parameters in XtraReports.</para>
-      </summary>
-    </member>
     <member name="T:DevExpress.XtraReports.Parameters.CascadingParametersService">
       <summary>
         <para>For internal use.</para>
@@ -25803,6 +25798,127 @@ The DefaultBoolean.Default value is equivalent to True.</value>
         <para>The parameter returns a string value, corresponding to the <see cref="T:System.String"/> type.</para>
       </summary>
     </member>
+    <member name="T:DevExpress.XtraReports.Parameters.RangeBoundaryParameter">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.AllowNull">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.Description">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.MultiValue">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.ObjectType">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.Tag">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.Type">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.ValueSourceSettings">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeBoundaryParameter.Visible">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="T:DevExpress.XtraReports.Parameters.RangeEndParameter">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.RangeEndParameter.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraReports.Parameters.RangeEndParameter"/> class.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.XtraReports.Parameters.RangeParameterEditorOptions">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeParameterEditorOptions.PredefinedDateRanges">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.RangeParameterEditorOptions.RegisterDateRange(System.String,System.Func{System.DateTime},System.Func{System.DateTime})">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="name"></param>
+      <param name="getStart"></param>
+      <param name="getEnd"></param>
+    </member>
+    <member name="T:DevExpress.XtraReports.Parameters.RangeParametersSettings">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.RangeParametersSettings.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraReports.Parameters.RangeParametersSettings"/> class.</para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.RangeParametersSettings.#ctor(DevExpress.XtraReports.Parameters.RangeStartParameter,DevExpress.XtraReports.Parameters.RangeEndParameter)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraReports.Parameters.RangeParametersSettings"/> class with specified settings.</para>
+      </summary>
+      <param name="startParameter"></param>
+      <param name="endParameter"></param>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeParametersSettings.EndParameter">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.RangeParametersSettings.StartParameter">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="T:DevExpress.XtraReports.Parameters.RangeStartParameter">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.RangeStartParameter.#ctor">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraReports.Parameters.RangeStartParameter"/> class.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraReports.Parameters.StaticListLookUpSettings">
       <summary>
         <para>Provides the look-up editor settings for report parameters that are not bound to a datasource.</para>
@@ -25836,6 +25952,23 @@ The DefaultBoolean.Default value is equivalent to True.</value>
         <para>Provides access to the list of static values for the report parameter.</para>
       </summary>
       <value>A <see cref="T:DevExpress.XtraReports.Parameters.LookUpValueCollection"/> object.</value>
+    </member>
+    <member name="T:DevExpress.XtraReports.Parameters.ValueSourceSettings">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.ValueSourceSettings.ObjectType">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.ValueSourceSettings.Parameter">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="N:DevExpress.XtraReports.ReportGeneration">
       <summary>

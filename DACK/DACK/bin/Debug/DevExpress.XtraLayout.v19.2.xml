@@ -87,6 +87,20 @@
         <para>Forces the control to finish its initialization.</para>
       </summary>
     </member>
+    <member name="M:DevExpress.XtraDataLayout.DataLayoutControl.GetControlByFieldName(System.String)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="fieldName"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraDataLayout.DataLayoutControl.GetItemByFieldName(System.String)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="fieldName"></param>
+      <returns></returns>
+    </member>
     <member name="M:DevExpress.XtraDataLayout.DataLayoutControl.GetLayoutElementsBindingsInfo">
       <summary>
         <para>Returns information on the layout column count and binding settings of public properties in the data source.</para>
@@ -1329,7 +1343,7 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutAppearanceCollection.ControlDisabled">
       <summary>
-        <para>Gets the appearance settings used to paint the contents of the editors owned by the LayoutControl when they are disabled. This option is only in effect for DevExpress controls that support the Style Controller mechanism.</para>
+        <para>Gets the appearance settings used to paint the contents of the editors owned by the LayoutControl when they are disabled. This option is only in effect for DevExpress controls that support the <see cref="T:DevExpress.XtraEditors.StyleController"/>.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Utils.AppearanceObject"/> object which provides the appearance settings used to paint the contents of the editors when they are disabled.</value>
     </member>
@@ -1353,7 +1367,7 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutAppearanceCollection.ControlReadOnly">
       <summary>
-        <para>Gets the appearance settings used to paint the contents of the editors owned by the LayoutControl when they are in the read-only state. This option is only in effect for DevExpress controls that support the Style Controller mechanism.</para>
+        <para>Gets the appearance settings used to paint the contents of the editors owned by the LayoutControl when they are in the read-only state. This option is only in effect for DevExpress controls that support the <see cref="T:DevExpress.XtraEditors.StyleController"/> mechanism.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Utils.AppearanceObject"/> object which provides the corresponding appearance settings.</value>
     </member>
@@ -2311,9 +2325,9 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControl.OptionsPrint">
       <summary>
-        <para>Provides access to the options that specify how a <see cref="T:DevExpress.XtraLayout.LayoutControl"/> is printed/exported.</para>
+        <para>The Layout Control&#39;s print/export options. This object&#39;s settings affect all layout items and groups.</para>
       </summary>
-      <value>An object containing the LayoutControl&#39;s print and export options.</value>
+      <value>The LayoutControl&#39;s print and export options.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControl.OptionsSerialization">
       <summary>
@@ -2897,9 +2911,9 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControlItem.OptionsPrint">
       <summary>
-        <para>Provides access to options that specify how the <see cref="T:DevExpress.XtraLayout.LayoutControlItem"/> is printed/exported.</para>
+        <para>The item&#39;s print/export options.</para>
       </summary>
-      <value>An object containing the layout item&#39;s print and export options.</value>
+      <value>The layout item&#39;s print and export options.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutControlItem.Owner">
       <summary>
@@ -3489,9 +3503,9 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutGroup.OptionsPrint">
       <summary>
-        <para>Provides access to options that specify how the <see cref="T:DevExpress.XtraLayout.LayoutGroup"/>  is printed/exported .</para>
+        <para>The group&#39;s print/export options. This object&#39;s settings affect all layout items owned by the group.</para>
       </summary>
-      <value>An object containing the layout group&#39;s print and export options.</value>
+      <value>The layout group&#39;s print and export options.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.LayoutGroup.OptionsTableLayoutGroup">
       <summary>
@@ -3697,7 +3711,7 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="T:DevExpress.XtraLayout.LayoutRepositoryItem">
       <summary>
-        <para>Represents a layout item capable of displaying information provided by a repository item object.</para>
+        <para>Represents a layout item capable of displaying information provided by a repository item.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraLayout.LayoutRepositoryItem.#ctor">
@@ -4241,11 +4255,29 @@ is dependent on the type of control embedded in this layout item.</value>
       </summary>
       <value>true, if the layout item and its nested items are printed/exported; false, if they are excluded from the printing/export output.</value>
     </member>
+    <member name="P:DevExpress.XtraLayout.OptionsPrintBase.AppearanceItem">
+      <summary>
+        <para>Print/export appearance settings of a specific item&#39;s label and control. For a Layout Group, this property specifies the default appearance settings for all layout items owned by the group.</para>
+      </summary>
+      <value>The print appearance settings applied to the item&#39;s label and control.</value>
+    </member>
     <member name="P:DevExpress.XtraLayout.OptionsPrintBase.AppearanceItemCaption">
       <summary>
-        <para>Contains appearance settings used to paint a layout item&#39;s caption in a <see cref="T:DevExpress.XtraLayout.LayoutControl"/>&#39;s print/export output.</para>
+        <para>Contains print/export appearance settings used to paint a layout item.</para>
       </summary>
-      <value>An object that contains settings to customize the appearance of the layout item caption.</value>
+      <value>Print/export appearance settings used to paint the current layout item.</value>
+    </member>
+    <member name="P:DevExpress.XtraLayout.OptionsPrintBase.AppearanceItemControl">
+      <summary>
+        <para>Print/export appearance settings of a specific item&#39;s control. For a Layout Group, this property specifies the default appearance settings for controls of all layout items owned by the group.</para>
+      </summary>
+      <value>The print appearance settings applied to the item&#39;s control.</value>
+    </member>
+    <member name="P:DevExpress.XtraLayout.OptionsPrintBase.AppearanceItemText">
+      <summary>
+        <para>Print/export appearance settings of a specific item&#39;s label. For a Layout Group, this property specifies the default appearance settings for labels of all layout items owned by the group.</para>
+      </summary>
+      <value>The print appearance settings applied to the item&#39;s label.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.OptionsPrintBase.TextToControlDistance">
       <summary>
@@ -4255,7 +4287,7 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="T:DevExpress.XtraLayout.OptionsPrintControl">
       <summary>
-        <para>Provides print and export options for the <see cref="T:DevExpress.XtraLayout.LayoutControl"/>.</para>
+        <para>Provides the Layout Control&#39;s print and export options.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraLayout.OptionsPrintControl.#ctor(DevExpress.XtraLayout.ILayoutControl)">
@@ -4272,15 +4304,33 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.OptionsPrintControl.AppearanceGroupCaption">
       <summary>
-        <para>Contains appearance settings used to paint captions of layout groups when a <see cref="T:DevExpress.XtraLayout.LayoutControl"/> is printed/exported.</para>
+        <para>The default print/export appearance settings used to paint captions of layout groups.</para>
       </summary>
       <value>An object that contains settings to customize the appearance of layout group captions.</value>
     </member>
+    <member name="P:DevExpress.XtraLayout.OptionsPrintControl.AppearanceItem">
+      <summary>
+        <para>The default print/export appearance settings applied to labels and controls for all layout items.</para>
+      </summary>
+      <value>The default appearance settings applied to labels and controls for all layout items.</value>
+    </member>
     <member name="P:DevExpress.XtraLayout.OptionsPrintControl.AppearanceItemCaption">
       <summary>
-        <para>Contains appearance settings used to paint layout item captions in a <see cref="T:DevExpress.XtraLayout.LayoutControl"/>&#39;s print/export output.</para>
+        <para>Contains print/export appearance settings used to paint layout items.</para>
       </summary>
-      <value>An object that contains settings to customize the appearance of layout item captions.</value>
+      <value>Print/export appearance settings used to paint layout items.</value>
+    </member>
+    <member name="P:DevExpress.XtraLayout.OptionsPrintControl.AppearanceItemControl">
+      <summary>
+        <para>The default print/export appearance settings applied to controls for all layout items.</para>
+      </summary>
+      <value>The default appearance settings applied to controls for all layout items.</value>
+    </member>
+    <member name="P:DevExpress.XtraLayout.OptionsPrintControl.AppearanceItemText">
+      <summary>
+        <para>The default print/export appearance settings applied to labels for all layout items.</para>
+      </summary>
+      <value>The default appearance settings applied to labels for all layout items.</value>
     </member>
     <member name="M:DevExpress.XtraLayout.OptionsPrintControl.Dispose">
       <summary>
@@ -4301,7 +4351,7 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="T:DevExpress.XtraLayout.OptionsPrintGroup">
       <summary>
-        <para>Provides print and export options for layout groups.</para>
+        <para>A layout group&#39;s print and export options.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraLayout.OptionsPrintGroup.#ctor(DevExpress.XtraLayout.BaseLayoutItem)">
@@ -4318,20 +4368,20 @@ is dependent on the type of control embedded in this layout item.</value>
     </member>
     <member name="P:DevExpress.XtraLayout.OptionsPrintGroup.AppearanceGroupCaption">
       <summary>
-        <para>Contains appearance settings used to paint a layout group&#39;s caption in a <see cref="T:DevExpress.XtraLayout.LayoutControl"/>&#39;s print/export output.</para>
+        <para>Print/export appearance settings used to paint a layout group&#39;s caption.</para>
       </summary>
       <value>An object that contains settings to customize the appearance of the layout group&#39;s caption.</value>
     </member>
     <member name="T:DevExpress.XtraLayout.OptionsPrintItem">
       <summary>
-        <para>Provides print and export options for layout items.</para>
+        <para>A layout item&#39;s print and export options.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraLayout.OptionsPrintItem.#ctor(DevExpress.XtraLayout.BaseLayoutItem)">
+    <member name="M:DevExpress.XtraLayout.OptionsPrintItem.#ctor(DevExpress.XtraLayout.LayoutControlItem)">
       <summary>
-        <para>Initializes a new instance of an <see cref="T:DevExpress.XtraLayout.OptionsPrintItem"/> class with the specified owner.</para>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraLayout.OptionsPrintItem"/> class with specified settings.</para>
       </summary>
-      <param name="owner">An object that will own the created object.</param>
+      <param name="owner"></param>
     </member>
     <member name="T:DevExpress.XtraLayout.OptionsTableLayoutGroup">
       <summary>

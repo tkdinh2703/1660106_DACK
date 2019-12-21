@@ -14,7 +14,7 @@ namespace DACK
         public string NgaySanXuat { get; set; }
         public string XuatXu { get; set; }
         public int SoLuong { get; set; }
-        public string HinhAnh { get; set; }
+        public Object HinhAnh { get; set; }
         public string NhaCungCap { get; set; }
         public long GiaMua { get; set; }
         public long GiaBan { get; set; }

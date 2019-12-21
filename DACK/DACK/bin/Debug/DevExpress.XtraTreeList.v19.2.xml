@@ -1751,9 +1751,9 @@ This constant is used to initialize the <see cref="P:DevExpress.XtraEditors.Repo
     </member>
     <member name="P:DevExpress.XtraTreeList.Columns.TreeListOptionsFind.Behavior">
       <summary>
-        <para>Gets or sets whether records that do not match a query in the Find Panel are hidden.</para>
+        <para>Gets or sets whether records that do not match a query in the find panel are hidden.</para>
       </summary>
-      <value>A DevExpress.XtraEditors.FindPanelBehavior enumeration value that specifies whether records that do not match the query are hidden.</value>
+      <value>A <see cref="T:DevExpress.XtraEditors.FindPanelBehavior"/> enumeration value that specifies whether records that do not match the query are hidden.</value>
     </member>
     <member name="P:DevExpress.XtraTreeList.Columns.TreeListOptionsFind.ClearFindOnClose">
       <summary>
@@ -2844,42 +2844,42 @@ This constant is used to initialize the <see cref="P:DevExpress.XtraEditors.Repo
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.Default">
       <summary>
-        <para>Smart, if the tree list is in a look-up editor; Extended, otherwise (Standard for v.16.1 and older).</para>
+        <para>Equivalent to &#39;ParentBranch&#39; mode for the <see cref="T:DevExpress.XtraTreeList.TreeList"/> control. Equivalent to &#39;Matches&#39; mode for the <see cref="T:DevExpress.XtraEditors.TreeListLookUpEdit"/> control.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.EntireBranch">
       <summary>
-        <para>Shows parent and child nodes that do not fit the filter.</para>
+        <para>Shows nodes that match the filter along with the nodes&#39; parents and children (even if they do not fit the filter).</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.Extended">
       <summary>
-        <para>Shows parent nodes that do not fit the filter.</para>
+        <para>The same as the &#39;ParentBranch&#39; option.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.Matches">
       <summary>
-        <para></para>
+        <para>Shows only those nodes that match the filter.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.ParentBranch">
       <summary>
-        <para></para>
+        <para>Shows nodes that match the filter along with the nodes&#39; parents (even if they do not fit the filter).</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.ParentsMatch">
       <summary>
-        <para></para>
+        <para>Shows nodes if they and all their parents match the filter.If a node fits the filter but any of its parents does not, the node is not displayed.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.Smart">
       <summary>
-        <para>Does not show parent nodes that do not fit the filter criteria.</para>
+        <para>The same as the &#39;Matches&#39; option.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraTreeList.FilterMode.Standard">
       <summary>
-        <para>Nodes that match the applied filter are only displayed if their parent nodes also fit the filter.If a node fits the filter but any of its parent nodes does not, the node is not displayed.</para>
+        <para>The same as the &#39;ParentsMatch&#39; option.</para>
       </summary>
     </member>
     <member name="T:DevExpress.XtraTreeList.FilterNodeEventArgs">
@@ -4137,6 +4137,21 @@ By using <see cref="T:DevExpress.XtraTreeList.Nodes.TreeListNode"/> class method
       </summary>
       <param name="columnID">An object that identifies a column (a <see cref="T:DevExpress.XtraTreeList.Columns.TreeListColumn"/> object, field name, column&#39;s absolute index or corresponding DataColumn object).</param>
       <param name="val">The value to set for a specific column in the current node.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeList.Nodes.TreeListNode.Sort(DevExpress.XtraTreeList.Columns.TreeListColumn,System.Windows.Forms.SortOrder,System.Boolean)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="column"></param>
+      <param name="order"></param>
+      <param name="recursive"></param>
+    </member>
+    <member name="M:DevExpress.XtraTreeList.Nodes.TreeListNode.Sort(System.Collections.Generic.IComparer{DevExpress.XtraTreeList.Nodes.TreeListNode},System.Boolean)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="comparer"></param>
+      <param name="recursive"></param>
     </member>
     <member name="P:DevExpress.XtraTreeList.Nodes.TreeListNode.StateImageIndex">
       <summary>
@@ -6043,7 +6058,12 @@ This property is obsolete. Use the <see cref="P:DevExpress.XtraTreeList.TreeList
     </member>
     <member name="E:DevExpress.XtraTreeList.TreeList.FilterPopupExcelData">
       <summary>
-        <para>Allows you to remove and modify items in the Excel-style Filter Dropdown, as well as add your own custom items that apply specific filtering conditions.</para>
+        <para>Allows you to add, remove, and modify data values and customize predefined filters in the Excel style pop-up filter menus.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.XtraTreeList.TreeList.FilterPopupExcelParseFilterCriteria">
+      <summary>
+        <para>Allows you to parse the filter criteria applied to data and select the corresponding values in the filter menu.</para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraTreeList.TreeList.FilterPopupExcelPrepareTemplate">
@@ -6053,7 +6073,7 @@ This property is obsolete. Use the <see cref="P:DevExpress.XtraTreeList.TreeList
     </member>
     <member name="E:DevExpress.XtraTreeList.TreeList.FilterPopupExcelQueryFilterCriteria">
       <summary>
-        <para>Fires when a new data filter is about to be applied to the control using the Excel-style Filter Dropdown, and allows you to substitute the filter.</para>
+        <para>Fires when a filter criteria is about to be applied to data and allows you to customize the filter criteria.</para>
       </summary>
     </member>
     <member name="P:DevExpress.XtraTreeList.TreeList.FindFilterText">
@@ -7118,12 +7138,6 @@ This property is obsolete. Use the <see cref="P:DevExpress.XtraTreeList.TreeList
         <para>Updates the Tree List control to reflect changes made to a data source.</para>
       </summary>
     </member>
-    <member name="M:DevExpress.XtraTreeList.TreeList.RefreshEditor(System.Boolean)">
-      <summary>
-        <para>Refreshes the active editor.</para>
-      </summary>
-      <param name="updateEditorValue">true, if the editor should update the value it displays; otherwise, false.</param>
-    </member>
     <member name="M:DevExpress.XtraTreeList.TreeList.RefreshNode(DevExpress.XtraTreeList.Nodes.TreeListNode)">
       <summary>
         <para>Refreshes the specified node.</para>
@@ -7596,6 +7610,23 @@ Or, a <see cref="P:DevExpress.Utils.OptionsLayoutBase.FullLayout"/> object, to s
         <para>Invokes an Expression Editor that enables editing an expression for the specified unbound column.</para>
       </summary>
       <param name="column">A <see cref="T:DevExpress.XtraTreeList.Columns.TreeListColumn"/> that represents an unbound column whose expression will be edited in the Expression Editor.</param>
+    </member>
+    <member name="M:DevExpress.XtraTreeList.TreeList.Sort(DevExpress.XtraTreeList.Nodes.TreeListNode,DevExpress.XtraTreeList.Columns.TreeListColumn,System.Windows.Forms.SortOrder,System.Boolean)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="node"></param>
+      <param name="column"></param>
+      <param name="order"></param>
+      <param name="recursive"></param>
+    </member>
+    <member name="M:DevExpress.XtraTreeList.TreeList.Sort(DevExpress.XtraTreeList.Nodes.TreeListNode,System.Collections.Generic.IComparer{DevExpress.XtraTreeList.Nodes.TreeListNode},System.Boolean)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="node"></param>
+      <param name="comparer"></param>
+      <param name="recursive"></param>
     </member>
     <member name="P:DevExpress.XtraTreeList.TreeList.SortedColumnCount">
       <summary>
@@ -9043,9 +9074,9 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="P:DevExpress.XtraTreeList.TreeListOptionsFilter.MRUFilterListCount">
       <summary>
-        <para></para>
+        <para>Gets or sets the MRU Filter List capacity.</para>
       </summary>
-      <value></value>
+      <value>An integer value that specifies the MRU Filter List capacity.</value>
     </member>
     <member name="P:DevExpress.XtraTreeList.TreeListOptionsFilter.MRUFilterListPopupCount">
       <summary>
@@ -9457,6 +9488,12 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
         <para>Gets or sets a value specifying which nodes take part in calculations when applying best fit to columns.</para>
       </summary>
       <value>A DevExpress.XtraTreeList.TreeListBestFitNodes enumeration value that specifies which nodes take part in calculations when applying best fit to columns.</value>
+    </member>
+    <member name="P:DevExpress.XtraTreeList.TreeListOptionsView.BestFitUseErrorInfo">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraTreeList.TreeListOptionsView.CheckBoxStyle">
       <summary>

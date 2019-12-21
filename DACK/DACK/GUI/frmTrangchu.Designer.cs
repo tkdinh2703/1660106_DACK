@@ -46,16 +46,15 @@
             this.btnNhasanxuat = new DevExpress.XtraBars.BarButtonItem();
             this.btnkhohang = new DevExpress.XtraBars.BarButtonItem();
             this.btnnhaphang = new DevExpress.XtraBars.BarButtonItem();
+            this.bntqlKhachhang = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonHethong = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonDangxuat = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribondoimatkhau = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonDanhmuc = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonBanhang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonMuahang = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonQuanly = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonNhanvien = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.bntqlKhachhang = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -152,6 +151,7 @@
             this.btnMuahang.Id = 9;
             this.btnMuahang.ImageOptions.LargeImage = global::DACK.Properties.Resources.shopping_girl_icon;
             this.btnMuahang.Name = "btnMuahang";
+            this.btnMuahang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BtnMuahang_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -208,6 +208,13 @@
             this.btnnhaphang.Id = 18;
             this.btnnhaphang.Name = "btnnhaphang";
             // 
+            // bntqlKhachhang
+            // 
+            this.bntqlKhachhang.Caption = "Khách hàng";
+            this.bntqlKhachhang.Id = 19;
+            this.bntqlKhachhang.Name = "bntqlKhachhang";
+            this.bntqlKhachhang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BntqlKhachhang_ItemClick);
+            // 
             // ribbonHethong
             // 
             this.ribbonHethong.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -236,8 +243,7 @@
             // ribbonDanhmuc
             // 
             this.ribbonDanhmuc.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonBanhang,
-            this.ribbonMuahang});
+            this.ribbonBanhang});
             this.ribbonDanhmuc.Name = "ribbonDanhmuc";
             this.ribbonDanhmuc.Text = "Danh Mục";
             // 
@@ -248,12 +254,6 @@
             this.ribbonBanhang.ItemLinks.Add(this.btnnhaphang);
             this.ribbonBanhang.Name = "ribbonBanhang";
             this.ribbonBanhang.Text = "Giao dịch";
-            // 
-            // ribbonMuahang
-            // 
-            this.ribbonMuahang.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonMuahang.Name = "ribbonMuahang";
-            this.ribbonMuahang.Text = "Mua Hàng";
             // 
             // ribbonQuanly
             // 
@@ -278,12 +278,6 @@
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(927, 24);
-            // 
-            // bntqlKhachhang
-            // 
-            this.bntqlKhachhang.Caption = "Khách hàng";
-            this.bntqlKhachhang.Id = 19;
-            this.bntqlKhachhang.Name = "bntqlKhachhang";
             // 
             // frmTrangchu
             // 
@@ -313,7 +307,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribondoimatkhau;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonDanhmuc;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonBanhang;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonMuahang;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonQuanly;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonNhanvien;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;

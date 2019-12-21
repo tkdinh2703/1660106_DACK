@@ -1079,10 +1079,10 @@
     </member>
     <member name="M:DevExpress.XtraEditors.BaseCheckedListBoxControl.SetItemChecked(System.Int32,System.Boolean)">
       <summary>
-        <para>Changes the state of the item to checked or unchecked.</para>
+        <para>Sets the specified item&#39;s state to checked or unchecked.</para>
       </summary>
-      <param name="index">An integer value representing the zero-based index of the item to be changed. If it is negative or exceeds the last available index, the method will have no effect.</param>
-      <param name="value">true to check the item, false to uncheck it.</param>
+      <param name="index">An integer value that specifies the zero-based index of the item whose check state should be changed.</param>
+      <param name="value">true, if the item is checked; false, if the item is unchecked.</param>
     </member>
     <member name="M:DevExpress.XtraEditors.BaseCheckedListBoxControl.SetItemCheckState(System.Int32,System.Windows.Forms.CheckState)">
       <summary>
@@ -8832,6 +8832,12 @@ A specific version of the addressed image is automatically chosen based on the a
       </summary>
       <param name="duration">A TimeSpan object that specifies the minimum duration for the loading indicator.</param>
     </member>
+    <member name="M:DevExpress.XtraEditors.Controls.LookUpEditAutoSuggestEventArgs.SetQuerySuggestionsTask``1(System.Threading.Tasks.Task{System.Collections.Generic.List{``0}})">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="querySuggestionsAsAsyncList"></param>
+    </member>
     <member name="T:DevExpress.XtraEditors.Controls.LookUpEditSearchHighlightEventArgs">
       <summary>
         <para>A base class for the AutoSearch and AutoSuggest event parameters.</para>
@@ -14902,15 +14908,15 @@ A specific version of the addressed image is automatically chosen based on the a
     </member>
     <member name="M:DevExpress.XtraEditors.Filtering.ExcelFilteringDataEventArgs.ClearData">
       <summary>
-        <para></para>
+        <para>Removes all items from the collection of data values by which the column being processed can be filtered.</para>
       </summary>
-      <returns></returns>
+      <returns>true, if the items are successfully removed; otherwise, false.</returns>
     </member>
     <member name="P:DevExpress.XtraEditors.Filtering.ExcelFilteringDataEventArgs.DataItems">
       <summary>
         <para>Provides access to the collection of data values by which the column being processed can be filtered, and the corresponding display texts.</para>
       </summary>
-      <value>A <see cref="T:System.Collections.Generic.List`1"/>&lt;DevExpress.XtraEditors.Filtering.ExcelFilterDataItem,&gt; object specifying the collection of data values by which the column being processed can be filtered.</value>
+      <value>An object that specifies the collection of data values by which the column being processed can be filtered.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Filtering.ExcelFilteringDataEventArgs.DisplayTexts">
       <summary>
@@ -17291,9 +17297,19 @@ In <see cref="F:DevExpress.XtraEditors.HotTrackSelectMode.SelectItemOnHotTrack"/
         <para>Fires when the editor SearchMode property is set to . In this mode, the editor filters out data source records that do not match the currently entered text, and displays remaining records in the drop-down panel. The AutoSearch event is optional, it allows you to fine-tune the search. See the <see cref="T:DevExpress.XtraEditors.LookUpEdit"/> class description to learn more.</para>
       </summary>
     </member>
+    <member name="E:DevExpress.XtraEditors.LookUpEdit.AutoSearchComplete">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="E:DevExpress.XtraEditors.LookUpEdit.AutoSuggest">
       <summary>
         <para>Fires when you set the SearchMode property to AutoSuggest. In this mode, the editor runs the asynchronous Task assigned in the event handler to retrieve a list of drop-down panel items. See the <see cref="T:DevExpress.XtraEditors.LookUpEdit"/> class description for more information.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.XtraEditors.LookUpEdit.AutoSuggestComplete">
+      <summary>
+        <para></para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraEditors.LookUpEdit.CustomDrawCell">
@@ -23423,9 +23439,19 @@ In bound mode, this method populates the item collection before returning it.</p
       </summary>
       <value>The zero-based visible column index against which an incremental search is performed.</value>
     </member>
+    <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit.AutoSearchComplete">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit.AutoSuggest">
       <summary>
         <para>Fires when you set the SearchMode property to AutoSuggest. In this mode, the editor runs the asynchronous Task assigned in the event handler to retrieve a list of drop-down panel items. See the <see cref="T:DevExpress.XtraEditors.LookUpEdit"/> class description for more information.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit.AutoSuggestComplete">
+      <summary>
+        <para></para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit.BestFit">
@@ -24252,6 +24278,12 @@ In bound mode, this method populates the item collection before returning it.</p
       </summary>
       <value>A <see cref="T:DevExpress.Utils.DefaultBoolean"/> enumeration value that specifies whether it is allowed to zoom pictures using the mouse wheel.</value>
     </member>
+    <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit.AnimatedImageLoopMode">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="M:DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit.Assign(DevExpress.XtraEditors.Repository.RepositoryItem)">
       <summary>
         <para>Copies the settings of a specific repository item to the current one.</para>
@@ -24568,7 +24600,7 @@ In bound mode, this method populates the item collection before returning it.</p
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemPopupBase.CloseUpKey">
       <summary>
-        <para>Gets or sets the key combination used to open and close the popup window.</para>
+        <para>Gets or sets the key combination used to open and close the pop-up window.</para>
       </summary>
       <value>A <see cref="T:DevExpress.Utils.KeyShortcut"/> object specifying the key combination used to open and close the popup window.</value>
     </member>
@@ -25808,9 +25840,9 @@ In bound mode, this method populates the item collection before returning it.</p
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.NullValuePromptShowForEmptyValue">
       <summary>
-        <para>Gets or sets whether the text specified by the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.NullValuePrompt"/> property is displayed when the editor contains an empty string.</para>
+        <para>Gets or sets whether the editor displays a prompt when its value is not specified (equals <see cref="F:System.String.Empty"/>).</para>
       </summary>
-      <value>true if the text specified by the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.NullValuePrompt"/> property is displayed when the editor contains an empty string; otherwise, false.</value>
+      <value>true, if the editor displays a prompt when its value is not specified (equals <see cref="F:System.String.Empty"/>); otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.OwnerEdit">
       <summary>
@@ -25838,21 +25870,21 @@ In bound mode, this method populates the item collection before returning it.</p
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.ShowNullValuePrompt">
       <summary>
-        <para></para>
+        <para>Gets or sets conditions under which this editor should display its null value text (see the NullValuePrompt property).</para>
       </summary>
-      <value></value>
+      <value>Specifies conditions under which this editor should display its null value text.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.ShowNullValuePromptWhenFocused">
       <summary>
-        <para>Gets or sets whether to display the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.NullValuePrompt"/> when the current editor is focused.</para>
+        <para>Gets or sets whether the focused editor displays a prompt when its value is not specified.</para>
       </summary>
-      <value>true, if the <see cref="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.NullValuePrompt"/> is displayed when the editor is focused; otherwise, false.</value>
+      <value>true, if the focused editor displays a prompt when its value is not specified; otherwise, false.</value>
     </member>
     <member name="P:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.ShowNullValuePromptWhenReadOnly">
       <summary>
-        <para></para>
+        <para>Gets or sets whether the read-only editor displays a prompt when its value is not specified.</para>
       </summary>
-      <value></value>
+      <value>true, if the read-only editor displays a prompt when its value is not specified; otherwise, false.</value>
     </member>
     <member name="E:DevExpress.XtraEditors.Repository.RepositoryItemTextEdit.Spin">
       <summary>
@@ -27142,6 +27174,36 @@ scrolling using the keyboard arrow keys (and the mouse wheel, provided that <see
         <para>Sets the filter criteria.</para>
       </summary>
       <param name="filter">A string value that is the filter criteria.</param>
+    </member>
+    <member name="T:DevExpress.XtraEditors.ShowNullValuePromptOptions">
+      <summary>
+        <para>Enumerates values that specify when an editor shows a prompt.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraEditors.ShowNullValuePromptOptions.Default">
+      <summary>
+        <para>Enables all options.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraEditors.ShowNullValuePromptOptions.EditorFocused">
+      <summary>
+        <para>A prompt is displayed when the editor is focused and not focused. Disable this option to only display the prompt when the editor is not focused.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraEditors.ShowNullValuePromptOptions.EditorReadOnly">
+      <summary>
+        <para>A prompt is displayed when the editor is in the read-only and editable states. Disable this option to only display the prompt when the editor is editable.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraEditors.ShowNullValuePromptOptions.EmptyValue">
+      <summary>
+        <para>A prompt is displayed when the editor&#39;s value equals <see cref="F:System.String.Empty"/> or null (Nothing in VB). Disable this option to only display the prompt when the editor&#39;s value equals null (Nothing in VB).</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraEditors.ShowNullValuePromptOptions.NullValue">
+      <summary>
+        <para>Disables all options. A prompt is only shown for an editable, not focused editor whose value equals null (Nothing in VB).</para>
+      </summary>
     </member>
     <member name="T:DevExpress.XtraEditors.SimpleButton">
       <summary>

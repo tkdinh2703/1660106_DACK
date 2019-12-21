@@ -2248,7 +2248,7 @@
     </member>
     <member name="T:DevExpress.Pdf.PdfDocumentPosition">
       <summary>
-        <para>Represents the PDF coordinates of a hit point and the page number.</para>
+        <para>Represents a point in the page coordinates of the PDF document.</para>
       </summary>
     </member>
     <member name="M:DevExpress.Pdf.PdfDocumentPosition.#ctor(System.Int32,DevExpress.Pdf.PdfPoint)">
@@ -5199,6 +5199,69 @@
       </summary>
       <param name="x">A <see cref="T:System.Double"/> value. This value is assigned to the <see cref="P:DevExpress.Pdf.PdfPoint.X"/> property.</param>
       <param name="y">A <see cref="T:System.Double"/> value. This value is assigned to the <see cref="P:DevExpress.Pdf.PdfPoint.Y"/> property.</param>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_Addition(DevExpress.Pdf.PdfPoint,DevExpress.Pdf.PdfPoint)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_Division(DevExpress.Pdf.PdfPoint,DevExpress.Pdf.PdfPoint)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_Division(DevExpress.Pdf.PdfPoint,System.Double)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="value1"></param>
+      <param name="value2"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_Multiply(DevExpress.Pdf.PdfPoint,DevExpress.Pdf.PdfPoint)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_Multiply(DevExpress.Pdf.PdfPoint,System.Double)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_Multiply(System.Double,DevExpress.Pdf.PdfPoint)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_Subtraction(DevExpress.Pdf.PdfPoint,DevExpress.Pdf.PdfPoint)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="left"></param>
+      <param name="right"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.Pdf.PdfPoint.op_UnaryNegation(DevExpress.Pdf.PdfPoint)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="value"></param>
+      <returns></returns>
     </member>
     <member name="P:DevExpress.Pdf.PdfPoint.X">
       <summary>

@@ -36,7 +36,7 @@ namespace DACK.BUS
             return db.Insertphieunhaphang(phieunhaphang);
         }
 
-        public int InsertCTphieuxuathang(Chitietphieuxuatnhaphang phieuxuathang)
+        public int InsertCTphieuxuathang(CTPhieuxuatnhaphang phieuxuathang)
         {
             return db.InsertCTphieuxuathang( phieuxuathang);
         }

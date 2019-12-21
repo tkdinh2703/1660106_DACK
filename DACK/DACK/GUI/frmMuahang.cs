@@ -89,9 +89,20 @@ namespace DACK.GUI
         {
             Themsunhacungcap themsunhacungcap = new Themsunhacungcap();
             themsunhacungcap.Show();
+            themsunhacungcap.khicapnhat += Themsunhacungcap_khicapnhat;
         }
 
-        private void FrmMuahang_Load(object sender, EventArgs e)
+        private void Themsunhacungcap_khicapnhat()
+        {
+            lstNCC = muahangBUS.ChonNCC();
+            cbbNCC.Properties.DataSource = lstNCC;
+            cbbNCC.Properties.DisplayMember = "TenNCC";
+            cbbNCC.Properties.ValueMember = "Id";
+            cbbNCC.Properties.PopupResizeMode = ResizeMode.FrameResize;
+            cbbNCC.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+            cbbNCC.EditValue = lstNCC[lstNCC.Count - 1].Id;
+        }
+            private void FrmMuahang_Load(object sender, EventArgs e)
         {
             Chondoituong();
             LoaditemID();
@@ -243,7 +254,7 @@ namespace DACK.GUI
 
             var id = muahangBUS.IDphieunhaphang(phieuxuathang.Maphieuthu);
             int soluong;
-            Chitietphieuxuatnhaphang ctPhieuxuathang = new Chitietphieuxuatnhaphang();
+            CTPhieuxuatnhaphang ctPhieuxuathang = new CTPhieuxuatnhaphang();
             for (int i = 0; i < lstphieuxh.Count; i++)
             {
                 ctPhieuxuathang.Maphieuxuathang = int.Parse(id.ToString());

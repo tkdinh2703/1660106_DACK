@@ -27,6 +27,12 @@
       </summary>
       <value>A <see cref="T:System.Collections.Generic.List`1"/>&lt;<see cref="T:DevExpress.XtraScheduler.AppointmentDragInfo"/>,&gt; collection containing properties of additional dragged appointments.</value>
     </member>
+    <member name="P:DevExpress.XtraScheduler.AdditionalAppointmentsDragEventArgs.Data">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.XtraScheduler.AdditionalAppointmentsDragEventArgs.PrimaryAppointmentInfos">
       <summary>
         <para>Provides access to the properties of the primary dragged appointments.</para>
@@ -1169,15 +1175,6 @@
       <summary>
         <para>Provides data for the <see cref="E:DevExpress.XtraScheduler.SchedulerControl.AppointmentDrag"/> event.</para>
       </summary>
-    </member>
-    <member name="M:DevExpress.XtraScheduler.AppointmentDragEventArgs.#ctor(DevExpress.XtraScheduler.Appointment,DevExpress.XtraScheduler.Appointment,DevExpress.XtraScheduler.TimeInterval,DevExpress.XtraScheduler.Resource)">
-      <summary>
-        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraScheduler.AppointmentDragEventArgs"/> class with the specified settings.</para>
-      </summary>
-      <param name="sourceAppointment">An <see cref="T:DevExpress.XtraScheduler.Appointment"/> object which is the source appointment. This value is assigned to the <see cref="P:DevExpress.XtraScheduler.AppointmentDragEventArgs.SourceAppointment"/> property.</param>
-      <param name="editedAppointment">An <see cref="T:DevExpress.XtraScheduler.Appointment"/> object which is the appointment being dragged. This value is assigned to the <see cref="P:DevExpress.XtraScheduler.AppointmentDragEventArgs.EditedAppointment"/> property.</param>
-      <param name="hitInterval">A <see cref="T:DevExpress.XtraScheduler.TimeInterval"/> value which is the destination time interval. This value is assigned to the <see cref="P:DevExpress.XtraScheduler.AppointmentDragEventArgs.HitInterval"/> property.</param>
-      <param name="hitResource">A <see cref="T:DevExpress.XtraScheduler.Resource"/> object which is the destination resource. This value is assigned to the <see cref="P:DevExpress.XtraScheduler.AppointmentDragEventArgs.HitResource"/> property.</param>
     </member>
     <member name="P:DevExpress.XtraScheduler.AppointmentDragEventArgs.AdditionalAppointments">
       <summary>
@@ -6896,9 +6893,29 @@ A <see cref="T:System.DateTime"/> object specifying the appointment start - the 
         <para>The text of an error that may occur in the Appointment Editing form.Default Value: &quot;The date you entered occurs before the start date.&quot;</para>
       </summary>
     </member>
+    <member name="F:DevExpress.XtraScheduler.Localization.SchedulerStringId.Msg_InvalidHourCount">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraScheduler.Localization.SchedulerStringId.Msg_InvalidHourCountValue">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="F:DevExpress.XtraScheduler.Localization.SchedulerStringId.Msg_InvalidInputFile">
       <summary>
         <para>Default Value: &quot;Input file is invalid.&quot;</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraScheduler.Localization.SchedulerStringId.Msg_InvalidMinuteCount">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraScheduler.Localization.SchedulerStringId.Msg_InvalidMinuteCountValue">
+      <summary>
+        <para></para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraScheduler.Localization.SchedulerStringId.Msg_InvalidMonthCount">
@@ -11570,6 +11587,12 @@ See the How to: Split Appointments and Series article for more information.</par
         <para>Copies all settings from the options object passed as the parameter to the current object.</para>
       </summary>
       <param name="options">A <see cref="T:DevExpress.XtraScheduler.SchedulerOptionsCustomization"/> object (which is the <see cref="T:DevExpress.Utils.Controls.BaseOptions"/> descendant) whose settings are assigned to the current object.</param>
+    </member>
+    <member name="P:DevExpress.XtraScheduler.SchedulerOptionsCustomization.RecurrenceFormEditors">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="M:DevExpress.XtraScheduler.SchedulerOptionsCustomization.ToString">
       <summary>

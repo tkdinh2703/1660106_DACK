@@ -33,5 +33,14 @@ namespace DACK.BUS
         {
             sanphamDAO.Laodcbbedit(comboBoxEdit,tenbang,tencot);
         }
+        public List<Sanpham> LIstsanpham()
+        {
+            return sanphamDAO.LIstsanpham();
+        }
+        public string Location(int Id)
+        {
+            
+            return sanphamDAO.Location(Id).ToString();
+        }
     }
 }

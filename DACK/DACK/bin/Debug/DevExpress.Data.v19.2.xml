@@ -13915,6 +13915,12 @@ Also <see cref="P:DevExpress.Utils.FormatInfo.FormatString"/> is set to &quot;d&
       </summary>
       <value>true, to use the legacy filter editor; otherwise, false.</value>
     </member>
+    <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLegacySchedulerCellDecoration">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
     <member name="P:DevExpress.Xpf.Core.CompatibilitySettings.UseLightweightBarItems">
       <summary>
         <para></para>
@@ -23034,6 +23040,48 @@ Otherwise, the closest matching image side (height or width) will be sized to th
       <summary>
         <para>The complex properties are shown at the bottom of the Field List.</para>
       </summary>
+    </member>
+    <member name="N:DevExpress.XtraReports.Parameters">
+      <summary>
+        <para>Contains classes that are used to handle parameters in XtraReports.</para>
+      </summary>
+    </member>
+    <member name="T:DevExpress.XtraReports.Parameters.Range`1">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.Range`1.#ctor(`0,`0)">
+      <summary>
+        <para>Initializes a new instance of the <see cref="T:DevExpress.XtraReports.Parameters.Range`1"/> class with specified settings.</para>
+      </summary>
+      <param name="start"></param>
+      <param name="end"></param>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.Range`1.End">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.Range`1.Equals(System.Object)">
+      <summary>
+        <para></para>
+      </summary>
+      <param name="obj"></param>
+      <returns></returns>
+    </member>
+    <member name="M:DevExpress.XtraReports.Parameters.Range`1.GetHashCode">
+      <summary>
+        <para></para>
+      </summary>
+      <returns></returns>
+    </member>
+    <member name="P:DevExpress.XtraReports.Parameters.Range`1.Start">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="N:DevExpress.XtraReports.UI">
       <summary>

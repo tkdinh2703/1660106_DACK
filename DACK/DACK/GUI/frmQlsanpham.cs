@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using System.Data.SqlClient;
 using DACK.DAO;
 using DACK.BUS;
+using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraEditors.Controls;
 
 namespace DACK
 {
@@ -20,42 +22,36 @@ namespace DACK
         int IDmh = 3;
         int row = 0;
         int Role=0;
+        List<Sanpham> sanphams;
         SanphamBUS sanphamBus = new SanphamBUS();
         public frmQlsanpham()
         {
             InitializeComponent();
-            grviewsanpham.ShownEditor += grviewsanpham_ShownEditor;
+            
         }
         public frmQlsanpham(int role)
         {
             InitializeComponent();
-            grviewsanpham.ShownEditor += grviewsanpham_ShownEditor;
+            
             Role = role;
-        }
-
-        private void grviewsanpham_ShownEditor(object sender, EventArgs e)
-        {
-            grviewsanpham.ActiveEditor.MouseUp += new MouseEventHandler(ActiveEditor_MouseUp);
-        }
-
-        private void ActiveEditor_MouseUp(object sender, MouseEventArgs e)
-        {
-
-            Object hinhanh = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "HinhAnh");
-            pictureBox1.ImageLocation = hinhanh.ToString();
-            row = grviewsanpham.FocusedRowHandle;
         }
 
         private void Qlsanpham_Load(object sender, EventArgs e)
         {
-            Loaddata();
-            Roleform roleform = phanquyen();
-            btnthem.Enabled = roleform.Them;
-            bntxoa.Enabled = roleform.Xoa;
-            btnsua.Enabled = roleform.Sua;
-            btnin.Enabled = roleform.Inan;
-            btnhap.Enabled = roleform.Nhap;
-            btnxuat.Enabled = roleform.Xuat;
+            //Loaddata();
+            //Roleform roleform = phanquyen();
+            //btnthem.Enabled = roleform.Them;
+            //bntxoa.Enabled = roleform.Xoa;
+            //btnsua.Enabled = roleform.Sua;
+            //btnin.Enabled = roleform.Inan;
+            //btnhap.Enabled = roleform.Nhap;
+            //btnxuat.Enabled = roleform.Xuat;
+            //grviewsanpham.RowHeight = 100;
+            sanphams = sanphamBus.LIstsanpham();
+
+            grvsanpham.DataSource = sanphams;// new BindingList<Sanpham>(sanphams); ;
+           
+            
         }
         
 
@@ -63,7 +59,7 @@ namespace DACK
         {           
            var data = sanphamBus.loadsanpham();
             grvsanpham.DataSource = data;
-            Bingding();
+          
             
         }
 
@@ -71,11 +67,12 @@ namespace DACK
             var role =db.quyentruycap(Role,IDmh);
             return role;
         }
-        public void Bingding() {
-            Object hinhanh = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "HinhAnh");
-            pictureBox1.ImageLocation = hinhanh.ToString();
+       
+        public string Laylocation(int id)
+        {
+            string Location = sanphamBus.Location(id);
+            return Location;
         }
-
         private void Btnsua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             
@@ -85,7 +82,7 @@ namespace DACK
                 Object ngaySanXuat = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "NgaySanXuat");
                 Object xuatXu = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "XuatXu");
                 Object soLuong = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "SoLuong");
-                Object hinhAnh = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "HinhAnh");
+                Object hinhAnh = Laylocation((int)id);
                 Object nhaCungCap = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "NhaCungCap");
                 Object giaMua = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "GiaMua");
                 Object giaBanLe = grviewsanpham.GetRowCellValue(grviewsanpham.FocusedRowHandle, "GiaBan");
@@ -100,7 +97,7 @@ namespace DACK
                 NgaySanXuat = ngaySanXuat.ToString(),
                 XuatXu = xuatXu.ToString(),
                 SoLuong = int.Parse(soLuong.ToString()),
-                HinhAnh = hinhAnh.ToString(),
+                HinhAnh = hinhAnh,
                 NhaCungCap = nhaCungCap.ToString(),
                 GiaMua = long.Parse(giaMua.ToString()),
                 GiaBan = long.Parse(giaBanLe.ToString()),
@@ -162,60 +159,21 @@ namespace DACK
         private void Grviewsanpham_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
             row = grviewsanpham.FocusedRowHandle;
-            Bingding();
+           
             row = grviewsanpham.FocusedRowHandle;
 
         }
 
-       
 
-        //btnFrist
-        private void SimpleButton1_Click(object sender, EventArgs e)
+        private void Grviewsanpham_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
         {
-            grviewsanpham.FocusedRowHandle = 0;
-            row = 0;
-            lbvitri.Text = ((row + 1) + "/" + grviewsanpham.RowCount);
-            Bingding();
-        }
+            //if (e.Column.FieldName == "HinhAnh")
+            //{
+            //    e.DefaultDraw();
 
-        private void Btnnext_Click(object sender, EventArgs e)
-        {
-            if (row < grviewsanpham.RowCount)
-            {
-                if (row != grviewsanpham.RowCount - 1)
-                {
-                    row++;
-                    grviewsanpham.FocusedRowHandle = row;
-                    Bingding();
-                }
-                else
-                    MessageBox.Show("Đã hết sản phẩm!");
-            }
-            lbvitri.Text = ((row + 1) + "/" + grviewsanpham.RowCount);
-        }
+            //    e.Cache.DrawImage(Image.FromFile(sanphams[e.RowHandle].HinhAnh.ToString()), e.Bounds.Location);
 
-        private void Btnprev_Click(object sender, EventArgs e)
-        {
-            if (row >= 0)
-            {
-                if (row != 0)
-                {
-                    row--;
-                    grviewsanpham.FocusedRowHandle = row;
-                    Bingding();
-                }
-                else
-                    MessageBox.Show("First Record");
-            }
-            lbvitri.Text = ((row + 1) + "/" + grviewsanpham.RowCount);
-        }
-
-        private void Btnlast_Click(object sender, EventArgs e)
-        {
-            grviewsanpham.FocusedRowHandle = grviewsanpham.RowCount - 1;
-            row = grviewsanpham.RowCount - 1;
-            lbvitri.Text = ((row + 1) + "/" + grviewsanpham.RowCount);
-            Bingding();
+            //}
         }
     }
 }

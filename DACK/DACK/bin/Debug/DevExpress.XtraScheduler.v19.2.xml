@@ -706,6 +706,21 @@
       </summary>
       <value>An <see cref="T:DevExpress.XtraScheduler.AppointmentDependencyMappingInfo"/> object containing information on the mapping of the dependency&#39;s properties to the appropriate data fields.</value>
     </member>
+    <member name="T:DevExpress.XtraScheduler.AppointmentDisplayMode">
+      <summary>
+        <para>Enumerates values that specify whether to display appointments that belong to all resources in a category or to the selected resource only.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraScheduler.AppointmentDisplayMode.AllResources">
+      <summary>
+        <para>A category displays appointments for all resources, regardless of the selected resource.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraScheduler.AppointmentDisplayMode.SelectedResource">
+      <summary>
+        <para>A category displays appointments for the selected resource only.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraScheduler.AppointmentDragDropOptions">
       <summary>
         <para>Contains options specific for appointment drag-and-drop operations.</para>
@@ -5032,6 +5047,21 @@
       </summary>
       <value>A <see cref="T:DevExpress.XtraScheduler.SchedulerDataStorage"/> object that owns this <see cref="T:DevExpress.XtraScheduler.ResourceDataStorage"/>.</value>
     </member>
+    <member name="T:DevExpress.XtraScheduler.ResourceDisplayStyle">
+      <summary>
+        <para>Enumerates values that specify how to display resources in categories: as resource tabs or category headers.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraScheduler.ResourceDisplayStyle.Headers">
+      <summary>
+        <para>All resources in a category are displayed as a single category header and users cannot select a resource in a category.</para>
+      </summary>
+    </member>
+    <member name="F:DevExpress.XtraScheduler.ResourceDisplayStyle.Tabs">
+      <summary>
+        <para>Each resource in a category is displayed as a separate tab and users can select a resource (tab) in a category.</para>
+      </summary>
+    </member>
     <member name="T:DevExpress.XtraScheduler.ResourceExtension">
       <summary>
         <para>Defines extension methods for the <see cref="T:DevExpress.XtraScheduler.Resource"/> object.</para>
@@ -5689,6 +5719,11 @@ The legacy default color is shown below:</para>
         <para>Enables resource headers to be painted manually.</para>
       </summary>
     </member>
+    <member name="E:DevExpress.XtraScheduler.SchedulerControl.CustomDrawTabHeader">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerControl.CustomDrawTimeCell">
       <summary>
         <para>Allows you to manually paint time cells.</para>
@@ -6057,6 +6092,11 @@ The legacy default color is shown below:</para>
     <member name="E:DevExpress.XtraScheduler.SchedulerControl.PrepareContextMenu">
       <summary>
         <para>This member is obsolete. Handle the <see cref="E:DevExpress.XtraScheduler.SchedulerControl.PopupMenuShowing"/> event instead.</para>
+      </summary>
+    </member>
+    <member name="E:DevExpress.XtraScheduler.SchedulerControl.PrepareDragData">
+      <summary>
+        <para></para>
       </summary>
     </member>
     <member name="E:DevExpress.XtraScheduler.SchedulerControl.PreparePopupMenu">
@@ -9264,7 +9304,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="T:DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl">
       <summary>
-        <para>The checked list box control that filters resources within the <see cref="T:DevExpress.XtraScheduler.SchedulerControl"/>.</para>
+        <para>Represents a check-list box that filters resources in the attached scheduler.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraScheduler.UI.ResourcesCheckedListBoxControl.#ctor">
@@ -9298,7 +9338,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="T:DevExpress.XtraScheduler.UI.ResourcesComboBoxControl">
       <summary>
-        <para>The combo box control that filters resources within the <see cref="T:DevExpress.XtraScheduler.SchedulerControl"/>.</para>
+        <para>Represents a combo box that filters resources in the attached scheduler.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraScheduler.UI.ResourcesComboBoxControl.#ctor">
@@ -9356,7 +9396,7 @@ The DefaultBoolean.Default value is equivalent to DefaultBoolean.True if the sta
     </member>
     <member name="T:DevExpress.XtraScheduler.UI.ResourcesPopupCheckedListBoxControl">
       <summary>
-        <para>The editor with a pop-up checked list box control that filters resources within the <see cref="T:DevExpress.XtraScheduler.SchedulerControl"/>.</para>
+        <para>Represents a check-list combo box that filters resources in the attached scheduler.</para>
       </summary>
     </member>
     <member name="M:DevExpress.XtraScheduler.UI.ResourcesPopupCheckedListBoxControl.#ctor">

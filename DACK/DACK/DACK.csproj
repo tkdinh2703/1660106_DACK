@@ -34,17 +34,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="DevExpress.Data.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -76,6 +76,7 @@
     <Compile Include="BUS\NhansuBUS.cs" />
     <Compile Include="BUS\NhasanxuatBUS.cs" />
     <Compile Include="BUS\SanphamBUS.cs" />
+    <Compile Include="BUS\ThutienBUS.cs" />
     <Compile Include="DAO\BanhangDAO.cs" />
     <Compile Include="DAO\Datbase.cs" />
     <Compile Include="DAO\DoimatkhauDAO.cs" />
@@ -86,10 +87,14 @@
     <Compile Include="DAO\NhansuDAO.cs" />
     <Compile Include="DAO\NhasanxuatDAO.cs" />
     <Compile Include="DAO\SanphamDAO.cs" />
-    <Compile Include="DTO\Chitietphieuxuatnhaphang.cs" />
+    <Compile Include="DAO\ThutienDAO.cs" />
+    <Compile Include="DTO\CTphieuthutratien.cs" />
+    <Compile Include="DTO\Hoadonthutratien.cs" />
+    <Compile Include="DTO\CTPhieuxuatnhaphang.cs" />
     <Compile Include="DTO\Khachhang.cs" />
     <Compile Include="DTO\Khohang.cs" />
     <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DTO\Luoithutratien.cs" />
     <Compile Include="DTO\Nhacungcap.cs" />
     <Compile Include="DTO\Nhansu.cs" />
     <Compile Include="DTO\Nhasanxuat.cs" />
@@ -101,12 +106,6 @@
     </Compile>
     <Compile Include="GUI\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmQlngu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmQlngu.Designer.cs">
-      <DependentUpon>frmQlngu.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmBanhang.cs">
       <SubType>Form</SubType>
@@ -150,6 +149,12 @@
     <Compile Include="GUI\frmQlnhasanxuat.Designer.cs">
       <DependentUpon>frmQlnhasanxuat.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmThutien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThutien.Designer.cs">
+      <DependentUpon>frmThutien.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmTrangchu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +162,18 @@
       <DependentUpon>frmTrangchu.cs</DependentUpon>
     </Compile>
     <Compile Include="DTO\Globatlva.cs" />
+    <Compile Include="GUI\frmTratien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTratien.Designer.cs">
+      <DependentUpon>frmTratien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Themsuakhachhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Themsuakhachhang.Designer.cs">
+      <DependentUpon>Themsuakhachhang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\themsuakhohang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +223,6 @@
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQlngu.resx">
-      <DependentUpon>frmQlngu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmBanhang.resx">
       <DependentUpon>frmBanhang.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,11 +244,20 @@
     <EmbeddedResource Include="GUI\frmQlnhasanxuat.resx">
       <DependentUpon>frmQlnhasanxuat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThutien.resx">
+      <DependentUpon>frmThutien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmTrangchu.resx">
       <DependentUpon>frmTrangchu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmQlnguoidung.resx">
       <DependentUpon>frmQlnguoidung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTratien.resx">
+      <DependentUpon>frmTratien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Themsuakhachhang.resx">
+      <DependentUpon>Themsuakhachhang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\themsuakhohang.resx">
       <DependentUpon>themsuakhohang.cs</DependentUpon>

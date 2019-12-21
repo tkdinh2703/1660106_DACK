@@ -50,8 +50,8 @@ namespace DACK
             cbbLoaihang.Text = s.LoaiHang;
             cbbNhacungcap.Text = s.NhaCungCap;
             cbbthuonghieu.Text = s.Thuonghieu;
-            pictureBox1.ImageLocation = s.HinhAnh;
-            srcAnh = s.HinhAnh;
+            pictureBox1.ImageLocation = s.HinhAnh.ToString();
+            srcAnh = s.HinhAnh.ToString();
             
         }
 

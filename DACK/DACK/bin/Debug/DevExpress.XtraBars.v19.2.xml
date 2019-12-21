@@ -27827,6 +27827,11 @@ This option is in effect when a custom control is embedded into the gallery grou
         <para>Fires when the Application Button&#39;s associated control (<see cref="P:DevExpress.XtraBars.Ribbon.RibbonControl.ApplicationButtonDropDownControl"/>) is about to be displayed.</para>
       </summary>
     </member>
+    <member name="E:DevExpress.XtraBars.Ribbon.RibbonControl.BeforeLoadLayout">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="E:DevExpress.XtraBars.Ribbon.RibbonControl.BeforeUnMerge">
       <summary>
         <para>Raises before this <see cref="T:DevExpress.XtraBars.Ribbon.RibbonControl"/> is unmerged and allows you to react to this upcoming change.</para>
@@ -28155,6 +28160,11 @@ This option is in effect when a custom control is embedded into the gallery grou
         <para>Updates a Ribbon Control.</para>
       </summary>
     </member>
+    <member name="E:DevExpress.XtraBars.Ribbon.RibbonControl.LayoutUpgrade">
+      <summary>
+        <para></para>
+      </summary>
+    </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RibbonControl.Manager">
       <summary>
         <para>Gets the Ribbon BarManager.</para>
@@ -28271,6 +28281,12 @@ This option is in effect when a custom control is embedded into the gallery grou
         <para>Gets or sets the minimum width of the Display Options button&#39;s dropdown window.</para>
       </summary>
       <value>An integer value that specifies the minimum width of the Display Options button&#39;s dropdown window.</value>
+    </member>
+    <member name="P:DevExpress.XtraBars.Ribbon.RibbonControl.OptionsPageCategories">
+      <summary>
+        <para></para>
+      </summary>
+      <value></value>
     </member>
     <member name="P:DevExpress.XtraBars.Ribbon.RibbonControl.OptionsStubGlyphs">
       <summary>
@@ -28766,7 +28782,7 @@ This option is in effect when a custom control is embedded into the gallery grou
     </member>
     <member name="F:DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2019">
       <summary>
-        <para>Office 2019-inspired style. Features a flat appearance, tab animations (when the &quot;Office 2019 Colorful&quot; vector skin is applied), and the capability to collapse into a single-row &quot;Simplified&quot; state.</para>
+        <para>Office 2019-inspired style. Features a flat appearance, tab animations (when the &quot;Office 2019 Colorful&quot;, &quot;Office 2019 Black&quot;, &quot;Office 2019 White&quot;, or &quot;Office 2019 Dark Gray&quot; vector skin is applied), and the capability to collapse into a single-row &quot;Simplified&quot; state.</para>
       </summary>
     </member>
     <member name="F:DevExpress.XtraBars.Ribbon.RibbonControlStyle.OfficeUniversal">

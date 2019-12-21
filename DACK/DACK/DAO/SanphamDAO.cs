@@ -45,5 +45,16 @@ namespace DACK.DAO
             string sql = string.Format("Select * from {0}", tenbang);
             db.Laodcbb(comboBoxEdit,sql,tencot);
         }
+        public List<Sanpham> LIstsanpham()
+        {
+
+            string sql = string.Format("Select * from Sanphams");
+            return db.LIstsanpham(sql);
+        }
+        public string Location(int Id)
+        {
+            string sql = string.Format("Select HinhAnh from Sanphams where Id='{0}' ", Id);
+            return db.Laythuoctinh(sql).ToString();
+        }
     }
 }

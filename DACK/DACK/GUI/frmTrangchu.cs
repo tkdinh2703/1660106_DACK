@@ -111,6 +111,18 @@ namespace DACK
             banhang.Show();
         }
 
+        private void BntqlKhachhang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmQlKhachhang qlKhachhang = new frmQlKhachhang(Role);
+            qlKhachhang.Show();
+        }
+
+        private void BtnMuahang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmMuahang muahang = new frmMuahang();
+            muahang.Show();
+        }
+
         private void FrmTrangchu_Load(object sender, EventArgs e)
         {
             if (Role == 1) {

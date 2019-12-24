@@ -32,7 +32,7 @@ namespace DACK.DAO
         }
         public int themhoadonthu(Hoadonthutratien hoadonthutratien)
         {
-            string sql = string.Format("Insert into Hoadonthu(Makh,Mahoadonthu,Ngaylap,Manv) Values('{0}','{1}','{2}','3')", hoadonthutratien.Makh, hoadonthutratien.Mahoadonthu, hoadonthutratien.Ngaylap,hoadonthutratien.Manv);
+            string sql = string.Format("Insert into Hoadonthu(Makh,Mahoadonthu,Ngaylap,Manv) Values('{0}','{1}','{2}','{3}')", hoadonthutratien.Makh, hoadonthutratien.Mahoadonthu, hoadonthutratien.Ngaylap,hoadonthutratien.Manv);
             return DB.thesuadulieu(sql);
         }
         public int themcthoadonthu(CTphieuthutratien cTphieuthutratien)

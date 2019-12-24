@@ -36,7 +36,7 @@ namespace DACK.DAO
         public int Insertphieunhaphang(Phieunhaphang phieunhaphang)
         {
 
-            string sql = string.Format("Insert into Phieunhaphang(Maphieuthu,MaNcc,MaNvnhap,MaKhonhap,Ngaynhap) Values('{0}','{1}','{2}','{3}','{4}')", phieunhaphang.Maphieuthu, phieunhaphang.MaNcc, phieunhaphang.Manv, phieunhaphang.Makho, phieunhaphang.Ngaylap);
+            string sql = string.Format("Insert into Phieunhaphang(Maphieuthu,MaNcc,MaNvnhap,MaKhonhap,Ngaynhap,Tongtien) Values('{0}','{1}','{2}','{3}','{4}','{5}')", phieunhaphang.Maphieuthu, phieunhaphang.MaNcc, phieunhaphang.Manv, phieunhaphang.Makho, phieunhaphang.Ngaylap, phieunhaphang.Tongtien);
 
             var rs = db.thesuadulieu(sql);
             return rs;

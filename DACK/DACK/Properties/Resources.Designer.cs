@@ -63,6 +63,26 @@ namespace DACK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _2339C1 {
+            get {
+                object obj = ResourceManager.GetObject("2339C1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _34111331981_80664f28e0_o {
+            get {
+                object obj = ResourceManager.GetObject("34111331981_80664f28e0_o", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Actions_user_group_delete_icon {
             get {
                 object obj = ResourceManager.GetObject("Actions-user-group-delete-icon", resourceCulture);
@@ -83,6 +103,56 @@ namespace DACK.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cach_mua_si_tai_tong_kho_si_sai_gon {
+            get {
+                object obj = ResourceManager.GetObject("cach-mua-si-tai-tong-kho-si-sai-gon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cartera_cuero_marron_mucho_dinero_68708_304 {
+            get {
+                object obj = ResourceManager.GetObject("cartera-cuero-marron-mucho-dinero_68708-304", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap erp_manufacturing_phan_mem_quan_ly_san_xuat {
+            get {
+                object obj = ResourceManager.GetObject("erp-manufacturing-phan-mem-quan-ly-san-xuat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_kho_report_31 {
+            get {
+                object obj = ResourceManager.GetObject("icon-kho-report-31", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logout_icon {
             get {
                 object obj = ResourceManager.GetObject("logout-icon", resourceCulture);
@@ -96,6 +166,26 @@ namespace DACK.Properties {
         internal static System.Drawing.Bitmap notebook_girl_icon {
             get {
                 object obj = ResourceManager.GetObject("notebook-girl-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OCON {
+            get {
+                object obj = ResourceManager.GetObject("OCON", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_icon {
+            get {
+                object obj = ResourceManager.GetObject("payment-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

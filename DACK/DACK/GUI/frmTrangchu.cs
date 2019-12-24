@@ -119,8 +119,28 @@ namespace DACK
 
         private void BtnMuahang_ItemClick(object sender, ItemClickEventArgs e)
         {
-            frmMuahang muahang = new frmMuahang();
+            frmMuahang muahang = new frmMuahang(Id);
             muahang.Show();
+        }
+
+        private void Btnnhaphang_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            frmBanhang banhang = new frmBanhang(Id);
+            banhang.Show();
+        }
+
+        private void Btntinhtien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            frmThutien thutien = new frmThutien(Id);
+            thutien.Show();
+        }
+
+        private void Btntratien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            frmTratien thutien = new frmTratien(Id);
+            thutien.Show();
         }
 
         private void FrmTrangchu_Load(object sender, EventArgs e)

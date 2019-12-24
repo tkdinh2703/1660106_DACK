@@ -240,7 +240,15 @@ namespace DACK.GUI
             }
             return sanpham;
         }
-
+        public long tongtien()
+        {
+            long tongtien = 0;
+            for (int i = 0; i < lstphieuxh.Count; i++)
+            {
+                tongtien += lstphieuxh[i].Tongthanhtoan;
+            }
+            return tongtien;
+        }
         private void Btnluu_Click(object sender, EventArgs e)
         {
             Phieunhaphang phieuxuathang = new Phieunhaphang();
@@ -249,6 +257,7 @@ namespace DACK.GUI
             phieuxuathang.MaNcc = int.Parse(txtMancc.Text);
             phieuxuathang.Manv = int.Parse(cbbnhanviennhap.EditValue.ToString());
             phieuxuathang.Ngaylap = txtngaylap.Text;
+            phieuxuathang.Tongtien = tongtien();
             // chua rang buoc madonhang
             muahangBUS.Insertphieunhaphang(phieuxuathang);
 

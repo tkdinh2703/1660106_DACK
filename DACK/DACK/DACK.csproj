@@ -77,6 +77,7 @@
     <Compile Include="BUS\NhasanxuatBUS.cs" />
     <Compile Include="BUS\SanphamBUS.cs" />
     <Compile Include="BUS\ThutienBUS.cs" />
+    <Compile Include="BUS\TratienBUS.cs" />
     <Compile Include="DAO\BanhangDAO.cs" />
     <Compile Include="DAO\Datbase.cs" />
     <Compile Include="DAO\DoimatkhauDAO.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="DTO\Luoixuatnhaphang.cs" />
     <Compile Include="DTO\Phieunhaphang.cs" />
     <Compile Include="DTO\Phieuxuathang.cs" />
+    <Compile Include="DAO\TratienDAO.cs" />
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,6 +327,32 @@
   <ItemGroup>
     <None Include="Resources\shopping-girl-icon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\erp-manufacturing-phan-mem-quan-ly-san-xuat.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OCON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2339C1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-kho-report-31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cach-mua-si-tai-tong-kho-si-sai-gon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cartera-cuero-marron-mucho-dinero_68708-304.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\34111331981_80664f28e0_o.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

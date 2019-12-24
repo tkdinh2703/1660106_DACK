@@ -321,6 +321,36 @@ namespace DACK.DAO
             con.Close();
             return lstpxh;
         }
+        public List<Phieunhaphang> Listpheunhaphang(string sql)
+        {
+            List<Phieunhaphang> lstpxh = new List<Phieunhaphang>();
+
+
+            SqlConnection con = new SqlConnection(path);
+
+            SqlCommand sqlCommand = new SqlCommand(sql, con);
+            con.Open();
+            SqlDataReader row = sqlCommand.ExecuteReader();
+            if (row.HasRows)
+            {
+                while (row.Read())
+                {
+                    lstpxh.Add(new Phieunhaphang
+                    {
+                        Id = int.Parse(row[0].ToString()),
+                        Maphieuthu = row[1].ToString(),
+                        MaNcc = int.Parse(row[2].ToString()),
+                        Makho = int.Parse(row[3].ToString()),
+                        Manv = int.Parse(row[4].ToString()),
+                        Ngaylap = row[5].ToString(),
+                        Tongtien = long.Parse(row[6].ToString())
+                    }); ;
+                }
+
+            }
+            con.Close();
+            return lstpxh;
+        }
         public long Tongtienphieuthuthu(string sql)
         {
             long tongtien = 0;

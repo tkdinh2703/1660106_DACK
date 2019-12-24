@@ -14,5 +14,6 @@ namespace DACK.DTO
         public int Makho { get; set; }
         public int Manv { get; set; }
         public string Ngaylap { get; set; }
+        public long Tongtien { get; set; }
     }
 }

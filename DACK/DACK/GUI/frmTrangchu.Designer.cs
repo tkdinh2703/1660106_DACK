@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTrangchu));
             this.ribbon = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -63,7 +64,9 @@
             this.ribbonNhanvien = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbon
@@ -269,6 +272,7 @@
             this.btnnhasnaxuat.Id = 25;
             this.btnnhasnaxuat.ImageOptions.LargeImage = global::DACK.Properties.Resources.erp_manufacturing_phan_mem_quan_ly_san_xuat;
             this.btnnhasnaxuat.Name = "btnnhasnaxuat";
+            this.btnnhasnaxuat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnnhasnaxuat_ItemClick);
             // 
             // btnkho
             // 
@@ -276,6 +280,7 @@
             this.btnkho.Id = 26;
             this.btnkho.ImageOptions.LargeImage = global::DACK.Properties.Resources.icon_kho_report_31;
             this.btnkho.Name = "btnkho";
+            this.btnkho.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnkho_ItemClick);
             // 
             // ribbonHethong
             // 
@@ -353,6 +358,10 @@
             this.ribbonStatusBar.Ribbon = this.ribbon;
             this.ribbonStatusBar.Size = new System.Drawing.Size(927, 24);
             // 
+            // xtraTabbedMdiManager1
+            // 
+            this.xtraTabbedMdiManager1.MdiParent = this;
+            // 
             // frmTrangchu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,12 +370,14 @@
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
             this.IconOptions.Image = global::DACK.Properties.Resources.Text_Documents_icon;
+            this.IsMdiContainer = true;
             this.Name = "frmTrangchu";
             this.Ribbon = this.ribbon;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.FrmTrangchu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -408,5 +419,6 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem btnnhasnaxuat;
         private DevExpress.XtraBars.BarButtonItem btnkho;
+        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
     }
 }

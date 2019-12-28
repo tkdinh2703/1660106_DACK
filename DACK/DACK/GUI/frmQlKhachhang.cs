@@ -39,6 +39,13 @@ namespace DACK.GUI
         private void FrmQlKhachhang_Load(object sender, EventArgs e)
         {
             Loadnhansu();
+            Roleform roleform = phanquyen();
+            btnthem.Enabled = roleform.Them;
+            btnxoa.Enabled = roleform.Xoa;
+            btnsua.Enabled = roleform.Sua;
+            btnin.Enabled = roleform.Inan;
+            btnnhap.Enabled = roleform.Nhap;
+            btnxuat.Enabled = roleform.Xuat;
         }
 
         private void Btnsua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -97,6 +104,11 @@ namespace DACK.GUI
             Themsuakhachhang themsuakhachhang = new Themsuakhachhang();
             themsuakhachhang.Show();
             themsuakhachhang.khicapnhat += Themsuanhansu_khicapnhat;
+        }
+
+        private void GridControl1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

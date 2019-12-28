@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DACK.DTO;
 using DACK.BUS;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraReports.UI;
 
 namespace DACK.GUI
 {
@@ -26,8 +27,8 @@ namespace DACK.GUI
         private decimal qsoluong = 0;
         private decimal thanhtien = 0;
         private decimal giahientai = 0;
-        private decimal vat = 0;
-        private decimal Tongth = 0;
+        private long vat = 0;
+        private long Tongth = 0;
         public frmBanhang()
         {
             InitializeComponent();
@@ -201,10 +202,10 @@ namespace DACK.GUI
                         {
                             giahientai = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(Giahientai));
                             thanhtien = qsoluong * giahientai;
-                            vat = (thanhtien * sanpham.VAT) / 100;
+                            vat =(long) (thanhtien * sanpham.VAT) / 100;
                             gridView1.SetFocusedRowCellValue(Thanhtien, thanhtien);
                             gridView1.SetFocusedRowCellValue(VAT, vat);
-                            Tongth = vat + thanhtien;
+                            Tongth = (long)(vat + thanhtien);
                             gridView1.SetFocusedRowCellValue(Tongthanhtoan, Tongth);
                         }
                     }
@@ -241,10 +242,10 @@ namespace DACK.GUI
                         {
                             giahientai = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(Giahientai));
                             thanhtien = qsoluong * giahientai;
-                            vat = (thanhtien * sanpham.VAT) / 100;
+                            vat = (long)(thanhtien * sanpham.VAT) / 100;
                             gridView1.SetFocusedRowCellValue(Thanhtien, thanhtien);
                             gridView1.SetFocusedRowCellValue(VAT, vat);
-                            Tongth = vat + thanhtien;
+                            Tongth = (long)(vat + thanhtien);
                             gridView1.SetFocusedRowCellValue(Tongthanhtoan, Tongth);
                         }
                     }
@@ -264,10 +265,10 @@ namespace DACK.GUI
                 {
                     giahientai = Convert.ToDecimal(gridView1.GetFocusedRowCellValue(Giahientai));
                     thanhtien = qsoluong * giahientai;
-                    vat = (thanhtien * sanpham.VAT) / 100;
+                    vat = (long)(thanhtien * sanpham.VAT) / 100;
                     gridView1.SetFocusedRowCellValue(Thanhtien, thanhtien);
                     gridView1.SetFocusedRowCellValue(VAT, vat);
-                    Tongth = vat + thanhtien;
+                    Tongth = (long)(vat + thanhtien);
                     gridView1.SetFocusedRowCellValue(Tongthanhtoan, Tongth);
                 }
 
@@ -325,6 +326,15 @@ namespace DACK.GUI
         private void Cbbnhanvien_EditValueChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void Txtghichu_TextChanged(object sender, EventArgs e)
+        {
+            Dsnguoidung dsnguoidung = new Dsnguoidung();
+            lstkachchang = banhangBUS.ChonKh();
+            dsnguoidung.DataSource = lstkachchang;
+            ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+            report.ShowPreview();
         }
     }
 }

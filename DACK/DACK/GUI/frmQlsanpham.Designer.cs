@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQlsanpham));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnthem = new DevExpress.XtraBars.BarButtonItem();
@@ -102,8 +103,8 @@
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnthem),
-            new DevExpress.XtraBars.LinkPersistInfo(this.bntxoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnsua),
+            new DevExpress.XtraBars.LinkPersistInfo(this.bntxoa),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnin),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnhap),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnxuat)});
@@ -115,40 +116,58 @@
             // 
             this.btnthem.Caption = "Thêm";
             this.btnthem.Id = 0;
+            this.btnthem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnthem.ImageOptions.Image")));
+            this.btnthem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnthem.ImageOptions.LargeImage")));
             this.btnthem.Name = "btnthem";
+            this.btnthem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnthem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnthem_ItemClick);
             // 
             // bntxoa
             // 
             this.bntxoa.Caption = "Xóa";
             this.bntxoa.Id = 1;
+            this.bntxoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntxoa.ImageOptions.Image")));
+            this.bntxoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bntxoa.ImageOptions.LargeImage")));
             this.bntxoa.Name = "bntxoa";
+            this.bntxoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.bntxoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bntxoa_ItemClick);
             // 
             // btnsua
             // 
             this.btnsua.Caption = "Sửa";
             this.btnsua.Id = 2;
+            this.btnsua.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnsua.ImageOptions.Image")));
+            this.btnsua.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnsua.ImageOptions.LargeImage")));
             this.btnsua.Name = "btnsua";
+            this.btnsua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnsua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnsua_ItemClick);
             // 
             // btnin
             // 
             this.btnin.Caption = "In";
             this.btnin.Id = 3;
+            this.btnin.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnin.ImageOptions.Image")));
+            this.btnin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnin.ImageOptions.LargeImage")));
             this.btnin.Name = "btnin";
+            this.btnin.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // btnhap
             // 
             this.btnhap.Caption = "Nhập";
             this.btnhap.Id = 4;
+            this.btnhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnhap.ImageOptions.Image")));
+            this.btnhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnhap.ImageOptions.LargeImage")));
             this.btnhap.Name = "btnhap";
+            this.btnhap.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // btnxuat
             // 
             this.btnxuat.Caption = "Xuất";
             this.btnxuat.Id = 5;
+            this.btnxuat.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnxuat.ImageOptions.Image")));
+            this.btnxuat.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnxuat.ImageOptions.LargeImage")));
             this.btnxuat.Name = "btnxuat";
+            this.btnxuat.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             // 
             // barDockControlTop
             // 
@@ -156,7 +175,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(963, 20);
+            this.barDockControlTop.Size = new System.Drawing.Size(963, 24);
             // 
             // barDockControlBottom
             // 
@@ -170,27 +189,27 @@
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 20);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 24);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 429);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 425);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(963, 20);
+            this.barDockControlRight.Location = new System.Drawing.Point(963, 24);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 429);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 425);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.grvsanpham);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 20);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 24);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(853, 148, 409, 266);
             this.layoutControl1.Root = this.Root;
-            this.layoutControl1.Size = new System.Drawing.Size(963, 429);
+            this.layoutControl1.Size = new System.Drawing.Size(963, 425);
             this.layoutControl1.TabIndex = 9;
             this.layoutControl1.Text = "layoutControl1";
             // 
@@ -206,7 +225,7 @@
             this.repositoryItemImageEdit1,
             this.repositoryItemImageEdit2,
             this.repositoryItemPictureEdit2});
-            this.grvsanpham.Size = new System.Drawing.Size(939, 405);
+            this.grvsanpham.Size = new System.Drawing.Size(939, 401);
             this.grvsanpham.TabIndex = 0;
             this.grvsanpham.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.grviewsanpham});
@@ -411,7 +430,7 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1});
             this.Root.Name = "Root";
-            this.Root.Size = new System.Drawing.Size(963, 429);
+            this.Root.Size = new System.Drawing.Size(963, 425);
             this.Root.TextVisible = false;
             // 
             // layoutControlItem1
@@ -419,7 +438,7 @@
             this.layoutControlItem1.Control = this.grvsanpham;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(943, 409);
+            this.layoutControlItem1.Size = new System.Drawing.Size(943, 405);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 

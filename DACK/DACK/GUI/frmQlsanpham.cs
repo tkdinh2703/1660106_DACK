@@ -39,13 +39,13 @@ namespace DACK
         private void Qlsanpham_Load(object sender, EventArgs e)
         {
             //Loaddata();
-            //Roleform roleform = phanquyen();
-            //btnthem.Enabled = roleform.Them;
-            //bntxoa.Enabled = roleform.Xoa;
-            //btnsua.Enabled = roleform.Sua;
-            //btnin.Enabled = roleform.Inan;
-            //btnhap.Enabled = roleform.Nhap;
-            //btnxuat.Enabled = roleform.Xuat;
+            Roleform roleform = phanquyen();
+            btnthem.Enabled = roleform.Them;
+            bntxoa.Enabled = roleform.Xoa;
+            btnsua.Enabled = roleform.Sua;
+            btnin.Enabled = roleform.Inan;
+            btnhap.Enabled = roleform.Nhap;
+            btnxuat.Enabled = roleform.Xuat;
             //grviewsanpham.RowHeight = 100;
             sanphams = sanphamBus.LIstsanpham();
 
@@ -57,10 +57,12 @@ namespace DACK
 
         private void Loaddata()
         {           
-           var data = sanphamBus.loadsanpham();
-            grvsanpham.DataSource = data;
-          
-            
+           //var data = sanphamBus.loadsanpham();
+           // grvsanpham.DataSource = data;
+            sanphams = sanphamBus.LIstsanpham();
+
+            grvsanpham.DataSource = sanphams;
+
         }
 
         public Roleform phanquyen() {

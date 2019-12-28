@@ -190,6 +190,7 @@
             this.txtghichu.Size = new System.Drawing.Size(605, 30);
             this.txtghichu.TabIndex = 26;
             this.txtghichu.Text = "";
+            this.txtghichu.TextChanged += new System.EventHandler(this.Txtghichu_TextChanged);
             // 
             // cbbnhanvien
             // 
@@ -854,7 +855,7 @@
             this.ClientSize = new System.Drawing.Size(984, 435);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmBanhang";
-            this.Text = "frmBanhang";
+            this.Text = "Bán hàng";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmBanhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();

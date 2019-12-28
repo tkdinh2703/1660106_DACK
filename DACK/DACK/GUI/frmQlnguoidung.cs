@@ -1,15 +1,16 @@
-﻿using DACK.BUS;
-using DACK.DAO;
-using DACK.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Text;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
+using DACK.DAO;
+using DACK.BUS;
+using DACK.DTO;
 
 namespace DACK.GUI
 {
@@ -23,28 +24,16 @@ namespace DACK.GUI
         {
             InitializeComponent();
         }
-        public frmQlnguoidung(int role,int Idmh)
+        public frmQlnguoidung(int role, int Idmh)
         {
             InitializeComponent();
             this.Idmh = Idmh;
             Role = role;
         }
-
-        private void Qlnhansu_Load(object sender, EventArgs e)
-        {
-            Loadnhansu();
-            Roleform roleform = phanquyen();
-            btnthem.Enabled = roleform.Them;
-            btnXoa.Enabled = roleform.Xoa;
-            btnsua.Enabled = roleform.Sua;
-            btnin.Enabled = roleform.Inan;
-            btnhap.Enabled = roleform.Nhap;
-            btnxuat.Enabled = roleform.Xuat;
-        }
         public void Loadnhansu()
         {
 
-            gridControl1.DataSource= nhansuBus.loadnhansu(Idmh);
+            gridControl1.DataSource = nhansuBus.loadnhansu(Idmh);
         }
         public Roleform phanquyen()
         {
@@ -52,11 +41,23 @@ namespace DACK.GUI
             return role;
         }
 
+        private void FrmQlnguoidung_Load(object sender, EventArgs e)
+        {
+            Loadnhansu();
+            Roleform roleform = phanquyen();
+            btnthem.Enabled = roleform.Them;
+            btnXoa.Enabled = roleform.Xoa;
+            btnsua.Enabled = roleform.Sua;
+            btnin.Enabled = roleform.Inan;
+            btnnhap.Enabled = roleform.Nhap;
+            btnxuat.Enabled = roleform.Xuat;
+        }
+
         private void BtnXoa_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             Object id = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Id");
-            
-            var row = nhansuBus.Xoanhansu(int.Parse(id.ToString()),gridView1) ;
+
+            var row = nhansuBus.Xoanhansu(int.Parse(id.ToString()), gridView1);
             if (row > 0)
             {
                 gridView1.DeleteRow(gridView1.FocusedRowHandle);
@@ -100,7 +101,7 @@ namespace DACK.GUI
 
 
             };
-            Themsuanguoidung themsuanhansu = new Themsuanguoidung(nhansu,Idmh);
+            Themsuanguoidung themsuanhansu = new Themsuanguoidung(nhansu, Idmh);
             themsuanhansu.Show();
             themsuanhansu.khicapnhat += Themsuanhansu_khicapnhat;
         }
@@ -112,7 +113,7 @@ namespace DACK.GUI
 
         private void Btnthem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Themsuanguoidung themsuanhansu = new Themsuanguoidung(Role,Idmh);
+            Themsuanguoidung themsuanhansu = new Themsuanguoidung(Role, Idmh);
             themsuanhansu.Show();
             themsuanhansu.khicapnhat += Themsuanhansu_khicapnhat;
         }

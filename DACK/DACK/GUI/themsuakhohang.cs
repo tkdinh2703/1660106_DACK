@@ -22,7 +22,8 @@ namespace DACK.GUI
         public themsuakhohang()
         {
             InitializeComponent();
-            btnluu.Text = "Thêm kho hàng";
+            btnluu.Text = "Thêm ";
+            this.Text = "Thêm kho hàng";
         }
         public themsuakhohang(Khohang khohang)
         {
@@ -30,7 +31,8 @@ namespace DACK.GUI
             Id = khohang.Id;
             txtdiachi.Text = khohang.Diachikho;
             txtkhohang.Text = khohang.Tenkhohang;
-
+            btnluu.Text = "Cập nhật";
+            this.Text = "Cập nhật kho hàng";
         }
 
         private void Btnluu_Click(object sender, EventArgs e)

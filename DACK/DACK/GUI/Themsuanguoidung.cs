@@ -24,10 +24,11 @@ namespace DACK.GUI
         public Themsuanguoidung()
         {
             InitializeComponent();
+            this.Text = "Đăng ký";
             layoutControlItem16.ContentVisible = false;
-            btnluu.Text = "Thêm";
+            btnluu.Text = "Lưu";
            
-                cbbquyenhan.Text = "Khách Hàng";
+                cbbquyenhan.Text = "Người dùng";
                 cbbquyenhan.Enabled = false;
             
         }
@@ -38,10 +39,19 @@ namespace DACK.GUI
             this.IDmh = Idmh;
             layoutControlItem16.ContentVisible = false;
             btnluu.Text = "Thêm";
+            if (Idmh == 1)
+            {
+                this.Text = "Thêm người dùng";
+            }
+            if (Idmh == 2)
+            {
+                this.Text = "Thêm nhân sự";
+            }
         }
         public Themsuanguoidung(Nhansu nhansu, string matkhau)
         {
             InitializeComponent();
+            this.Text = "Cập nhật thông tin";
             btnluu.Text = "Cập nhật";
             Id = nhansu.Id;
             btnluu.Enabled = false;
@@ -66,18 +76,7 @@ namespace DACK.GUI
             txttaikhoan.Enabled = false;
             txtsodeinthoai.Text = nhansu.Sodienthoai.ToString();
             txtsodeinthoai.Enabled = false;
-            if (nhansu.IdQuyen == 1)
-            {
-                cbbquyenhan.Text = "Khách Hàng";
-            }
-            if (nhansu.IdQuyen == 2)
-            {
-                cbbquyenhan.Text = "Nhân Viên";
-            }
-            if (nhansu.IdQuyen == 3)
-            {
-                cbbquyenhan.Text = "Quản Lý";
-            }
+            
             if (nhansu.Gioitinh == "Nam")
             {
                 rdonam.Checked = true;
@@ -88,15 +87,15 @@ namespace DACK.GUI
             }
             if (nhansu.IdQuyen == 1)
             {
-                cbbquyenhan.Text = "Khách Hàng";
+                cbbquyenhan.Text = "Người dùng";
             }
             if (nhansu.IdQuyen == 2)
             {
-                cbbquyenhan.Text = "Nhân Viên";
+                cbbquyenhan.Text = "Nhân viên";
             }
             if (nhansu.IdQuyen == 3)
             {
-                cbbquyenhan.Text = "Quản Lý";
+                cbbquyenhan.Text = "Admin";
             }          
             rdonam.Enabled = false;
             rdonu.Enabled = false;
@@ -107,6 +106,7 @@ namespace DACK.GUI
         public Themsuanguoidung(Nhansu nhansu,int Idmh)
         {
             InitializeComponent();
+            this.Text = "Cập nhật thông tin";
             Role = 3;
             this.IDmh = Idmh;
             btnluu.Text="Cập nhật";
@@ -124,21 +124,21 @@ namespace DACK.GUI
             txtsodeinthoai.Text = nhansu.Sodienthoai.ToString();
             if (nhansu.IdQuyen == 1)
             {
-                cbbquyenhan.Text = "Khách Hàng";
+                cbbquyenhan.Text = "Người dùng";
             }
             if (nhansu.IdQuyen == 2)
             {
-                cbbquyenhan.Text = "Nhân Viên";
+                cbbquyenhan.Text = "Nhân viên";
             }
             if (nhansu.IdQuyen == 3)
             {
-                cbbquyenhan.Text = "Quản Lý";
+                cbbquyenhan.Text = "Admin";
             }
-            if (nhansu.Gioitinh == "nam")
+            if (nhansu.Gioitinh == "Nam")
             {
                 rdonam.Checked = true;
             }
-            if (nhansu.Gioitinh == "nữ")
+            if (nhansu.Gioitinh == "Nữ")
             {
                 rdonu.Checked = true;
             }         
@@ -178,15 +178,15 @@ namespace DACK.GUI
             Nhansu nhansu = new Nhansu();
             nhansu.Id = this.Id;
             int quyen = 0;
-            if (cbbquyenhan.Text == "Khách Hàng")
+            if (cbbquyenhan.Text == "Người dùng")
             {
                 quyen = 1;
             }
-            if (cbbquyenhan.Text == "Nhân Viên")
+            if (cbbquyenhan.Text == "Nhân viên")
             {
                 quyen = 2;
             }
-            if (cbbquyenhan.Text == "Quản Lý")
+            if (cbbquyenhan.Text == "Admin")
             {
                 quyen = 3;
             }
@@ -219,7 +219,7 @@ namespace DACK.GUI
             nhansuBUS.Laodcbbedit(cbbquyenhan, "Quyen", "TenQuyen");
             if (IDmh==1)
             {
-                cbbquyenhan.Text = "Khách Hàng";
+                cbbquyenhan.Text = "Người dùng";
                 cbbquyenhan.Enabled = false;
             }
 
@@ -243,6 +243,7 @@ namespace DACK.GUI
             txtsodeinthoai.Enabled = true;                    
             rdonam.Enabled = true;
             rdonu.Enabled = true;
+            label1.Enabled = true;
             
            // btnthaydoi.Visible = false;
         }

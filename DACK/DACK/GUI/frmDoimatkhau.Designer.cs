@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.btndong = new DevExpress.XtraEditors.SimpleButton();
+            this.btnluu = new DevExpress.XtraEditors.SimpleButton();
+            this.txtconfigmk = new DevExpress.XtraEditors.TextEdit();
+            this.txtmatkhaumoi = new DevExpress.XtraEditors.TextEdit();
+            this.txtmkcu = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.txtmkcu = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtmatkhaumoi = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtconfigmk = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnluu = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.btndong = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtconfigmk.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmatkhaumoi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmkcu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmkcu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmatkhaumoi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtconfigmk.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
@@ -76,6 +76,53 @@
             this.layoutControl1.Size = new System.Drawing.Size(457, 139);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // btndong
+            // 
+            this.btndong.Location = new System.Drawing.Point(327, 114);
+            this.btndong.Name = "btndong";
+            this.btndong.Size = new System.Drawing.Size(101, 22);
+            this.btndong.StyleController = this.layoutControl1;
+            this.btndong.TabIndex = 8;
+            this.btndong.Text = "Đóng";
+            // 
+            // btnluu
+            // 
+            this.btnluu.Location = new System.Drawing.Point(222, 114);
+            this.btnluu.Name = "btnluu";
+            this.btnluu.Size = new System.Drawing.Size(101, 22);
+            this.btnluu.StyleController = this.layoutControl1;
+            this.btnluu.TabIndex = 7;
+            this.btnluu.Text = "Xác nhận";
+            this.btnluu.Click += new System.EventHandler(this.Btnluu_Click);
+            // 
+            // txtconfigmk
+            // 
+            this.txtconfigmk.Location = new System.Drawing.Point(128, 80);
+            this.txtconfigmk.Name = "txtconfigmk";
+            this.txtconfigmk.Size = new System.Drawing.Size(300, 20);
+            this.txtconfigmk.StyleController = this.layoutControl1;
+            this.txtconfigmk.TabIndex = 6;
+            this.txtconfigmk.EditValueChanged += new System.EventHandler(this.Txtconfigmk_EditValueChanged);
+            this.txtconfigmk.Click += new System.EventHandler(this.Txtconfigmk_Click);
+            // 
+            // txtmatkhaumoi
+            // 
+            this.txtmatkhaumoi.Location = new System.Drawing.Point(128, 46);
+            this.txtmatkhaumoi.Name = "txtmatkhaumoi";
+            this.txtmatkhaumoi.Size = new System.Drawing.Size(300, 20);
+            this.txtmatkhaumoi.StyleController = this.layoutControl1;
+            this.txtmatkhaumoi.TabIndex = 5;
+            this.txtmatkhaumoi.EditValueChanged += new System.EventHandler(this.Txtmatkhaumoi_EditValueChanged);
+            this.txtmatkhaumoi.Click += new System.EventHandler(this.Txtmatkhaumoi_Click);
+            // 
+            // txtmkcu
+            // 
+            this.txtmkcu.Location = new System.Drawing.Point(128, 12);
+            this.txtmkcu.Name = "txtmkcu";
+            this.txtmkcu.Size = new System.Drawing.Size(300, 20);
+            this.txtmkcu.StyleController = this.layoutControl1;
+            this.txtmkcu.TabIndex = 4;
             // 
             // Root
             // 
@@ -103,14 +150,6 @@
             this.emptySpaceItem1.Size = new System.Drawing.Size(210, 26);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // txtmkcu
-            // 
-            this.txtmkcu.Location = new System.Drawing.Point(137, 3);
-            this.txtmkcu.Name = "txtmkcu";
-            this.txtmkcu.Size = new System.Drawing.Size(291, 20);
-            this.txtmkcu.StyleController = this.layoutControl1;
-            this.txtmkcu.TabIndex = 4;
-            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtmkcu;
@@ -120,16 +159,6 @@
             this.layoutControlItem1.Text = "Mật khẩu cũ";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(113, 13);
             // 
-            // txtmatkhaumoi
-            // 
-            this.txtmatkhaumoi.Location = new System.Drawing.Point(137, 37);
-            this.txtmatkhaumoi.Name = "txtmatkhaumoi";
-            this.txtmatkhaumoi.Size = new System.Drawing.Size(291, 20);
-            this.txtmatkhaumoi.StyleController = this.layoutControl1;
-            this.txtmatkhaumoi.TabIndex = 5;
-            this.txtmatkhaumoi.EditValueChanged += new System.EventHandler(this.Txtmatkhaumoi_EditValueChanged);
-            this.txtmatkhaumoi.Click += new System.EventHandler(this.Txtmatkhaumoi_Click);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtmatkhaumoi;
@@ -138,16 +167,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(420, 24);
             this.layoutControlItem2.Text = "mật khẩu mới";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(113, 13);
-            // 
-            // txtconfigmk
-            // 
-            this.txtconfigmk.Location = new System.Drawing.Point(137, 71);
-            this.txtconfigmk.Name = "txtconfigmk";
-            this.txtconfigmk.Size = new System.Drawing.Size(291, 20);
-            this.txtconfigmk.StyleController = this.layoutControl1;
-            this.txtconfigmk.TabIndex = 6;
-            this.txtconfigmk.EditValueChanged += new System.EventHandler(this.Txtconfigmk_EditValueChanged);
-            this.txtconfigmk.Click += new System.EventHandler(this.Txtconfigmk_Click);
             // 
             // layoutControlItem3
             // 
@@ -182,16 +201,6 @@
             this.emptySpaceItem4.Size = new System.Drawing.Size(420, 10);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnluu
-            // 
-            this.btnluu.Location = new System.Drawing.Point(222, 105);
-            this.btnluu.Name = "btnluu";
-            this.btnluu.Size = new System.Drawing.Size(101, 22);
-            this.btnluu.StyleController = this.layoutControl1;
-            this.btnluu.TabIndex = 7;
-            this.btnluu.Text = "Xác nhận";
-            this.btnluu.Click += new System.EventHandler(this.Btnluu_Click);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.btnluu;
@@ -200,15 +209,6 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(105, 26);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            // 
-            // btndong
-            // 
-            this.btndong.Location = new System.Drawing.Point(327, 105);
-            this.btndong.Name = "btndong";
-            this.btndong.Size = new System.Drawing.Size(101, 22);
-            this.btndong.StyleController = this.layoutControl1;
-            this.btndong.TabIndex = 8;
-            this.btndong.Text = "Đóng";
             // 
             // layoutControlItem5
             // 
@@ -226,16 +226,16 @@
             this.ClientSize = new System.Drawing.Size(457, 139);
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmDoimatkhau";
-            this.Text = "frmDoimatkhau";
+            this.Text = "Đổi mật khẩu";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtconfigmk.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmatkhaumoi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmkcu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmkcu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtmatkhaumoi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtconfigmk.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();

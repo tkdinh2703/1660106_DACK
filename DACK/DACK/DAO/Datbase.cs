@@ -92,11 +92,11 @@ namespace DACK.DAO
                 roleform.Email = (row[4].ToString());
                 roleform.NgayThamgia = (row[5].ToString());
                 roleform.Diachi = (row[6].ToString());
-                roleform.IdQuyen = int.Parse(row[7].ToString());
-                roleform.Gioitinh = (row[8].ToString());
-                roleform.Nganhang = (row[9].ToString());               
-                roleform.Sotk = long.Parse(row[10].ToString());              
-                roleform.Sodienthoai = int.Parse(row[11].ToString());
+                roleform.Gioitinh = row[7].ToString();
+                roleform.Nganhang = (row[8].ToString());
+                roleform.Sotk = long.Parse(row[9].ToString());               
+                roleform.Sodienthoai = int.Parse(row[10].ToString());              
+                roleform.IdQuyen = int.Parse(row[11].ToString());
                
 
             }

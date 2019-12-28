@@ -34,15 +34,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v19.2.Export, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v19.2.Extensions, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraScheduler.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraScheduler.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="PresentationCore" />
@@ -51,9 +66,14 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,6 +109,11 @@
     <Compile Include="DAO\NhasanxuatDAO.cs" />
     <Compile Include="DAO\SanphamDAO.cs" />
     <Compile Include="DAO\ThutienDAO.cs" />
+    <Compile Include="Dskhachang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dskhachang.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DTO\CTphieuthutratien.cs" />
     <Compile Include="DTO\Hoadonthutratien.cs" />
     <Compile Include="DTO\CTPhieuxuatnhaphang.cs" />
@@ -103,6 +128,12 @@
     <Compile Include="DTO\Phieunhaphang.cs" />
     <Compile Include="DTO\Phieuxuathang.cs" />
     <Compile Include="DAO\TratienDAO.cs" />
+    <Compile Include="GUI\Dsnguoidung.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Dsnguoidung.Designer.cs">
+      <DependentUpon>Dsnguoidung.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +169,12 @@
     </Compile>
     <Compile Include="GUI\frmQlkhohang.Designer.cs">
       <DependentUpon>frmQlkhohang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmQlnguoidung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmQlnguoidung.Designer.cs">
+      <DependentUpon>frmQlnguoidung.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\FrmQlnhacungcap.cs">
       <SubType>Form</SubType>
@@ -201,11 +238,11 @@
       <DependentUpon>Themsunhacungcap.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="GUI\frmQlnguoidung.cs">
+    <Compile Include="GUI\frmQlnhansu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmQlnguoidung.Designer.cs">
-      <DependentUpon>frmQlnguoidung.cs</DependentUpon>
+    <Compile Include="GUI\frmQlnhansu.Designer.cs">
+      <DependentUpon>frmQlnhansu.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GUI\frmQlsanpham.cs">
@@ -222,6 +259,9 @@
     <Compile Include="GUI\Themsuasanpham.Designer.cs">
       <DependentUpon>Themsuasanpham.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\Dsnguoidung.resx">
+      <DependentUpon>Dsnguoidung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +280,9 @@
     <EmbeddedResource Include="GUI\frmQlkhohang.resx">
       <DependentUpon>frmQlkhohang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmQlnguoidung.resx">
+      <DependentUpon>frmQlnguoidung.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmQlnhacungcap.resx">
       <DependentUpon>FrmQlnhacungcap.cs</DependentUpon>
     </EmbeddedResource>
@@ -252,8 +295,8 @@
     <EmbeddedResource Include="GUI\frmTrangchu.resx">
       <DependentUpon>frmTrangchu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmQlnguoidung.resx">
-      <DependentUpon>frmQlnguoidung.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\frmQlnhansu.resx">
+      <DependentUpon>frmQlnhansu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmTratien.resx">
       <DependentUpon>frmTratien.cs</DependentUpon>
@@ -290,6 +333,17 @@
     <EmbeddedResource Include="GUI\Themsuasanpham.resx">
       <DependentUpon>Themsuasanpham.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Dskhachang.xsc">
+      <DependentUpon>Dskhachang.xsd</DependentUpon>
+    </None>
+    <None Include="Dskhachang.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dskhachang.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dskhachang.xss">
+      <DependentUpon>Dskhachang.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

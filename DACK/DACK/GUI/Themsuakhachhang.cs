@@ -23,10 +23,12 @@ namespace DACK.GUI
         {
             InitializeComponent();
             btnluu.Text = "Thêm";
+            this.Text = "Thêm khách hàng";
         }
         public Themsuakhachhang(Khachhang khachhang )
         {
             InitializeComponent();
+            this.Text = "Cập nhật khách hàng";
             Id = khachhang.Id;
             txtdiachi.Text = khachhang.Diachi;
             txtemail.Text = khachhang.Email;

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DACK.BUS;
 using DACK.DTO;
 using DACK.DAO;
+using DevExpress.XtraReports.UI;
 
 namespace DACK.GUI
 {
@@ -109,6 +110,15 @@ namespace DACK.GUI
         private void GridControl1_Click(object sender, EventArgs e)
         {
 
+        }
+        BanhangBUS banhangBUS = new BanhangBUS();
+        private void Btnin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Dskhachang dsnguoidung = new Dskhachang();
+            List<Khachhang> lstkachchang = banhangBUS.ChonKh();
+            dsnguoidung.DataSource = lstkachchang;
+            ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+            report.ShowPreview();
         }
     }
 }

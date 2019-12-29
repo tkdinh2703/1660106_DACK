@@ -25,6 +25,16 @@ namespace DACK.DAO
             var datatable = db.laydulieu(sql);
             return datatable;
         }
+        public List<Nhansu> Dsnhanvien()
+        {
+            string sql = string.Format("Select * from Nhansu where IdQuyen= {0} or IdQuyen = {1}", 2, 3);
+            return db.Chonnv(sql);
+        }
+        public List<Nhansu> Dsnguoidung()
+        {
+            string sql = string.Format("Select * from Nhansu where IdQuyen= {0}", 1);
+            return db.Chonnv(sql);
+        }
         public int Xoanhansu(int Id, GridView grviewsanpham)
         {
             string sql = string.Format("Delete from Nhansu Where Id={0} ", Id);

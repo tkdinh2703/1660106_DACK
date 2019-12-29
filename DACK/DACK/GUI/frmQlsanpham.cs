@@ -13,6 +13,8 @@ using DACK.DAO;
 using DACK.BUS;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraEditors.Controls;
+using DACK.GUI;
+using DevExpress.XtraReports.UI;
 
 namespace DACK
 {
@@ -176,6 +178,16 @@ namespace DACK
             //    e.Cache.DrawImage(Image.FromFile(sanphams[e.RowHandle].HinhAnh.ToString()), e.Bounds.Location);
 
             //}
+        }
+        BanhangBUS banhangBUS = new BanhangBUS();
+        private void Btnin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            Dsanpham dsnguoidung = new Dsanpham();
+            List<Sanpham> lstkachchang = banhangBUS.LIstsanpham();
+            dsnguoidung.DataSource = lstkachchang;
+            ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+            report.ShowPreview();
         }
     }
 }

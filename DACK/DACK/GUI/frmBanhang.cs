@@ -330,11 +330,7 @@ namespace DACK.GUI
 
         private void Txtghichu_TextChanged(object sender, EventArgs e)
         {
-            Dsnguoidung dsnguoidung = new Dsnguoidung();
-            lstkachchang = banhangBUS.ChonKh();
-            dsnguoidung.DataSource = lstkachchang;
-            ReportPrintTool report = new ReportPrintTool(dsnguoidung);
-            report.ShowPreview();
+            
         }
     }
 }

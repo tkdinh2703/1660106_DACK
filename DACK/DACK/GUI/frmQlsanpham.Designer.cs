@@ -33,8 +33,8 @@
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnthem = new DevExpress.XtraBars.BarButtonItem();
-            this.bntxoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnsua = new DevExpress.XtraBars.BarButtonItem();
+            this.bntxoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnin = new DevExpress.XtraBars.BarButtonItem();
             this.btnhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnxuat = new DevExpress.XtraBars.BarButtonItem();
@@ -122,16 +122,6 @@
             this.btnthem.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnthem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnthem_ItemClick);
             // 
-            // bntxoa
-            // 
-            this.bntxoa.Caption = "Xóa";
-            this.bntxoa.Id = 1;
-            this.bntxoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntxoa.ImageOptions.Image")));
-            this.bntxoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bntxoa.ImageOptions.LargeImage")));
-            this.bntxoa.Name = "bntxoa";
-            this.bntxoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.bntxoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bntxoa_ItemClick);
-            // 
             // btnsua
             // 
             this.btnsua.Caption = "Sửa";
@@ -142,6 +132,16 @@
             this.btnsua.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.btnsua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnsua_ItemClick);
             // 
+            // bntxoa
+            // 
+            this.bntxoa.Caption = "Xóa";
+            this.bntxoa.Id = 1;
+            this.bntxoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("bntxoa.ImageOptions.Image")));
+            this.bntxoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("bntxoa.ImageOptions.LargeImage")));
+            this.bntxoa.Name = "bntxoa";
+            this.bntxoa.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.bntxoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Bntxoa_ItemClick);
+            // 
             // btnin
             // 
             this.btnin.Caption = "In";
@@ -150,6 +150,7 @@
             this.btnin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnin.ImageOptions.LargeImage")));
             this.btnin.Name = "btnin";
             this.btnin.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnin_ItemClick);
             // 
             // btnhap
             // 

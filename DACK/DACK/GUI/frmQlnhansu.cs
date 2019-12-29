@@ -1,6 +1,7 @@
 ﻿using DACK.BUS;
 using DACK.DAO;
 using DACK.DTO;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -115,6 +116,15 @@ namespace DACK.GUI
             Themsuanguoidung themsuanhansu = new Themsuanguoidung(Role,Idmh);
             themsuanhansu.Show();
             themsuanhansu.khicapnhat += Themsuanhansu_khicapnhat;
+        }
+        NhansuDAO nhansuDao = new NhansuDAO();
+        private void Btnin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Dsnhanvien dsnguoidung = new Dsnhanvien();
+            List<Nhansu> lstkachchang = nhansuDao.Dsnhanvien();
+            dsnguoidung.DataSource = lstkachchang;
+            ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+            report.ShowPreview();
         }
     }
 }

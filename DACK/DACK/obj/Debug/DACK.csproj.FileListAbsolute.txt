@@ -497,3 +497,6 @@ D:\Udql_01\1660106\DACK\DACK\bin\Debug\es\DevExpress.Diagram.v19.2.Core.resource
 D:\Udql_01\1660106\DACK\DACK\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\Udql_01\1660106\DACK\DACK\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dsnguoidung.resources
+D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dskhachang.resources
+D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dsnhanvien.resources
+D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dsanpham.resources

@@ -144,6 +144,7 @@
             this.btnin.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnin.ImageOptions.LargeImage")));
             this.btnin.Name = "btnin";
             this.btnin.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.btnin.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnin_ItemClick);
             // 
             // btnhap
             // 

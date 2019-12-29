@@ -114,6 +114,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Dskhachang.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Dsnguoidung.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Dsnguoidung.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DTO\CTphieuthutratien.cs" />
     <Compile Include="DTO\Hoadonthutratien.cs" />
     <Compile Include="DTO\CTPhieuxuatnhaphang.cs" />
@@ -128,11 +133,29 @@
     <Compile Include="DTO\Phieunhaphang.cs" />
     <Compile Include="DTO\Phieuxuathang.cs" />
     <Compile Include="DAO\TratienDAO.cs" />
+    <Compile Include="GUI\Dsanpham.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Dsanpham.Designer.cs">
+      <DependentUpon>Dsanpham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dskhachang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Dskhachang.Designer.cs">
+      <DependentUpon>Dskhachang.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Dsnguoidung.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="GUI\Dsnguoidung.Designer.cs">
       <DependentUpon>Dsnguoidung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dsnhanvien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Dsnhanvien.Designer.cs">
+      <DependentUpon>Dsnhanvien.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Form1.cs">
       <SubType>Form</SubType>
@@ -259,8 +282,17 @@
     <Compile Include="GUI\Themsuasanpham.Designer.cs">
       <DependentUpon>Themsuasanpham.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\Dsanpham.resx">
+      <DependentUpon>Dsanpham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dskhachang.resx">
+      <DependentUpon>Dskhachang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Dsnguoidung.resx">
       <DependentUpon>Dsnguoidung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dsnhanvien.resx">
+      <DependentUpon>Dsnhanvien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -343,6 +375,17 @@
     </None>
     <None Include="Dskhachang.xss">
       <DependentUpon>Dskhachang.xsd</DependentUpon>
+    </None>
+    <None Include="Dsnguoidung.xsc">
+      <DependentUpon>Dsnguoidung.xsd</DependentUpon>
+    </None>
+    <None Include="Dsnguoidung.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Dsnguoidung.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Dsnguoidung.xss">
+      <DependentUpon>Dsnguoidung.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

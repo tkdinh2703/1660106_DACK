@@ -11,6 +11,7 @@ using DevExpress.XtraBars;
 using DACK.GUI;
 using DACK.BUS;
 using DACK.DTO;
+using DevExpress.XtraBars.Helpers;
 
 namespace DACK
 {
@@ -132,22 +133,18 @@ namespace DACK
         private void BtnDoimatkhau_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            Form form = Isactive(typeof(frmDoimatkhau));
-            if (form == null)
-            {
 
                 frmDoimatkhau doimatkhau = new frmDoimatkhau(Id, passwork);
-                doimatkhau.MdiParent = this;
+               
                 doimatkhau.Show();
                 doimatkhau.khicapnhat += Doimatkhau_khicapnhat;
-            }
-            else
-                form.Activate();
+           
         }
 
         private void Doimatkhau_khicapnhat()
         {
             this.Close();
+            this.khiDangXuat();
         }
 
         private void BtnThoat_ItemClick(object sender, ItemClickEventArgs e)
@@ -160,15 +157,11 @@ namespace DACK
             NhansuBUS nhansuBUS = new NhansuBUS();
             Nhansu nhansu = nhansuBUS.Laynhansu(Id);
            
-            Form form = Isactive(typeof(Themsuanguoidung));
-            if (form == null)
-            {
+           
                 Themsuanguoidung themsuanguoidung = new Themsuanguoidung(nhansu, passwork);              
                 themsuanguoidung.MdiParent = this;
                 themsuanguoidung.Show();
-            }
-            else
-                form.Activate();
+            
         }
 
         private void Btnbanhang_ItemClick(object sender, ItemClickEventArgs e)
@@ -287,8 +280,19 @@ namespace DACK
         {
             if (Role == 1) {
                 btnquanlyuser.Enabled = false;
-                
+                btnbanhang.Enabled = false;
+                btnMuahang.Enabled = false;
+                btntinhtien.Enabled = false;
+                btntratien.Enabled = false;
+
             }
+            if (Role == 2)
+            {               
+                btnbanhang.Enabled = false;              
+                btntinhtien.Enabled = false;             
+
+            }
+            SkinHelper.InitSkinPopupMenu(skin);
         }
     }
 }

@@ -404,6 +404,16 @@ namespace DACK.DAO
             conn.Close();
             return v;
         }
+        public int Laythuoctinhint(string sql)
+        {
+
+            SqlConnection conn = new SqlConnection(path);
+            conn.Open();
+            SqlCommand sqlCommand = new SqlCommand(sql, conn);
+            var v = sqlCommand.ExecuteScalar();
+            conn.Close();
+            return int.Parse(v.ToString());
+        }
         public int Demthuoctinh(string sql)
         {
 

@@ -34,7 +34,7 @@ namespace DACK.GUI
         public void Loadnhansu()
         {
 
-            gridControl1.DataSource = nhansuBus.loadnhansu(Idmh);
+            gridControl1.DataSource = nhansuDao.Lstnhansu(Idmh);
         }
         public Roleform phanquyen()
         {
@@ -89,7 +89,7 @@ namespace DACK.GUI
             {
                 Id = (int)id,
                 TenDangNhap = tenDangNhap.ToString(),
-                MatKhau = matKhau.ToString(),
+                MatKhau = nhansuDao.Laypasswork((int)id),
                 Ten = ten.ToString(),
                 Email = tmail.ToString(),
                 NgayThamgia = ngayThamgia.ToString(),

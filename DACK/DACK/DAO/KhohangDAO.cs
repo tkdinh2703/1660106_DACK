@@ -20,6 +20,7 @@ namespace DACK.DAO
             var datatable = db.laydulieu(sql);
             return datatable;
         }
+
         public int Xoankh(int Id, GridView grviewsanpham)
         {
             string sql = string.Format("Delete from Khohang Where Id={0} ", Id);
@@ -41,5 +42,6 @@ namespace DACK.DAO
             var rs = db.thesuadulieu(sql);
             return rs;
         }
+       
     }
 }

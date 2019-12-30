@@ -33,13 +33,12 @@
             this.linkdk = new DevExpress.XtraEditors.HyperlinkLabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.button1 = new System.Windows.Forms.Button();
-            this.txtPasswork = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtUser = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtPasswork = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPasswork.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,11 +47,11 @@
             this.groupControl1.Appearance.BackColor = System.Drawing.Color.Orange;
             this.groupControl1.Appearance.Options.UseBackColor = true;
             this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.groupControl1.Controls.Add(this.txtPasswork);
             this.groupControl1.Controls.Add(this.btnLogin);
             this.groupControl1.Controls.Add(this.linkdk);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.button1);
-            this.groupControl1.Controls.Add(this.txtPasswork);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.txtUser);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -100,13 +99,6 @@
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // txtPasswork
-            // 
-            this.txtPasswork.Location = new System.Drawing.Point(146, 79);
-            this.txtPasswork.Name = "txtPasswork";
-            this.txtPasswork.Size = new System.Drawing.Size(193, 20);
-            this.txtPasswork.TabIndex = 3;
-            // 
             // labelControl2
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -134,6 +126,14 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Tên Đăng Nhập";
             // 
+            // txtPasswork
+            // 
+            this.txtPasswork.Location = new System.Drawing.Point(146, 82);
+            this.txtPasswork.Name = "txtPasswork";
+            this.txtPasswork.Size = new System.Drawing.Size(193, 21);
+            this.txtPasswork.TabIndex = 8;
+            this.txtPasswork.UseSystemPasswordChar = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -144,10 +144,10 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập hệ thống";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPasswork.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtUser.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -161,9 +161,9 @@
         private DevExpress.XtraEditors.HyperlinkLabelControl linkdk;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private System.Windows.Forms.Button button1;
-        private DevExpress.XtraEditors.TextEdit txtPasswork;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SimpleButton btnLogin;
+        private System.Windows.Forms.TextBox txtPasswork;
     }
 }
 

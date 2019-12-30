@@ -49,7 +49,7 @@ namespace DACK.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm sản phẩm thành công!");
+                    MessageBox.Show("Thêm kho hàng thành công!");
                 }
                 this.Close();
             }
@@ -70,6 +70,11 @@ namespace DACK.GUI
             ncc.Diachikho = txtdiachi.Text;                         
             return ncc;
 
+        }
+
+        private void SimpleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

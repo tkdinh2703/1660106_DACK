@@ -78,5 +78,10 @@ namespace DACK.GUI
                 txtmkcu.Focus();
             }
         }
+
+        private void Btndong_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

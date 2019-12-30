@@ -65,6 +65,8 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.barLinkContainerItem1 = new DevExpress.XtraBars.BarLinkContainerItem();
+            this.skin = new DevExpress.XtraBars.BarLinkContainerItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -97,14 +99,17 @@
             this.barButtonItem2,
             this.barButtonItem4,
             this.btnnhasnaxuat,
-            this.btnkho});
+            this.btnkho,
+            this.barLinkContainerItem1,
+            this.skin});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 27;
+            this.ribbon.MaxItemId = 29;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonHethong,
             this.ribbonDanhmuc,
             this.ribbonQuanly});
+            this.ribbon.QuickToolbarItemLinks.Add(this.barLinkContainerItem1);
             this.ribbon.Size = new System.Drawing.Size(927, 158);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
@@ -240,7 +245,7 @@
             // 
             // btntinhtien
             // 
-            this.btntinhtien.Caption = "Tính tiền    ";
+            this.btntinhtien.Caption = "Thu tiền";
             this.btntinhtien.Id = 20;
             this.btntinhtien.ImageOptions.LargeImage = global::DACK.Properties.Resources.payment_icon;
             this.btntinhtien.Name = "btntinhtien";
@@ -313,7 +318,7 @@
             this.ribbonBanhang,
             this.ribbonPageGroup1});
             this.ribbonDanhmuc.Name = "ribbonDanhmuc";
-            this.ribbonDanhmuc.Text = "Danh Mục";
+            this.ribbonDanhmuc.Text = "Chức năng";
             // 
             // ribbonBanhang
             // 
@@ -362,6 +367,20 @@
             // 
             this.xtraTabbedMdiManager1.MdiParent = this;
             // 
+            // barLinkContainerItem1
+            // 
+            this.barLinkContainerItem1.Caption = "barLinkContainerItem1";
+            this.barLinkContainerItem1.Id = 27;
+            this.barLinkContainerItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.skin)});
+            this.barLinkContainerItem1.Name = "barLinkContainerItem1";
+            // 
+            // skin
+            // 
+            this.skin.Caption = "Giao diện";
+            this.skin.Id = 28;
+            this.skin.Name = "skin";
+            // 
             // frmTrangchu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -373,6 +392,7 @@
             this.IsMdiContainer = true;
             this.Name = "frmTrangchu";
             this.Ribbon = this.ribbon;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "Trang chủ";
             this.Load += new System.EventHandler(this.FrmTrangchu_Load);
@@ -420,5 +440,7 @@
         private DevExpress.XtraBars.BarButtonItem btnnhasnaxuat;
         private DevExpress.XtraBars.BarButtonItem btnkho;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.BarLinkContainerItem barLinkContainerItem1;
+        private DevExpress.XtraBars.BarLinkContainerItem skin;
     }
 }

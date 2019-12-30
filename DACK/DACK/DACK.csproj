@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DevExpress.BonusSkins.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.CodeParser.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v19.2, Version=19.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -230,6 +231,18 @@
     <Compile Include="GUI\frmTratien.Designer.cs">
       <DependentUpon>frmTratien.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Inhoadonthuchi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Inhoadonthuchi.Designer.cs">
+      <DependentUpon>Inhoadonthuchi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inphieuthuchi.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Inphieuthuchi.Designer.cs">
+      <DependentUpon>Inphieuthuchi.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Themsuakhachhang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +272,11 @@
     </Compile>
     <Compile Include="GUI\Themsunhacungcap.Designer.cs">
       <DependentUpon>Themsunhacungcap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Phieuthuchi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Phieuthuchi.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="GUI\frmQlnhansu.cs">
@@ -333,6 +351,12 @@
     <EmbeddedResource Include="GUI\frmTratien.resx">
       <DependentUpon>frmTratien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Inhoadonthuchi.resx">
+      <DependentUpon>Inhoadonthuchi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Inphieuthuchi.resx">
+      <DependentUpon>Inphieuthuchi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Themsuakhachhang.resx">
       <DependentUpon>Themsuakhachhang.cs</DependentUpon>
     </EmbeddedResource>
@@ -386,6 +410,17 @@
     </None>
     <None Include="Dsnguoidung.xss">
       <DependentUpon>Dsnguoidung.xsd</DependentUpon>
+    </None>
+    <None Include="Phieuthuchi.xsc">
+      <DependentUpon>Phieuthuchi.xsd</DependentUpon>
+    </None>
+    <None Include="Phieuthuchi.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Phieuthuchi.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Phieuthuchi.xss">
+      <DependentUpon>Phieuthuchi.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

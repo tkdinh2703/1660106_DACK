@@ -46,6 +46,7 @@ namespace DACK.GUI
             int sohd = banhangBUS.Demthuoctinh();
             txtmadonhang.Text = "BHPT0" + (sohd + 1);
             cbbnhanvien.EditValue = ID; ;
+            cbbKho.EditValue = 1;
             txtngaylap.Text = DateTime.Now.ToString();      
             EditorButton editorButton = new EditorButton(ButtonPredefines.Plus);
             cbbChonKh.Properties.Buttons.Add(editorButton);          
@@ -279,11 +280,42 @@ namespace DACK.GUI
 
         private void Btnthnahtoan_Click(object sender, EventArgs e)
         {
+            
+            
+
+        }
+        public long tongtien()
+        {
+            long tongtien = 0;
+            for (int i = 0; i < lstluoixuathang.Count; i++)
+            {
+                tongtien +=lstluoixuathang[i].Tongthanhtoan;
+            }
+            return tongtien;
+        }
+        private void Cbbnhanvien_EditValueChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Txtghichu_TextChanged(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void Btnthem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Btnthnahtoan_Click_1(object sender, EventArgs e)
+        {
             Phieuxuathang phieuxuathang = new Phieuxuathang();
             phieuxuathang.Madonhang = txtmadonhang.Text;
             phieuxuathang.Makho = int.Parse(cbbKho.EditValue.ToString());
             phieuxuathang.Makh = int.Parse(txtmakh.Text);
-            phieuxuathang.Manv= int.Parse(cbbnhanvien.EditValue.ToString());
+            phieuxuathang.Manv = int.Parse(cbbnhanvien.EditValue.ToString());
             phieuxuathang.Ngaylap = txtngaylap.Text;
             phieuxuathang.Tongtien = tongtien();
             banhangBUS.Insertphieuxuathang(phieuxuathang);
@@ -303,34 +335,33 @@ namespace DACK.GUI
                 soluong = sanpham.SoLuong - lstluoixuathang[i].Soluong;
                 banhangBUS.UpdateSoluonghang(soluong, lstluoixuathang[i].Idsp);
             }
-            
+            if (checkin.Checked == true)
+            {
+                Inphieuthuchi dsnguoidung = new Inphieuthuchi();
+                dsnguoidung.DataSource = lstluoixuathang;
+                ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+                dsnguoidung.txttenkhachang.Text = cbbChonKh.Text;
+                dsnguoidung.txtkhooxuat.Text = cbbKho.Text;
+                dsnguoidung.txtmaphieuthu.Text = txtmadonhang.Text;
+                dsnguoidung.txtngaylap.Text = txtngaylap.Text;
+                dsnguoidung.txtsodienthoai.Text = txtsodienthoai.Text;
+                dsnguoidung.txttonggt.Text = tongtien().ToString();
+                report.ShowPreview();
 
-            for (int i= gridView1.RowCount-1; i>=0;i--)
+            }
+        }
+
+        private void Btnthem_Click_1(object sender, EventArgs e)
+        {
+
+            for (int i = gridView1.RowCount - 1; i >= 0; i--)
             {
                 gridView1.DeleteRow(i);
             }
             lstluoixuathang.Clear();
             LoaditemID();
             int sohd = banhangBUS.Demthuoctinh();
-            txtmadonhang.Text = "BHPT0" + (sohd+1);
-        }
-        public long tongtien()
-        {
-            long tongtien = 0;
-            for (int i = 0; i < lstluoixuathang.Count; i++)
-            {
-                tongtien +=lstluoixuathang[i].Tongthanhtoan;
-            }
-            return tongtien;
-        }
-        private void Cbbnhanvien_EditValueChanged(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void Txtghichu_TextChanged(object sender, EventArgs e)
-        {
-            
+            txtmadonhang.Text = "BHPT0" + (sohd + 1);
         }
     }
 }

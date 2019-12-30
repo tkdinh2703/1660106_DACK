@@ -500,3 +500,6 @@ D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dsnguoidung.resources
 D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dskhachang.resources
 D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dsnhanvien.resources
 D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Dsanpham.resources
+D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Inphieuthuchi.resources
+D:\Udql_01\1660106\DACK\DACK\obj\Debug\DACK.GUI.Inhoadonthuchi.resources
+D:\Udql_01\1660106\DACK\DACK\bin\Debug\DevExpress.BonusSkins.v19.2.dll

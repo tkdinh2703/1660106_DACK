@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DACK.BUS;
 using DACK.DTO;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraReports.UI;
 
 namespace DACK.GUI
 {
@@ -171,15 +172,45 @@ namespace DACK.GUI
             Hoadonthutratien hoadonthutratien = laythongtinhoadonchi();
             tratienBUS.themhoadonchi(hoadonthutratien);
             CThoadonchi();
-
-            for (int i = gridView1.RowCount - 1; i >= 0; i--)
+            if (checkin.Checked == true)
             {
-                gridView1.DeleteRow(i);
+                Inhoadonthuchi dsnguoidung = new Inhoadonthuchi();
+                dsnguoidung.DataSource = luoithutratiens;
+                ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+                dsnguoidung.txtmahoadon.Text = txtmahoadonchi.Text;
+                dsnguoidung.txtname.Text = cbbNcc.Text;
+                dsnguoidung.txtngay.Text = txtngaylap.Text;
+                dsnguoidung.txtsodienthoai.Text = txtsodienthoai.Text;
+                dsnguoidung.txttienconno.Text = tongTienno().ToString();
+                dsnguoidung.txttongtientra.Text = tongTientra().ToString();
+                dsnguoidung.lbltieude.Text = "Hóa đơn trả tiền";
+                dsnguoidung.lblthutratien.Text = "Người thanh toán";
+                dsnguoidung.txttienctytra.Text = "Tiền công ty trả trước:";
+                dsnguoidung.txtctyconno.Text = "Tiền công ty trả còn nợ";
+                dsnguoidung.lblbt3.Text = "Nhà cung cấp";
+                dsnguoidung.lblname.Text = "Nhà cung cấp:";
+                report.ShowPreview();
+
             }
-            luoithutratiens.Clear();
-            LoaditemID(int.Parse(txtmancc.Text));
-            int sohd = tratienBUS.Demthuoctinh();
-            txtmahoadonchi.Text = "PCHI00" + (sohd + 1);
+
+        }
+        public long tongTientra()
+        {
+            long tongtien = 0;
+            for (int i = 0; i < luoithutratiens.Count; i++)
+            {
+                tongtien += luoithutratiens[i].Tientra;
+            }
+            return tongtien;
+        }
+        public long tongTienno()
+        {
+            long tongtien = 0;
+            for (int i = 0; i < luoithutratiens.Count; i++)
+            {
+                tongtien += luoithutratiens[i].Tienno;
+            }
+            return tongtien;
         }
         public void CThoadonchi()
         {
@@ -205,6 +236,18 @@ namespace DACK.GUI
             hoadonthutratien.Ngaylap = txtngaylap.Text;
             hoadonthutratien.Manv = int.Parse(cbbnhanvien.EditValue.ToString());
             return hoadonthutratien;
+        }
+
+        private void SimpleButton2_Click(object sender, EventArgs e)
+        {
+            for (int i = gridView1.RowCount - 1; i >= 0; i--)
+            {
+                gridView1.DeleteRow(i);
+            }
+            luoithutratiens.Clear();
+            LoaditemID(int.Parse(txtmancc.Text));
+            int sohd = tratienBUS.Demthuoctinh();
+            txtmahoadonchi.Text = "PCHI00" + (sohd + 1);
         }
     }
 }

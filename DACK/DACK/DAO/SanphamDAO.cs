@@ -56,5 +56,15 @@ namespace DACK.DAO
             string sql = string.Format("Select HinhAnh from Sanphams where Id='{0}' ", Id);
             return db.Laythuoctinh(sql).ToString();
         }
+        public int laykhohang(string maphieuxuathang)
+        {
+            string sql = string.Format("Select Id from Khohang where Tenkhohang=N'{0}' ", maphieuxuathang);
+            return db.Laythuoctinhint(sql);
+        }
+        public int layncc(string maphieuxuathang)
+        {
+            string sql = string.Format("Select Id from Nhacungcap where TenNCC=N'{0}' ", maphieuxuathang);
+            return db.Laythuoctinhint(sql);
+        }
     }
 }

@@ -129,16 +129,18 @@
             // 
             // btndong
             // 
+            this.btndong.ImageOptions.ImageUri.Uri = "Close";
             this.btndong.Location = new System.Drawing.Point(697, 143);
             this.btndong.Name = "btndong";
-            this.btndong.Size = new System.Drawing.Size(74, 22);
+            this.btndong.Size = new System.Drawing.Size(74, 36);
             this.btndong.StyleController = this.layoutControl1;
             this.btndong.TabIndex = 15;
             this.btndong.Text = "Đóng";
+            this.btndong.Click += new System.EventHandler(this.Btndong_Click);
             // 
             // btnluu
             // 
-            this.btnluu.ImageOptions.ImageUri.Uri = "Add;Size16x16";
+            this.btnluu.ImageOptions.ImageUri.Uri = "SaveAndNew;Size16x16";
             this.btnluu.Location = new System.Drawing.Point(584, 143);
             this.btnluu.Name = "btnluu";
             this.btnluu.Size = new System.Drawing.Size(109, 36);
@@ -422,6 +424,7 @@
             this.ClientSize = new System.Drawing.Size(800, 182);
             this.Controls.Add(this.layoutControl1);
             this.Name = "Themsuakhachhang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Themsuakhachhang";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);

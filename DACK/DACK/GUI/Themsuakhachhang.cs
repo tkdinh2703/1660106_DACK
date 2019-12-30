@@ -61,7 +61,7 @@ namespace DACK.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm thành viên thành công!");
+                    MessageBox.Show("Thêm khách hàng thành công!");
                 }
                 this.Close();
             }
@@ -89,6 +89,11 @@ namespace DACK.GUI
                 khachhang.Gioitinh = "Nữ";
             }
             return khachhang;
+        }
+
+        private void Btndong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

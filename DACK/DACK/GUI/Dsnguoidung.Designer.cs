@@ -63,6 +63,7 @@
             this.Gioitinh = new DevExpress.XtraReports.UI.CalculatedField();
             this.Sodienthoai = new DevExpress.XtraReports.UI.CalculatedField();
             this.IdQuyen = new DevExpress.XtraReports.UI.CalculatedField();
+            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -70,9 +71,6 @@
             // 
             // TopMargin
             // 
-            this.TopMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrTable2,
-            this.xrLabel1});
             this.TopMargin.HeightF = 112.5F;
             this.TopMargin.Name = "TopMargin";
             // 
@@ -81,7 +79,7 @@
             this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 75F);
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(3.178914E-05F, 75F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -164,7 +162,7 @@
             // xrLabel1
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Arial", 19.75F, System.Drawing.FontStyle.Bold);
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(121.875F, 21.83332F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(162.5F, 10.00001F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -321,12 +319,20 @@
             // 
             this.IdQuyen.Name = "IdQuyen";
             // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable2,
+            this.xrLabel1});
+            this.ReportHeader.Name = "ReportHeader";
+            // 
             // Dsnguoidung
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
             this.TopMargin,
             this.BottomMargin,
-            this.Detail});
+            this.Detail,
+            this.ReportHeader});
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.Id,
             this.TenDangNhap,
@@ -388,5 +394,6 @@
         private DevExpress.XtraReports.UI.CalculatedField Gioitinh;
         private DevExpress.XtraReports.UI.CalculatedField Sodienthoai;
         private DevExpress.XtraReports.UI.CalculatedField IdQuyen;
+        private DevExpress.XtraReports.UI.ReportHeaderBand ReportHeader;
     }
 }

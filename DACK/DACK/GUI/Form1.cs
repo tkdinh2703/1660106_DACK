@@ -21,37 +21,6 @@ namespace DACK
             InitializeComponent();
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
-        {
-            
-            string username = txtUser.Text;
-            string passwork = txtPasswork.Text;
-            if (username.Length != 0 && passwork.Length != 0)
-            {
-
-                var v = loginDAO.Login(username, passwork);
-                if (v != null)
-                {
-                    int role = (int)v;
-                    //MessageBox.Show("" + role);
-                    frmTrangchu frmmanin = new frmTrangchu(role,ID(username), passwork); 
-                    frmmanin.Show();
-                    frmmanin.khiDangXuat += XuLyDangXuat;
-                    frmmanin.khiketthuc += Frmmanin_khiketthuc;
-
-                    this.Visible = false;
-                }
-                else
-                {
-                    MessageBox.Show("Đăng nhập không thành công Kiểm tra lại thông tin đăng nhập ");
-                }
-               
-            }
-            else {
-                MessageBox.Show("Thông tin đăng nhập không được bỏ trống");
-            }
-        }
-
         private void Frmmanin_khiketthuc()
         {
             this.Close();
@@ -77,6 +46,20 @@ namespace DACK
         }
 
         private void BtnLogin_MouseEnter(object sender, EventArgs e)
+        {
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLogin_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
         {
             string username = txtUser.Text;
             string passwork = txtPasswork.Text;

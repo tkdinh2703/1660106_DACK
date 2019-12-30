@@ -23,6 +23,7 @@ namespace DACK.GUI
         {
             InitializeComponent();
             btnluu.Text = "Thêm nhà sản xuất";
+            this.Text = "Thêm";
         }
         public themsuanhasanxxuat(Nhasanxuat nhasanxuat)
         {
@@ -31,6 +32,8 @@ namespace DACK.GUI
             txtquocgia.Text = nhasanxuat.Quocgia;
             txttebnsx.Text = nhasanxuat.TenNSX;
             txtwebsite.Text = nhasanxuat.Website;
+            btnluu.Text = "Thêm";
+            this.Text = "Cập nhật nhà sản xuất";
         }
 
         private void Btnluu_Click(object sender, EventArgs e)
@@ -47,7 +50,7 @@ namespace DACK.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm sản phẩm thành công!");
+                    MessageBox.Show("Thêm nhà sản xuất thành công!");
                 }
                 this.Close();
             }
@@ -67,6 +70,11 @@ namespace DACK.GUI
             ncc.Website = txtwebsite.Text;          
             return ncc;
 
+        }
+
+        private void SimpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

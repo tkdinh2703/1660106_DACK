@@ -12,6 +12,7 @@ using DevExpress.XtraLayout;
 using DACK.DTO;
 using DACK.BUS;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraReports.UI;
 
 namespace DACK.GUI
 {
@@ -172,16 +173,23 @@ namespace DACK.GUI
             Hoadonthutratien hoadonthutratien = laythongtinhoadonthu();
             thutienBUS.themhoadonthu(hoadonthutratien);
             CThoadonthu();
-
-            for (int i = gridView1.RowCount - 1; i >= 0; i--)
+            if (checkin.Checked == true)
             {
-                gridView1.DeleteRow(i);
+                Inhoadonthuchi dsnguoidung = new Inhoadonthuchi();
+                dsnguoidung.DataSource = luoithutratiens;
+                ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+                dsnguoidung.txtmahoadon.Text = txtmahoadonthu.Text;
+                dsnguoidung.txtname.Text = cbbkhachhang.Text;
+                dsnguoidung.txtngay.Text = txtngaylap.Text;
+                dsnguoidung.txtsodienthoai.Text = txtsodienthoai.Text;
+                dsnguoidung.txttienconno.Text = tongTienno().ToString();
+                dsnguoidung.txttongtientra.Text = tongTientra().ToString();
+                report.ShowPreview();
+
             }
-            luoithutratiens.Clear();
-            LoaditemID(int.Parse(txtmakh.Text));
-            int sohd = thutienBUS.Demthuoctinh();
-            txtmahoadonthu.Text = "PTHU00" + (sohd + 1);
+
         }
+
         public void CThoadonthu()
         {
             var id = thutienBUS.IDhoadonthu(txtmahoadonthu.Text);
@@ -198,6 +206,24 @@ namespace DACK.GUI
             }
             
         }
+        public long tongTientra()
+        {
+            long tongtien = 0;
+            for (int i = 0; i < luoithutratiens.Count; i++)
+            {
+                tongtien += luoithutratiens[i].Tientra;
+            }
+            return tongtien;
+        }
+        public long tongTienno()
+        {
+            long tongtien = 0;
+            for (int i = 0; i < luoithutratiens.Count; i++)
+            {
+                tongtien += luoithutratiens[i].Tienno;
+            }
+            return tongtien;
+        }
         public Hoadonthutratien laythongtinhoadonthu()
         {
             Hoadonthutratien hoadonthutratien = new Hoadonthutratien();
@@ -206,6 +232,19 @@ namespace DACK.GUI
             hoadonthutratien.Ngaylap = txtngaylap.Text;
             hoadonthutratien.Manv = int.Parse(cbbnhanvienlap.EditValue.ToString());
             return hoadonthutratien;
+        }
+
+        private void Btnthemmoi_Click(object sender, EventArgs e)
+        {
+
+            for (int i = gridView1.RowCount - 1; i >= 0; i--)
+            {
+                gridView1.DeleteRow(i);
+            }
+            luoithutratiens.Clear();
+            LoaditemID(int.Parse(txtmakh.Text));
+            int sohd = thutienBUS.Demthuoctinh();
+            txtmahoadonthu.Text = "PTHU00" + (sohd + 1);
         }
     }
 }

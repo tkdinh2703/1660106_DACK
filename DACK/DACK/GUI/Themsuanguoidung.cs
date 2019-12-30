@@ -27,7 +27,7 @@ namespace DACK.GUI
             this.Text = "Đăng ký";
             layoutControlItem16.ContentVisible = false;
             btnluu.Text = "Lưu";
-           
+            txtngaythamhia.Text = DateTime.Now.ToString();
                 cbbquyenhan.Text = "Người dùng";
                 cbbquyenhan.Enabled = false;
             
@@ -37,6 +37,7 @@ namespace DACK.GUI
             InitializeComponent();
             this.Role = Role;
             this.IDmh = Idmh;
+            txtngaythamhia.Text = DateTime.Now.ToString();
             layoutControlItem16.ContentVisible = false;
             btnluu.Text = "Thêm";
             if (Idmh == 1)

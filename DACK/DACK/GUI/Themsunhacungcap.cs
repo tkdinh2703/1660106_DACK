@@ -23,6 +23,7 @@ namespace DACK.GUI
         {
             InitializeComponent();
             btnluu.Text = "Thêm nhà cung cấp";
+            this.Text = "Thêm ";
         }
         public Themsunhacungcap(Nhacungcap nhacungcap)
         {
@@ -32,7 +33,8 @@ namespace DACK.GUI
             txtncc.Text = nhacungcap.TenNCC;
             txtwebsitencc.Text = nhacungcap.Website;
             txtsdtncc.Text = nhacungcap.DienThoai.ToString();
-            btnluu.Text = "Cập nhật sản phẩm";
+            btnluu.Text = "Cập nhật ";
+            this.Text = "Cập nhật ";
         }
 
         private void Btnluu_Click(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace DACK.GUI
                 }
                 else
                 {
-                    MessageBox.Show("Thêm sản phẩm thành công!");
+                    MessageBox.Show("Thêm nhà cung cấp thành công!");
                 }
                 this.Close();
             }
@@ -67,6 +69,11 @@ namespace DACK.GUI
             ncc.Website = txtwebsitencc.Text;          
             return ncc;
 
+        }
+
+        private void Btndong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

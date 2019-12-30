@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DACK.DTO;
 using DACK.BUS;
 using DevExpress.XtraEditors.Controls;
+using DevExpress.XtraReports.UI;
 
 namespace DACK.GUI
 {
@@ -109,6 +110,7 @@ namespace DACK.GUI
             int sohd = muahangBUS.Demthuoctinh();
             txtmaphieuchi.Text = "BHPC0" + (sohd + 1);
             txtngaylap.Text = DateTime.Now.ToString();
+
         }
 
         private void CbbNCC_EditValueChanged(object sender, EventArgs e)
@@ -276,8 +278,32 @@ namespace DACK.GUI
                 soluong = sanpham.SoLuong + lstphieuxh[i].Soluong;
                 muahangBUS.UpdateSoluonghang(soluong, lstphieuxh[i].Idsp);
             }
+            if (checkin.Checked == true)
+            {
+                Inphieuthuchi dsnguoidung = new Inphieuthuchi();
+                dsnguoidung.DataSource = lstphieuxh;
+                ReportPrintTool report = new ReportPrintTool(dsnguoidung);
+                dsnguoidung.txttenkhachang.Text = cbbNCC.Text;
+                dsnguoidung.txtkhooxuat.Text = cbbkhonhap.Text;
+                dsnguoidung.txtmaphieuthu.Text = txtmaphieuchi.Text;
+                dsnguoidung.txtngaylap.Text = txtngaylap.Text;
+                dsnguoidung.txtsodienthoai.Text = txtdienthoai.Text;
+                dsnguoidung.txttonggt.Text = tongtien().ToString();
+                dsnguoidung.lbltieude.Text = "Phiếu nhập hàng";
+                dsnguoidung.labelname.Text = "Nhà cung cấp:";
+                dsnguoidung.labelkhoxuatnhap.Text="Kho nhập:";
+                dsnguoidung.labelnhanvienkyten.Text = "Nhân viên nhập hàng";
+                dsnguoidung.labeltonghd.Text = "Tổng giá trị phiếu chi: thành tiền+thuế GTGT";
+                report.ShowPreview();
+
+            }
 
 
+            
+        }
+
+        private void Btnthem_Click(object sender, EventArgs e)
+        {
             for (int i = gridView1.RowCount - 1; i >= 0; i--)
             {
                 gridView1.DeleteRow(i);

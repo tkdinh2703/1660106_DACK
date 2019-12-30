@@ -13,6 +13,9 @@ using System.IO;
 using System.Drawing.Imaging;
 using DACK.DAO;
 using DACK.BUS;
+using DevExpress.XtraEditors.Controls;
+using DACK.GUI;
+using DACK.DTO;
 
 namespace DACK
 {
@@ -28,6 +31,7 @@ namespace DACK
         {
             InitializeComponent();
             btnLuu.Text = "Thêm sản phẩm";
+            this.Text = "Thêm sản phẩm ";
         }
         public Themsuasanpham(int id)
         {
@@ -38,6 +42,7 @@ namespace DACK
         {
             InitializeComponent();
             btnLuu.Text = "Cập nhật sản phẩm";
+            this.Text = "Cập nhật sản phẩm";
             Id = s.Id;
             txtTenhang.Text = s.TenHang;
             txtngaysx.Text = s.NgaySanXuat;
@@ -46,32 +51,97 @@ namespace DACK
             txtGiabanle.Value = s.GiaBan;
             txtGiabansi.Value = s.VAT;
             txtGiamua.Value = s.GiaMua;
-            cbbkhohang.Text = s.Khohang;
+            cbbkhohang.EditValue = laykhohang(s.Khohang);
             cbbLoaihang.Text = s.LoaiHang;
-            cbbNhacungcap.Text = s.NhaCungCap;
+            cbbNhacungcap.EditValue = layncc(s.NhaCungCap);
             cbbthuonghieu.Text = s.Thuonghieu;
             pictureBox1.ImageLocation = s.HinhAnh.ToString();
             srcAnh = s.HinhAnh.ToString();
             
         }
+        SanphamDAO sanphamDAO = new SanphamDAO();
+        public int laykhohang(string value)
+        {
+
+            int id = sanphamDAO.laykhohang(value);
+            return id;
+        }
+        public int layncc(string value)
+        {
+            int id = sanphamDAO.layncc(value);
+            return id;
+            
+        }
 
         private void Themsuasanpham_Load(object sender, EventArgs e)
         {
-            Loadkhoahang(cbbkhohang);
+            Loadkhoahang();
             Loadlaoihang(cbbLoaihang);
-            Loadnhacungcap(cbbNhacungcap);
+            Loadnhacungcap();
             Loadthuonghieu(cbbthuonghieu);
-            cbbkhohang.Properties.Buttons.Add(new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK) );
+
+            EditorButton editorButton = new EditorButton(ButtonPredefines.Plus);
+            cbbkhohang.Properties.Buttons.Add(editorButton);
+            editorButton.Click += EditorButton_Click;
+
+            EditorButton editorButton2 = new EditorButton(ButtonPredefines.Plus);
+            cbbNhacungcap.Properties.Buttons.Add(editorButton2);
+            editorButton2.Click += EditorButton2_Click; 
+
         }
+
+        private void EditorButton2_Click(object sender, EventArgs e)
+        {
+            Themsunhacungcap themsunhacungcap = new Themsunhacungcap();
+            themsunhacungcap.Show();
+            themsunhacungcap.khicapnhat += Themsunhacungcap_khicapnhat;
+        }
+
+        private void Themsunhacungcap_khicapnhat()
+        {
+            List<Nhacungcap> lstNCC = muahangBUS.ChonNCC();
+            cbbNhacungcap.Properties.DataSource = lstNCC;
+            cbbNhacungcap.Properties.DisplayMember = "TenNCC";
+            cbbNhacungcap.Properties.ValueMember = "Id";
+            cbbNhacungcap.Properties.PopupResizeMode = ResizeMode.FrameResize;
+            cbbNhacungcap.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+            cbbNhacungcap.EditValue = lstNCC[lstNCC.Count - 1].Id;
+        }
+
+        private void EditorButton_Click(object sender, EventArgs e)
+        {
+            themsuakhohang qlkhohang = new themsuakhohang();
+            qlkhohang.Show();
+            qlkhohang.khicapnhat += Qlkhohang_khicapnhat;
+        }
+
+        private void Qlkhohang_khicapnhat()
+        {
+            List<Khohang> lstkhohang = banhangBUS.ChonKhohang();
+            cbbkhohang.Properties.DataSource = lstkhohang;
+            cbbkhohang.Properties.DisplayMember = "Tenkhohang";
+            cbbkhohang.Properties.ValueMember = "Id";
+            cbbkhohang.Properties.PopupResizeMode = ResizeMode.FrameResize;
+            cbbkhohang.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
+            cbbkhohang.EditValue = lstkhohang[lstkhohang.Count - 1].Id;
+        }
+
         public void Loadlaoihang(ComboBoxEdit comboBoxEdit)
         {
             
             sanphamBus.Laodcbbedit(comboBoxEdit, "Loaihang", "TenLHang");
         }
-        public void Loadkhoahang(ComboBoxEdit comboBoxEdit) {
+        BanhangBUS banhangBUS = new BanhangBUS();
+        List<Khohang> lstkhohang;
+        public void Loadkhoahang() {
 
-            
-            sanphamBus.Laodcbbedit(comboBoxEdit, "Khohang", "Tenkhohang");
+
+            lstkhohang = banhangBUS.ChonKhohang();
+            cbbkhohang.Properties.DataSource = lstkhohang;
+            cbbkhohang.Properties.DisplayMember = "Tenkhohang";
+            cbbkhohang.Properties.ValueMember = "Id";
+            cbbkhohang.Properties.PopupResizeMode = ResizeMode.FrameResize;
+            cbbkhohang.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }
 
         public void Loadthuonghieu(ComboBoxEdit comboBoxEdit)
@@ -79,10 +149,16 @@ namespace DACK
            
             sanphamBus.Laodcbbedit(comboBoxEdit, "Thuonghieu", "TenNSX");
         }
-
-        public void Loadnhacungcap(ComboBoxEdit comboBoxEdit)
-        {   
-            sanphamBus.Laodcbbedit(comboBoxEdit, "Nhacungcap", "TenNCC");
+        List<Nhacungcap> lstNCC;
+        MuahangBUS muahangBUS = new MuahangBUS();
+        public void Loadnhacungcap()
+        {
+            lstNCC = muahangBUS.ChonNCC();
+            cbbNhacungcap.Properties.DataSource = lstNCC;
+            cbbNhacungcap.Properties.DisplayMember = "TenNCC";
+            cbbNhacungcap.Properties.ValueMember = "Id";
+            cbbNhacungcap.Properties.PopupResizeMode = ResizeMode.FrameResize;
+            cbbNhacungcap.Properties.BestFitMode = BestFitMode.BestFitResizePopup;
         }
 
 

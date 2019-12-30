@@ -25,6 +25,18 @@ namespace DACK.DAO
             var datatable = db.laydulieu(sql);
             return datatable;
         }
+        public List<Nhansu> Lstnhansu(int IDmh)
+        {
+            string sql = "";
+            if (IDmh != 1)
+            {
+                sql = string.Format("Select * from Nhansu Where IdQuyen={0} or IdQuyen={1} ", 2, 3);
+            }
+            else
+            { sql = string.Format("Select * from Nhansu Where IdQuyen={0}", IDmh); } //Where Id = { 0 }
+            List<Nhansu> datatable = db.Chonnv(sql);
+            return datatable;
+        }
         public List<Nhansu> Dsnhanvien()
         {
             string sql = string.Format("Select * from Nhansu where IdQuyen= {0} or IdQuyen = {1}", 2, 3);
@@ -73,6 +85,11 @@ namespace DACK.DAO
         {          
             string sql = string.Format("Select * from Nhansu where Id='{0}'", ID);          
             return db.Laynhansu(sql);
+        }
+        public string Laypasswork(int ID)
+        {
+            string sql = string.Format("Select MatKhau from Nhansu where Id='{0}'", ID);
+            return db.Laythuoctinh(sql).ToString();
         }
     }
 }
